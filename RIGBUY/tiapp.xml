@@ -1,139 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
-  xmlns:ti="http://ti.appcelerator.org">
-  <id>com.rigbuy.app</id>
-  <name>RIGBUY</name>
-  <version>1.0</version>
-  <publisher>hemantsolanki</publisher>
-  <url>undefined</url>
-  <description>undefined</description>
-  <copyright>2017 by hemantsolanki</copyright>
-  <icon>appicon.png</icon>
-  <fullscreen>false</fullscreen>
-  <navbar-hidden>false</navbar-hidden>
-  <analytics>true</analytics>
-  <guid>2e69446d-84e7-4277-9555-40338bf2edf3</guid>
-  <property name="ti.ui.defaultunit" type="string">dp</property>
-  <ios>
-    <enable-launch-screen-storyboard>false</enable-launch-screen-storyboard>
-    <use-app-thinning>true</use-app-thinning>
-    <plist>
-      <dict>
-        <key>NSLocationAlwaysUsageDescription</key>
-        <string>Please allow permission to access your location</string>
-        <key>NSLocationWhenInUseUsageDescription</key>
-        <string>Please allow permission to access your location</string>
-        <key>UISupportedInterfaceOrientations~iphone</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-        </array>
-        <key>UISupportedInterfaceOrientations~ipad</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-          <string>UIInterfaceOrientationPortraitUpsideDown</string>
-        </array>
-        <key>CFBundleURLTypes</key>
-        <array>
-          <dict>
-            <key>CFBundleURLName</key>
-            <string>com.rigbuy.app</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-              <string>fb174548553297041</string>
-              <string>com.googleusercontent.apps.61069628492-phalp1k382nlam34i2e0pcta25dce23n</string>
-            </array>
-          </dict>
-        </array>
-        <key>FacebookAppID</key>
-        <string>174548553297041</string>
-        <key>FacebookDisplayName</key>
-        <string>RIGBUY</string>
-        <key>LSApplicationQueriesSchemes</key>
-        <array>
-          <string>fbapi</string>
-          <string>fb-messenger-api</string>
-          <string>fbauth2</string>
-          <string>fbshareextension</string>
-        </array>
-        <key>UIRequiresPersistentWiFi</key>
-        <false/>
-        <key>UIPrerenderedIcon</key>
-        <false/>
-        <key>UIStatusBarHidden</key>
-        <false/>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
-      </dict>
-    </plist>
-  </ios>
-  <android 
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest android:versionCode="1" android:versionName="1.0" package="com.rigbuy.app">
-      <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23"/>
-      <uses-permission android:name="android.permission.CAMERA"/>
-      <uses-permission android:name="android.permission.INTERNET"/>
-      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-      <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
-      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-      <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-      <uses-permission android:name="android.permission.CALL_PHONE"/>
-      <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-      <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-      <application android:largeHeap="true">
-        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".RigbuyActivity" android:theme="@style/Theme.Titanium">
-          <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-          </intent-filter>
-        </activity>
-        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme" android:windowSoftInputMode="stateHidden|adjustPan"/>
-        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="RIGBUY" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-      </application>
-    </manifest>
-  </android>
-  <modules>
-    <module platform="commonjs">ti.cloud</module>
-    <module platform="iphone">dk.napp.slidemenu</module>
-    <module platform="commonjs">nl.fokkezb.html2as</module>
-    <module platform="android">facebook</module>
-    <module platform="iphone">facebook</module>
-    <module platform="iphone">ti.imagefactory</module>
-    <module platform="android">ti.imagefactory</module>
-    <module platform="android">dk.napp.drawer</module>
-    <module platform="android">ti.googlesignin</module>
-    <module platform="android">com.alcoapps.actionbarextras</module>
-  </modules>
-  <deployment-targets>
-    <target device="mobileweb">false</target>
-    <target device="android">true</target>
-    <target device="ipad">false</target>
-    <target device="iphone">true</target>
-  </deployment-targets>
-  <sdk-version>7.0.1.GA</sdk-version>
-  <plugins>
-    <plugin version="1.0">ti.alloy</plugin>
-  </plugins>
-  <property name="appc-app-id" type="string">5a6f600e747eaa59c858c8f0</property>
-  <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
-  <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
-  <property name="acs-oauth-secret-development" type="string">WEkSIfrHSjym15GIfRAyGkXZ3qjcrYTb</property>
-  <property name="acs-oauth-key-development" type="string">ivomqV3dsNHxxfl1M4WUHQKhZ0pvSWqK</property>
-  <property name="acs-api-key-development" type="string">q83B3flO4I01qHpDA9Jhrjbd6rlGQoYu</property>
-  <property name="acs-username-development" type="string">appc_app_user_dev</property>
-  <property name="acs-password-development" type="string">75XZEkcEzCDSFyoS4y</property>
-  <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
-  <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
-  <property name="acs-oauth-secret-production" type="string">wYeHLU37jppAikpbL3pQ6PYFatdeFIvq</property>
-  <property name="acs-oauth-key-production" type="string">YO6U3nXwtLGMrMCghjd20jNcdc3oywuE</property>
-  <property name="acs-api-key-production" type="string">FCDRHzr9aHFYr5bskWCvDcPTuaYsqpgg</property>
-  <property name="acs-username-production" type="string">appc_app_user</property>
-  <property name="acs-password-production" type="string">JwvqRFw8bKb3SDHKmj</property>
-  <property name="appc-org-id" type="string">220959560603109</property>
-  <property name="appc-creator-user-id" type="string">025572e5-ba70-4868-9445-60d8f18a1be5</property>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.rigbuy.app</id>
+    <name>RIGBUY</name>
+    <version>1.0</version>
+    <publisher>hemantsolanki</publisher>
+    <url>undefined</url>
+    <description>undefined</description>
+    <copyright>2017 by hemantsolanki</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>2e69446d-84e7-4277-9555-40338bf2edf3</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <enable-launch-screen-storyboard>false</enable-launch-screen-storyboard>
+        <use-app-thinning>true</use-app-thinning>
+        <plist>
+            <dict>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>Please allow permission to access your location</string>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>Please allow permission to access your location</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                </array>
+                <key>CFBundleURLTypes</key>
+                <array>
+                    <dict>
+                        <key>CFBundleURLName</key>
+                        <string>com.rigbuy.app</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>fb174548553297041</string>
+                            <string>com.googleusercontent.apps.61069628492-phalp1k382nlam34i2e0pcta25dce23n</string>
+                        </array>
+                    </dict>
+                </array>
+                <key>FacebookAppID</key>
+                <string>174548553297041</string>
+                <key>FacebookDisplayName</key>
+                <string>RIGBUY</string>
+                <key>LSApplicationQueriesSchemes</key>
+                <array>
+                    <string>fbapi</string>
+                    <string>fb-messenger-api</string>
+                    <string>fbauth2</string>
+                    <string>fbshareextension</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:versionCode="1" android:versionName="1.0" package="com.rigbuy.app">
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23"/>
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.CALL_PHONE"/>
+            <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+            <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+            <application android:largeHeap="true">
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:label="@string/app_name"
+                    android:name=".RigbuyActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                </activity>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:name="org.appcelerator.titanium.TiActivity"
+                    android:screenOrientation="portrait"
+                    android:theme="@style/MyTheme" android:windowSoftInputMode="stateHidden|adjustPan"/>
+                <activity
+                    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                    android:label="RIGBUY"
+                    android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+            </application>
+        </manifest>
+    </android>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">dk.napp.slidemenu</module>
+        <module platform="commonjs">nl.fokkezb.html2as</module>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
+        <module platform="iphone">ti.imagefactory</module>
+        <module platform="android">ti.imagefactory</module>
+        <module platform="android">dk.napp.drawer</module>
+        <module platform="android">com.alcoapps.actionbarextras</module>
+        <module platform="iphone">ti.googlesignin</module>
+        <module platform="android">ti.googlesignin</module>
+    </modules>
+    <deployment-targets>
+        <target device="mobileweb">false</target>
+        <target device="android">true</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+    </deployment-targets>
+    <sdk-version>7.0.1.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5a6f600e747eaa59c858c8f0</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">WEkSIfrHSjym15GIfRAyGkXZ3qjcrYTb</property>
+    <property name="acs-oauth-key-development" type="string">ivomqV3dsNHxxfl1M4WUHQKhZ0pvSWqK</property>
+    <property name="acs-api-key-development" type="string">q83B3flO4I01qHpDA9Jhrjbd6rlGQoYu</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">75XZEkcEzCDSFyoS4y</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">wYeHLU37jppAikpbL3pQ6PYFatdeFIvq</property>
+    <property name="acs-oauth-key-production" type="string">YO6U3nXwtLGMrMCghjd20jNcdc3oywuE</property>
+    <property name="acs-api-key-production" type="string">FCDRHzr9aHFYr5bskWCvDcPTuaYsqpgg</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">JwvqRFw8bKb3SDHKmj</property>
+    <property name="appc-org-id" type="string">220959560603109</property>
+    <property name="appc-creator-user-id" type="string">025572e5-ba70-4868-9445-60d8f18a1be5</property>
 </ti:app>

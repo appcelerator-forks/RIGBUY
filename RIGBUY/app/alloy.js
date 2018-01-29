@@ -70,11 +70,12 @@ Alloy.Globals.Constants = require('Constants');
 Alloy.Globals.Measurement = require('alloy/measurement');
 if (OS_IOS) {
 	defaultWidth = 320;
-	Alloy.Globals.abx = require('com.alcoapps.actionbarextras');
+	
 	//the base size of standard handset iphone (that apps were designed for)
 	deviceWidth = Titanium.Platform.displayCaps.platformWidth;
 	Alloy.Globals.scaleFactor = deviceWidth / defaultWidth;
 } else {
+	Alloy.Globals.abx = require('com.alcoapps.actionbarextras');
 	// defaultWidth = 400;
 	//the base size of standard handset iphone (that apps were designed for)
 	deviceWidth = Alloy.Globals.Measurement.pxToDP(Titanium.Platform.displayCaps.platformWidth) * 0.0028;
