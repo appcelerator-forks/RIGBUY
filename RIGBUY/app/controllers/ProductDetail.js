@@ -2,7 +2,7 @@
 var args = $.args;
 // $.productImg.image = args.product_image;
 var imageArray = [];
-imageArray.push(args.product_image);
+imageArray = args.images;
 $.nameLbl.text = args.owner_name;
 $.dateLbl.text = "Posted On " + args.created_date;
 $.amtLbl.text = args.price;

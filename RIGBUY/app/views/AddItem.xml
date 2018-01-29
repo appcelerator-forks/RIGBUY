@@ -46,6 +46,14 @@
 				</View>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
+			<View id="subcategoryVW" width="87%"  top="10" height="60">
+				<Label id="subcategoryLbl" color="#A39F9F" top="0" left="0">Sub Category</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="subcategoryTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Sub Category" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="subcategoryClickFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
 			<View id="productTypeVW" width="87%"  top="10" height="60">
 				<Label id="typeLbl" color="#A39F9F" top="0" left="0">Product Type</Label>
 				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="typeTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Product Type" color="black"></TextField>

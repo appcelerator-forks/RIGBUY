@@ -3,15 +3,18 @@ var args = $.args;
 Ti.API.info('PRODUCT DETAIL : ' + JSON.stringify(args));
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
-var categoryIndex=-1,
-    countryIndex=-1,
-    cityIndex=-1,
-    stateIndex=-1,
+var categoryIndex = -1,
+    subcategoryIndex = -1,
+    countryIndex = -1,
+    cityIndex = -1,
+    stateIndex = -1,
     categoryCheck,
+    subcategoryCheck,
     countryCheck,
     stateCheck,
     cityCheck;
 var categoryArray,
+    subcategoryArray,
     countryArray,
     cityArray,
     stateArray = [];
@@ -45,7 +48,7 @@ if (args.from == "add") {
 	$.statusTF.value = args.data.status;
 	if (args.data.status == "Activated") {
 		$.statusTF.status_id = "1";
-	} else { 
+	} else {
 		$.statusTF.status_id = "0";
 	}
 	if (OS_IOS)
@@ -56,6 +59,7 @@ $.nameVW.height = 60 * Alloy.Globals.scaleFactor;
 $.featuresVW.height = 60 * Alloy.Globals.scaleFactor;
 $.priceVW.height = 60 * Alloy.Globals.scaleFactor;
 $.categoryVW.height = 60 * Alloy.Globals.scaleFactor;
+$.subcategoryVW.height = 60 * Alloy.Globals.scaleFactor;
 $.productTypeVW.height = 60 * Alloy.Globals.scaleFactor;
 $.descVW.height = 100 * Alloy.Globals.scaleFactor;
 $.imgVW.height = 60 * Alloy.Globals.scaleFactor;
@@ -70,6 +74,7 @@ $.addressVW.height = 60 * Alloy.Globals.scaleFactor;
 
 function openFunc(e) {
 	categoryCheck = 0;
+	subcategoryCheck = 0;
 	countryCheck = 0;
 	stateCheck = 0;
 	cityCheck = 0;
@@ -87,6 +92,7 @@ function winClick(e) {
 		$.featureTF.blur();
 		$.descTF.blur();
 		$.categoryTF.blur();
+
 		$.priceTF.blur();
 		$.typeTF.blur();
 		$.addressTF.blur();
@@ -123,6 +129,12 @@ $.priceLbl.font = {
 	fontSize : 13 * Alloy.Globals.scaleFactor
 };
 $.priceTF.font = {
+	fontSize : 14 * Alloy.Globals.scaleFactor
+};
+$.subcategoryLbl.font = {
+	fontSize : 13 * Alloy.Globals.scaleFactor
+};
+$.subcategoryTF.font = {
 	fontSize : 14 * Alloy.Globals.scaleFactor
 };
 $.categoryLbl.font = {
@@ -271,6 +283,7 @@ function categoryClickFunc(e) {
 					$.categoryTF.value = e.data.title;
 					categoryIndex = e.data.index;
 					$.categoryTF.category_id = e.data.category_id;
+					getsubCategoryService(e.data.category_id);
 
 				}
 			},
@@ -285,6 +298,52 @@ function categoryClickFunc(e) {
 	}
 	setTimeout(function() {
 		$.categoryVW.focusable = true;
+	}, 1000);
+}
+
+function subcategoryClickFunc(e) {
+	if ($.subcategoryVW.focusable == false) {
+		return;
+	}
+	$.subcategoryVW.focusable = false;
+
+	$.priceTF.blur();
+	if ($.categoryTF.value != "" || $.categoryTF.value.trim().length > 0) {
+		if (subcategoryArray != undefined && subcategoryArray != null && subcategoryArray.length > 0) {
+			subcategoryCheck = 0;
+
+			Alloy.createWidget('danielhanold.pickerWidget', {
+				id : 'category',
+				outerView : $.AdvancedSearch,
+				hideNavBar : false,
+				type : 'single-column',
+				selectedValues : subcategoryIndex,
+				pickerValues : subcategoryArray,
+				onDone : function(e) {
+
+					Ti.API.info("yes " + JSON.stringify(e.data));
+
+					if (!e.cancel) {
+						$.subcategoryTF.value = e.data.title;
+						subcategoryIndex = e.data.index;
+						$.subcategoryTF.category_id = e.data.category_id;
+
+					}
+				},
+			});
+		} else {
+			if (Ti.Network.online) {
+				subcategoryCheck = 1;
+				getsubCategoryService($.categoryTF.category_id);
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again.");
+			}
+		}
+	} else {
+		Alloy.Globals.Alert("Please select category first");
+	}
+	setTimeout(function() {
+		$.subcategoryVW.focusable = true;
 	}, 1000);
 }
 
@@ -538,42 +597,45 @@ function submitFunc(e) {
 				if ($.priceTF.value > 0) {
 					if ($.currencyTF.value != null && $.currencyTF.value.trim().length > 0) {
 						if ($.categoryTF.value != null && $.categoryTF.value.trim().length > 0) {
-							if ($.typeTF.value != null && $.typeTF.value.trim().length > 0) {
-								if ($.statusTF.value != null && $.statusTF.value.trim().length > 0) {
-									if ($.countryTF.value != null && $.countryTF.value.trim().length > 0) {
-										if ($.stateTF.value != null && $.stateTF.value.trim().length > 0) {
-											if ($.cityTF.value != null && $.cityTF.value.trim().length > 0) {
-												if ($.addressTF.value != null && $.addressTF.value.trim().length > 0) {
-													if ($.descTF.value != null && $.descTF.value.trim().length > 0) {
-														if (selectedImage != null) {
-															addProductService();
+							if ($.subcategoryTF.value != null && $.subcategoryTF.value.trim().length > 0) {
+								if ($.typeTF.value != null && $.typeTF.value.trim().length > 0) {
+									if ($.statusTF.value != null && $.statusTF.value.trim().length > 0) {
+										if ($.countryTF.value != null && $.countryTF.value.trim().length > 0) {
+											if ($.stateTF.value != null && $.stateTF.value.trim().length > 0) {
+												if ($.cityTF.value != null && $.cityTF.value.trim().length > 0) {
+													if ($.addressTF.value != null && $.addressTF.value.trim().length > 0) {
+														if ($.descTF.value != null && $.descTF.value.trim().length > 0) {
+															if (selectedImage != null) {
+																addProductService();
+
+															} else {
+																Alloy.Globals.Alert("Please select product image");
+															}
 
 														} else {
-															Alloy.Globals.Alert("Please select product image");
+															Alloy.Globals.Alert("Please enter product description");
 														}
-
 													} else {
-														Alloy.Globals.Alert("Please enter product description");
+														Alloy.Globals.Alert("Please enter address of property");
 													}
 												} else {
-													Alloy.Globals.Alert("Please enter address of property");
+													Alloy.Globals.Alert("Please select city");
 												}
 											} else {
-												Alloy.Globals.Alert("Please select city");
+												Alloy.Globals.Alert("Please select state");
 											}
 										} else {
-											Alloy.Globals.Alert("Please select state");
+											Alloy.Globals.Alert("Please select country");
 										}
 									} else {
-										Alloy.Globals.Alert("Please select country");
+										Alloy.Globals.Alert("Please select product status");
 									}
 								} else {
-									Alloy.Globals.Alert("Please select product status");
+									Alloy.Globals.Alert("Please select product type");
 								}
 							} else {
-								Alloy.Globals.Alert("Please select product type");
+								Alloy.Globals.Alert("Please select product sub category");
 							}
-
 						} else {
 							Alloy.Globals.Alert("Please select product category");
 						}
@@ -740,6 +802,57 @@ function getCategoryServiceCallback(e) {
 				} else {
 
 					Ti.API.info("No category found");
+				}
+
+			} else {
+
+				Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_NO_DATA);
+
+			}
+		} catch(e) {
+			Ti.API.info('Error getCategoryerviceCallback :: ' + e.message);
+
+		}
+
+	} else {
+		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
+
+	}
+
+}
+
+function getsubCategoryService(id) {
+
+	if (Ti.Network.online) {
+
+		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getcategoryById&categoryId=" + id, getsubCategoryServiceCallback);
+
+	} else {
+
+		//Alloy.Globals.Alert("Please check your internet connection and try again.");
+
+	}
+}
+
+function getsubCategoryServiceCallback(e) {
+
+	if (e.success) {
+		try {
+			Ti.API.info('response ' + e.response);
+			var response = JSON.parse(e.response);
+
+			if (response != null) {
+				Ti.API.info('response.action_success = ' + JSON.stringify(response));
+				if (response.status == "1") {
+					subcategoryArray = response.data;
+					if (subcategoryCheck == 1) {
+						subcategoryClickFunc();
+					}
+
+				} else {
+
+					Ti.API.info("No sub category found");
 				}
 
 			} else {

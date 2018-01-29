@@ -3,15 +3,17 @@ var args = $.args;
 
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
-Ti.API.info('DATA : 1'+JSON.stringify(Alloy.Globals.filterSelectionObj));
+Ti.API.info('DATA : 1' + JSON.stringify(Alloy.Globals.filterSelectionObj));
 $.categoryTF.category_id = "";
-	$.stateTF.state_id = "";
-	$.countryTF.country_id = "";
-	$.cityTF.city_id = "";
-	$.categoryTF.value = "";
-	$.stateTF.value = "";
-	$.countryTF.value = "";
-	$.cityTF.value = "";
+$.subcategoryTF.category_id = "";
+$.stateTF.state_id = "";
+$.countryTF.country_id = "";
+$.cityTF.city_id = "";
+$.categoryTF.value = "";
+$.subcategoryTF.value = "";
+$.stateTF.value = "";
+$.countryTF.value = "";
+$.cityTF.value = "";
 if (Alloy.Globals.filterSelectionObj != null && Alloy.Globals.filterSelectionObj != undefined) {
 	$.categoryTF.category_id = Alloy.Globals.filterSelectionObj.categoryId;
 	$.stateTF.state_id = Alloy.Globals.filterSelectionObj.stateId;
@@ -21,8 +23,8 @@ if (Alloy.Globals.filterSelectionObj != null && Alloy.Globals.filterSelectionObj
 	$.stateTF.value = Alloy.Globals.filterSelectionObj.state;
 	$.countryTF.value = Alloy.Globals.filterSelectionObj.country;
 	$.cityTF.value = Alloy.Globals.filterSelectionObj.city;
-	Ti.API.info('DATA 2: '+JSON.stringify(Alloy.Globals.filterSelectionObj));
-	
+	Ti.API.info('DATA 2: ' + JSON.stringify(Alloy.Globals.filterSelectionObj));
+
 }
 
 function winClickFunc(e) {
@@ -70,6 +72,12 @@ $.categoryLbl.font = {
 	fontSize : 13 * Alloy.Globals.scaleFactor
 };
 $.categoryTF.font = {
+	fontSize : 15 * Alloy.Globals.scaleFactor
+};
+$.subcategoryLbl.font = {
+	fontSize : 13 * Alloy.Globals.scaleFactor
+};
+$.subcategoryTF.font = {
 	fontSize : 15 * Alloy.Globals.scaleFactor
 };
 $.cityLbl.font = {
@@ -123,7 +131,10 @@ function submitFunc(e) {
 	$.searchSubmitBtn.focusable == false;
 	$.AdvancedSearch.close();
 	var obj = {};
+	obj.category = $.categoryTF.value;
 	obj.categoryId = $.categoryTF.category_id;
+	obj.subcategory = $.subcategoryTF.value;
+	obj.subcategoryId = $.subcategoryTF.category_id;
 	obj.productType = "";
 	obj.price = $.priceTF.value;
 	obj.countryId = $.countryTF.country_id;
@@ -132,7 +143,7 @@ function submitFunc(e) {
 	obj.country = $.countryTF.value;
 	obj.state = $.stateTF.value;
 	obj.city = $.cityTF.value;
-	obj.category = $.categoryTF.value;
+	
 	Alloy.Globals.getProductListervice("filter", obj);
 
 	setTimeout(function(e) {
@@ -164,15 +175,18 @@ function cancelFunc(e) {
 
 }
 
-var categoryIndex=-1,
-    countryIndex=-1,
-    cityIndex=-1,
-    stateIndex=-1,
+var categoryIndex = -1,
+    subcategoryIndex = -1,
+    countryIndex = -1,
+    cityIndex = -1,
+    stateIndex = -1,
     categoryCheck,
+    subcategoryCheck,
     countryCheck,
     stateCheck,
     cityCheck;
 var categoryArray,
+    subcategoryArray,
     countryArray,
     cityArray,
     stateArray = [];
@@ -203,6 +217,7 @@ function categoryClickFunc(e) {
 					$.categoryTF.value = e.data.title;
 					categoryIndex = e.data.index;
 					$.categoryTF.category_id = e.data.category_id;
+					getsubCategoryService(e.data.category_id);
 
 				}
 			},
@@ -220,7 +235,51 @@ function categoryClickFunc(e) {
 	}, 1000);
 }
 
-var countryIndex = 0;
+function subcategoryClickFunc(e) {
+	if ($.subcategoryVW.focusable == false) {
+		return;
+	}
+	$.subcategoryVW.focusable = false;
+
+	$.priceTF.blur();
+	if ($.categoryTF.value != "" || $.categoryTF.value.trim().length > 0) {
+		if (subcategoryArray != undefined && subcategoryArray != null && subcategoryArray.length > 0) {
+			subcategoryCheck = 0;
+
+			Alloy.createWidget('danielhanold.pickerWidget', {
+				id : 'category',
+				outerView : $.AdvancedSearch,
+				hideNavBar : false,
+				type : 'single-column',
+				selectedValues : subcategoryIndex,
+				pickerValues : subcategoryArray,
+				onDone : function(e) {
+
+					Ti.API.info("yes " + JSON.stringify(e.data));
+
+					if (!e.cancel) {
+						$.subcategoryTF.value = e.data.title;
+						subcategoryIndex = e.data.index;
+						$.subcategoryTF.category_id = e.data.category_id;
+
+					}
+				},
+			});
+		} else {
+			if (Ti.Network.online) {
+				subcategoryCheck = 1;
+				getsubCategoryService($.categoryTF.category_id);
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again.");
+			}
+		}
+	} else {
+		Alloy.Globals.Alert("Please select category first");
+	}
+	setTimeout(function() {
+		$.subcategoryVW.focusable = true;
+	}, 1000);
+}
 
 function selectCountryFunc(e) {
 	if ($.countryVW.focusable == false) {
@@ -403,6 +462,57 @@ function getCategoryServiceCallback(e) {
 				} else {
 
 					Ti.API.info("No category found");
+				}
+
+			} else {
+
+				Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_NO_DATA);
+
+			}
+		} catch(e) {
+			Ti.API.info('Error getCategoryerviceCallback :: ' + e.message);
+
+		}
+
+	} else {
+		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
+
+	}
+
+}
+
+function getsubCategoryService(id) {
+
+	if (Ti.Network.online) {
+
+		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getcategoryById&categoryId=" + id, getsubCategoryServiceCallback);
+
+	} else {
+
+		//Alloy.Globals.Alert("Please check your internet connection and try again.");
+
+	}
+}
+
+function getsubCategoryServiceCallback(e) {
+
+	if (e.success) {
+		try {
+			Ti.API.info('response ' + e.response);
+			var response = JSON.parse(e.response);
+
+			if (response != null) {
+				Ti.API.info('response.action_success = ' + JSON.stringify(response));
+				if (response.status == "1") {
+					subcategoryArray = response.data;
+					if (subcategoryCheck == 1) {
+						subcategoryClickFunc();
+					}
+
+				} else {
+
+					Ti.API.info("No sub category found");
 				}
 
 			} else {
