@@ -1,7 +1,10 @@
 <Alloy>
 	<Window class="container" title="Product Details" backButtonTitle="" backgroundColor="white" onOpen="openFunc">
 		<ScrollView height="92%" top="0"  layout="vertical">
-		<ImageView id="productImg" top="0" height="38%" width="100%" image="/images/default.jpg"></ImageView>		
+			<View id="SlideimageVW" top="0" height="38%">
+				<ScrollableView id="slideImage" onScroll="scrollFun"></ScrollableView>
+			</View>
+		<!-- <ImageView id="productImg" top="0" height="38%" width="100%" image="/images/default.jpg"></ImageView>		 -->
 		<View   height="14%">
 			<View layout="horizontal" width="Ti.UI.SIZE">
 				<ImageView left="4%" image="/images/aimg.png"></ImageView>

@@ -418,6 +418,12 @@ function loginServiceCallback(e) {
 					Ti.App.Properties.setString("userid", response.records.userId);
 					Ti.App.Properties.setString("password", $.passwordTF.value.trim());
 					Ti.App.Properties.setBool("isLogin", true);
+					Alloy.Globals.loginLbl.text = "Logout";
+					if (OS_IOS) {
+						Alloy.Globals.logoutImg.leftImage = "/images/logout.png";
+					} else {
+						Alloy.Globals.logoutImg.image = "/images/logout.png";
+					}
 					if (Alloy.Globals.isScreen == "setting") {
 						var regScreen = Alloy.createController("Setting").getView();
 
@@ -466,12 +472,7 @@ function loginServiceCallback(e) {
 					}
 
 					$.Login.close();
-					Alloy.Globals.loginLbl.text = "Logout";
-					if (OS_IOS) {
-						Alloy.Globals.logoutImg.leftImage = "/images/logout.png";
-					} else {
-						Alloy.Globals.logoutImg.image = "/images/logout.png";
-					}
+					
 				} else {
 					Alloy.Globals.Alert(response.msg);
 				}

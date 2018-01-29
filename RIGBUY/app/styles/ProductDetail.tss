@@ -2,3 +2,15 @@
 ".container" : {
   
 }
+"#SlideimageVW":{
+	
+	backgroundColor: "gray",
+	//height: Alloy.Globals.scrollableHeight,
+	height: "250dp",
+	width: "100%"
+}
+"#slideImage":{
+	top: "0dp",
+	height:Ti.UI.FILL,
+	width: "100%"
+}

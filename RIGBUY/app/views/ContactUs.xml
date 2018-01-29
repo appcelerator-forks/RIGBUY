@@ -13,7 +13,7 @@
 			<Label id="headerLbl" color="white"  textAlign="center">Contact Us</Label>
 		</View>
 		<ScrollView top="0" bottom="0">
-			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+			<Label id="webview"  color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
 		</ScrollView>
 	</View>
 </Alloy>

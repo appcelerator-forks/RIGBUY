@@ -71,6 +71,7 @@ Alloy.Globals.openHome = function(response, loginObj) {
 		Alloy.Globals.centerView = homeScreen.getChildren()[0];
 		Alloy.Globals.drawer = NappDrawerModule.createDrawer({
 			fullscreen : false,
+			//theme : "Theme.Titanium",
 			leftWindow : homeScreen.getChildren()[1],
 			centerWindow : homeScreen.getChildren()[0],
 			fading : 0.2, // 0-1
@@ -79,8 +80,9 @@ Alloy.Globals.openHome = function(response, loginObj) {
 			shadowWidth : "40dp",
 			leftDrawerWidth : drawerWidth,
 			backgroundColor : "white",
-			opacity : 0,
-            backgroundColor:"white",
+			opacity : 1,
+			// navBarHidden:true,
+			backgroundColor : "white",
 			// animationMode : NappDrawerModule.ANIMATION_SCALE,
 			closeDrawerGestureMode : NappDrawerModule.CLOSE_MODE_MARGIN,
 			openDrawerGestureMode : NappDrawerModule.OPEN_MODE_ALL,
@@ -115,52 +117,16 @@ Alloy.Globals.openHome = function(response, loginObj) {
 			} else if (e.window == NappDrawerModule.RIGHT_WINDOW) {
 				Ti.API.info("windowDidOpen - RIGHT DRAWER");
 			}
-		}); 
+		});
 		Alloy.Globals.drawer.addEventListener('open', onNavDrawerWinOpen);
 		function onNavDrawerWinOpen(evt) {
 			Alloy.Globals.drawer.getActivity().actionBar.hide();
-			Alloy.Globals.drawer.animate({
-				opacity:1,
-				duration:500
-			});
-			//this.removeEventListener('open', onNavDrawerWinOpen);
-			// if (activity) {
-			// this.activity.actionBar.hide();
-			// }
-
-			// var activity = this.getActivity();
-			// if (activity) {
-			// Alloy.Globals.actionbar = activity.actionBar;
-			// Alloy.Globals.abx.setHomeAsUpIcon("/images/menu.png");
-			// Alloy.Globals.actionbar.setDisplayHomeAsUp(true);
-			// Alloy.Globals.actionbar.setHomeButtonEnabled(true);
-			// Alloy.Globals.abx.title = "Product List";
-			// Alloy.Globals.abx.color = "white";
-			// activity.actionBar.onHomeIconItemSelected = function(e) {
-			//
-			// Alloy.Globals.drawer.toggleLeftWindow();
-			// };
-			//
-			// activity.onCreateOptionsMenu = function(e) {
-			// var menuItem = e.menu.add({
-			// title : "Advanced Search",
-			// showAsAction : Titanium.Android.SHOW_AS_ACTION_ALWAYS,
-			// icon : "/images/filter1.png"
+			// Alloy.Globals.drawer.animate({
+				// opacity : 1,
+				// duration : 500
 			// });
-			// menuItem.addEventListener("click", function(e) {
-			// var advancedSearch = Alloy.createController("AdvancedSearch").getView();
-			// if (OS_IOS) {
-			// Alloy.Globals.navWin.openWindow(advancedSearch);
-			// } else {
-			// advancedSearch.open();
-			// }
-			//
-			// Alloy.Globals.currentWindow = advancedSearch;
-			// });
-			// };
-			// activity.invalidateOptionsMenu();
-			//
-			// }
+			Alloy.Globals.filterSelectionObj = null;
+			Alloy.Globals.getProductListervice();
 
 		}
 
@@ -173,3 +139,4 @@ Alloy.Globals.openHome = function(response, loginObj) {
 };
 
 Alloy.Globals.openHome();
+

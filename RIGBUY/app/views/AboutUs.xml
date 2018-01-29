@@ -10,7 +10,7 @@
 	<View class="container" platform="android" name="about" title="About Us" backgroundColor="white" layout="vertical">
 		<View height="56" backgroundColor="#f54224">
 			<Button id="menuBtn" backgroundImage="none" width="60" image="/images/menu.png" left="10" onClick="openMenu"></Button>
-			<Label id="headerLbl" color="white"  textAlign="center">About Us</Label>
+			<Label id="headerLbl" color="white"  textAlign="justify">About Us</Label>
 		</View>
 		<ScrollView top="0" bottom="0">
 			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>

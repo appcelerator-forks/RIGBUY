@@ -8,7 +8,7 @@ var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 // var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 
 $.webview.font = {
-	fontSize : 14 * Alloy.Globals.scaleFactor
+	fontSize : 15 * Alloy.Globals.scaleFactor
 };
 
 // Create the left and Right navigation Button and set the Home screen title with language

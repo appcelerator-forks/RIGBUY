@@ -9,18 +9,18 @@ if (OS_ANDROID) {
 	Alloy.Globals.logoutImg = $.logoutRow;
 }
 if (Ti.App.Properties.getBool("isLogin")) {
-	Alloy.Globals.loginLbl.text = "Logout";
+	$.rowLbl5.text = "Logout";
 	if (OS_IOS) {
-		Alloy.Globals.logoutImg.leftImage = "/images/logout.png";
+		$.logoutRow.leftImage = "/images/logout.png";
 	} else {
-		Alloy.Globals.logoutImg.image = "/images/logout.png";
+		$.logoutImg.image = "/images/logout.png";
 	}
 } else {
-	Alloy.Globals.loginLbl.text = "Login";
+	$.rowLbl5.text = "Login";
 	if (OS_IOS) {
-		Alloy.Globals.logoutImg.leftImage = "/images/login.png";
+		$.logoutRow.leftImage = "/images/login.png";
 	} else {
-		Alloy.Globals.logoutImg.image = "/images/login.png";
+		$.logoutImg.image = "/images/login.png";
 	}
 }
 if (OS_IOS) {
@@ -85,24 +85,20 @@ var productRow = function(detail) {
 			//tableRow.selectionStyle = Titanium.UI.iOS.TableViewCellSelectionStyle.NONE;
 		}
 		// tableRow.add(Ti.UI.createView({
-			// height : "100%",
-			// width : "100%",
-// 
-			// zIndex : 1 
+		// height : "100%",
+		// width : "100%",
+		//
+		// zIndex : 1
 		// }));
 		//0-0
 		tableRow.add(Ti.UI.createImageView({
-			
-			height :Ti.UI.FILL,
+			height : Ti.UI.FILL,
 			width : Ti.UI.FILL,
-			backgroundColor:"#000",
-			//defaultImage:"/images/default-thumb.png",
-			
+			defaultImage : "/images/Detail_no_Img.png",
 			image : detail[i].product_image,
 			zIndex : 1
 		}));
-		
-		
+
 		tableRow.add(Ti.UI.createImageView({
 			image : "/images/sh.png",
 			height : "100%",
@@ -157,7 +153,7 @@ var productRow = function(detail) {
 		//1
 		tableRow.add(Ti.UI.createLabel({
 			top : 30 * Alloy.Globals.scaleFactor,
-			height : 20 * Alloy.Globals.scaleFactor,
+			height : 16 * Alloy.Globals.scaleFactor,
 			left : 10 * Alloy.Globals.scaleFactor,
 			width : "80%",
 			color : 'white',
@@ -243,7 +239,7 @@ function changeFunc(e) {
 var favBtnSource;
 function tableClickFunc(e) {
 	$.search.blur();
-
+	Ti.API.info(e.source.name);
 	if (e.source.name == "favBtn") {
 		favBtnSource = e.source;
 		if (Ti.App.Properties.getBool("isLogin")) {
@@ -545,12 +541,13 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 4:
 		focus = true;
 		$.rightTable.focusable = true;
-		if (Ti.App.Properties.getBool("isLogin")) {
-			logout();
-		} else {
-			var regScreen = Alloy.createController("Login", "menu").getView();
-			regScreen.open();
-		}
+		// if (Ti.App.Properties.getBool("isLogin")) {
+			// logout();
+		// } else {
+			// var regScreen = Alloy.createController("Login", "menu").getView();
+			// regScreen.open();
+		// }
+		logout();
 
 		break;
 
@@ -562,6 +559,7 @@ function leftMenuOptionSelectedAndroid(e) {
 	}, 500);
 }
 
+var flag = false;
 function logout(e) {
 	var dialog = Ti.UI.createAlertDialog({
 		cancel : 1,
@@ -573,30 +571,51 @@ function logout(e) {
 		if (k.index === 0) {
 			Ti.API.info('The cancel button was clicked');
 		} else {
-			Ti.App.Properties.setBool("isLogin", false);
-			Ti.App.Properties.setString("email", "");
-			Ti.App.Properties.setString("userid", "");
-			Ti.App.Properties.setString("password", "");
-			Alloy.Globals.loginLbl.text = "Login";
-			Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
-			Alloy.Globals.currentWindow = null;
-			Alloy.Globals.productDetailObj = null;
-			Alloy.Globals.isScreen = "";
-			Alloy.Globals.socialLogin = false;
-			if (Alloy.Globals.google) {
-				Alloy.Globals.google.signOut();
-			}
-			if (OS_ANDROID) {
-				Alloy.Globals.drawer.toggleLeftWindow();
+			// Ti.App.Properties.setBool("isLogin", false);
+			// Ti.App.Properties.setString("email", "");
+			// Ti.App.Proper	ties.setString("userid", "");
+			// Ti.App.Properties.setString("password", "");
+//  
+			// Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+			// Alloy.Globals.currentWindow = null;
+			// Alloy.Globals.productDetailObj = null;
+			// Alloy.Globals.isScreen = "";
+			// Alloy.Globals.socialLogin = false;
+			// if (Alloy.Globals.google) {
+				// Alloy.Globals.google.signOut();
+			// }
+			// if (OS_ANDROID) {
+				// Alloy.Globals.drawer.toggleLeftWindow();
+			// } else {
+				// Alloy.Globals.openLeft();
+			// }
+			// if (OS_IOS) {
+				// $.logoutRow.leftImage = "/images/login.png";
+			// } else {
+				// $.logoutImg.image = "/images/login.png";
+			// }
+			// Alloy.Globals.Alert("Logout Successfully");
+			// $.rowLbl5.text = "Login";
+			if (flag) {
+				if (OS_IOS) {
+					$.logoutRow.leftImage = "/images/login.png";
+				} else {
+					$.logoutImg.image = "/images/login.png";
+				}
+				Alloy.Globals.Alert("1");
+				
+				$.rowLbl5.setText("Login");
+				flag = false;
 			} else {
-				Alloy.Globals.openLeft();
+				if (OS_IOS) {
+					$.logoutRow.leftImage = "/images/logout.png";
+				} else {
+					$.logoutImg.image = "/images/logout.png";
+				}
+				Alloy.Globals.Alert("2	");
+				$.rowLbl5.setText("Logout");
+				flag = true;
 			}
-			if (OS_IOS) {
-				Alloy.Globals.logoutImg.leftImage = "/images/login.png";
-			} else {
-				Alloy.Globals.logoutImg.image = "/images/login.png";
-			}
-			Alloy.Globals.Alert("Logout successfully");
 		}
 
 	});
@@ -692,7 +711,7 @@ function getProductListerviceCallback(e) {
 }
 
 Alloy.Globals.geoCall = function() {
-	if ( Titanium.Network.online) {
+	if (Titanium.Network.online) {
 
 		Titanium.Geolocation.getCurrentPosition(function(locationResult) {
 			Ti.API.info("locationResult " + JSON.stringify(locationResult));

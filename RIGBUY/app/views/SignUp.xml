@@ -9,7 +9,7 @@
 			<View id="imgVWContainer" top="20.78%" zIndex="10" right="8.75%" backgroundColor="#f54224" onClick="uploadPhotoFunc">
 				<ImageView id="userPic" image="/images/user_img.png" height="100%" width="100%" ></ImageView>
 			</View> 
-			<View width="87%" top="47.53%" height="9%">
+			<View width="87%" top="45%" height="10%">
 				<Label id="fullnameLbl"  color="#A39F9F" top="0" left="0">Full Name</Label>
 				<TextField id="nameTF"  backgroundColor="white" hintTextColor="#CFCFD3" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="86%" hintText="Enter full name" color="black" onReturn="nameReturnFunc"></TextField>
 				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
@@ -17,7 +17,7 @@
 				</View>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
-			<View width="87%" top="57.75%" height="9%">
+			<View width="87%" top="56%" height="10%">
 				<Label id="emailLbl" color="#A39F9F" top="0" left="0">Email</Label>
 				<TextField backgroundColor="white" keyboardType="Titanium.UI.KEYBOARD_TYPE_EMAIL" hintTextColor="#CFCFD3" color="black" name="tf" id="emailTF" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="86%" hintText="Enter email" color="black" onReturn="emailReturnFunc"></TextField>
 				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
@@ -25,7 +25,7 @@
 				</View>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
-			<View width="87%" top="67.97%" height="9%">
+			<View width="87%" top="67%" height="10%">
 				<Label id="phoneLbl" color="#A39F9F" top="0" left="0">Phone Number</Label>
 				<TextField platform="ios" id="phoneTF" keyboardType="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="86%" onReturn="phoneReturnFunc" hintText="Enter phone number" color="black">
 					<KeyboardToolbar >
@@ -45,7 +45,7 @@
 				</View>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
-			<View width="87%" top="78.19%" height="9%">
+			<View width="87%" top="78%" height="10%">
 				<Label id="pwdLbl" name="tf" color="#A39F9F" top="0" left="0">Password</Label>
 				<TextField passwordMask="true" hintTextColor="#CFCFD3"  backgroundColor="white" color="black" id="passwordTF" returnKeyType="Titanium.UI.RETURNKEY_DONE" maxLength="50" left="8" bottom="1" height="64%" width="86%" hintText="Enter password" color="black" maxLength="20"></TextField>
 				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
@@ -53,8 +53,8 @@
 				</View>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
-			<Button id="cancelBtn" left="6.50%" title="CANCEL" color="white" backgroundColor="#f54224" borderRadius="5" width="40%" height="6.69%" top="90%" onClick="backFunc" ></Button>
-			<Button id="signupBtn" right="6.50%" title="REGISTERTED" color="white" backgroundColor="#f54224" borderRadius="5" width="40%" height="6.69%" top="90%" onClick="signUpFunc" ></Button>
+			<Button id="cancelBtn" left="6.50%" title="CANCEL" color="white" backgroundColor="#f54224" borderRadius="5" width="40%" height="6.69%" top="92%" onClick="backFunc" ></Button>
+			<Button id="signupBtn" right="6.50%" title="REGISTERTED" color="white" backgroundColor="#f54224" borderRadius="5" width="40%" height="6.69%" top="92%" onClick="signUpFunc" ></Button>
 		</ScrollView>
 	</Window>
 </Alloy>
