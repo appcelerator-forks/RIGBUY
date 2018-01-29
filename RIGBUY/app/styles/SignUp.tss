@@ -1,0 +1,46 @@
+
+".container[platform=android]" : {
+  theme:"Theme.Titanium"
+}
+"#staticLbl":{
+	font:{
+		fontSize:15,
+		fontWeight:"bold"
+	}
+}
+"#fullnameLbl":{
+	font:{
+		fontSize:12,
+		fontWeight:"bold"
+	}
+}
+"#nameTF":{
+	font:{
+		fontSize:14,
+		
+	}
+}
+"#emailTF":{
+	font:{
+		fontSize:14,
+		
+	}
+}
+"#phoneTF":{
+	font:{
+		fontSize:14,
+		
+	}
+}
+"#pwdTF":{
+	font:{
+		fontSize:14,
+		
+	}
+}
+"#signupBtn":{
+	font:{
+		fontSize:14,
+		
+	}
+}

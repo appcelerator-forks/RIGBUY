@@ -1,0 +1,56 @@
+".nlFokkezbToast_window": {
+  width: Ti.UI.SIZE,
+  height: '120dp',
+
+  bottom: 0,
+
+  backgroundColor: 'transparent',
+  backgroundImage: null
+}
+
+".nlFokkezbToast_view": {
+  width: "94%",
+  height: Titanium.UI.SIZE, 
+   
+//  bottom: '-30dp',
+ 
+  // backgroundColor: '#000',
+  // borderRadius: '5dp'
+}
+
+"#middle": {
+  top:0,
+  
+  height:Ti.UI.SIZE,
+  backgroundColor: '#000',
+  borderRadius: '5dp'
+}
+
+".nlFokkezbToast_enterAnimation": {
+  bottom: '40dp'
+}
+
+".nlFokkezbToast_exitAnimation": {
+  bottom: '-40dp'
+}
+
+".nlFokkezbToast_label": {
+  //left: '10dp',
+  width: Ti.UI.SIZE,
+  //right: '10dp',
+
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: '#fff',
+  font: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  }
+}
+
+".nlFokkezbToast_view_error": {
+  backgroundColor: '#d9534f'
+}
+
+".nlFokkezbToast_view_warning": {
+  backgroundColor: '#f0ad4e'
+}

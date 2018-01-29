@@ -1,0 +1,16 @@
+<Alloy>
+	<Window class="container" backButtonTitle=""  title="My Items" backgroundColor="white" onOpen="openFunc">
+		<RightNavButton>
+			<Button image="/images/add.png" onClick="openAddItemScreen"></Button>
+		</RightNavButton>
+		<ActionBar platform="android" id="actionbar" title="My Item" displayHomeAsUp="true" onHomeIconItemSelected="doMenuClick" />
+		<Menu platform="android">
+            <MenuItem id="addBtn" title="Edit" onClick="openAddItemScreen" />
+        </Menu>
+		<TableView id="myItemTable" top="2%" bottom="0" separatorColor="white" onClick="tableClickFunc">
+				<FooterView>
+					<View height="1"></View>
+				</FooterView>
+			</TableView>
+	</Window>
+</Alloy>

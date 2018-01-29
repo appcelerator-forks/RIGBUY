@@ -1,0 +1,26 @@
+
+".container" : {
+  
+}
+"#rightTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
+".leftLable":{
+	color:"gray"
+}
+".row":{
+	//height:Alloy.Globals.rowHeight
+}
+"#search":{
+	font:{
+		fontSize:15
+	}
+}
+"#headerLbl":{
+	font:{
+		fontSize:20
+	}
+}

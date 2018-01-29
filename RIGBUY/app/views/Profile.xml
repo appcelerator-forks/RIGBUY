@@ -1,0 +1,143 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" title="Profile" onOpen="openFunc" onClick="winClickFunc">
+		<RightNavButtons platform="ios">
+			<Button id="editBtn" image="/images/edt.png" backgroundImage="none"  onClick="editFunc"></Button>
+		</RightNavButtons>
+		<ActionBar platform="android" id="actionbar" title="Profile" displayHomeAsUp="true" onHomeIconItemSelected="doMenuClick" />
+		<Menu platform="android">
+            <MenuItem id="editBtn" title="Edit" onClick="editFunc" />
+        </Menu>
+		<ScrollView backgroundColor="white">
+			<ImageView  top="0" image="/images/bck.png" width="100%"></ImageView>
+			<ImageView id="logoVW"  height="50" width="50" left="3%" image="/images/appLogo.png" ></ImageView>
+			<View id="deviceVW" left="5%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+				<ImageView image="/images/device.png"></ImageView>
+				<Label id="contactStaticLbl" height="20" left="12" color="white">9002030304</Label>
+			</View> 
+			<View id="adminEmailVW" left="5%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+				<ImageView image="/images/mail.png"></ImageView>
+				<Label id="emailStaticLbl" height="20" left="8" color="white">abc@mailinator.com</Label>
+			</View>
+			<Label id="nameStaticLbl" textAlign="right" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" maxLines="1"  left="5%" height="25" width="58.90%" color="white">Dilip Solanki</Label>
+			<View id="imgVWContainer"  zIndex="10" borderColor="#C82827" borderWidth="1" right="6%" backgroundColor="#f54224" onClick="uploadPhotoFunc">
+				<ImageView id="profileImage" image="/images/user_img.png" height="100%" width="100%"></ImageView>
+			</View>
+			<View id="personalVW"  width="86%" height="Ti.UI.SIZE">
+				<View width="18%" left="0" backgroundColor="#f54224" height="1"></View>
+				<Label id="infoLbl"   color="black">PERSONAL INFORMATION</Label>
+				<View width="18%" right="0" backgroundColor="#f54224" height="1"></View>
+			</View>
+			<View id="mainVW" layout="vertical" height="Ti.UI.SIZE">
+			<View id="nameVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/user.png"></ImageView>
+				</View>
+				<View  layout="vertical" left="20%" top="1" bottom="1">
+					<Label id="nameLbl" left="0" top="8%" color="#A39F9F">Name</Label>
+					<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="NEXT" onReturn="nameReturn" name="tf" id="nameTF" top="0" height="64%" left="0" right="0" backgroundColor="white" hintText="Enter Name" ></TextField>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			
+			<View id="phoneVW" height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/phone.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1">
+					<Label id="phoneLbl" left="0" top="8%" color="#A39F9F">Contact Number</Label>
+					<TextField editable="false" hintTextColor="#CFCFD3" color="black" returnKeyType="NEXT" keyboardType="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" name="tf" id="phoneTF" top="0" height="64%" left="0" right="0" backgroundColor="white" hintText="Enter Contact Number" platform="ios" >
+						<KeyboardToolbar >
+							<Toolbar >
+								<Items >
+
+									<FlexSpace/>
+									<FlexSpace/>
+									<Button onClick="phoneReturn">Next</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextField>
+					<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="NEXT" keyboardType="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" name="tf" id="phoneTF" top="0" height="64%" left="0" right="0" backgroundColor="white" hintText="Enter Contact Number" platform="android"></TextField>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			<View id="emailVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/mail.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1">
+					<Label id="emailLbl" left="0" top="8%" color="#A39F9F">Email</Label>
+					<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="NEXT" onReturn="emailReturn" name="tf" id="emailTF" top="0" height="64%" left="0" right="0" backgroundColor="white" hintText="Enter Email" ></TextField>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			<View id="locationVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/location.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1">
+					<Label id="locationLbl" left="0" top="8%" color="#A39F9F">Address</Label>
+					<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="DONE" name="tf" id="locationTF" top="0" height="64%" left="0" right="0" backgroundColor="white" hintText="Enter Address" ></TextField>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			<View id="countryVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/location.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1" onClick="selectCountryFunc">
+					<Label id="countryLbl" left="0" top="8%" color="#A39F9F">Country</Label>
+					
+					<View top="0" left="0" zIndex="10"  height="64%"  >
+						<TextField hintTextColor="#CFCFD3" zIndex="1" editable="false" color="black" returnKeyType="DONE" name="tf" id="countryTF" top="0" height="100%" left="0" right="0" backgroundColor="white" hintText="Select Country" ></TextField>
+						<Button width="100%" height="100%" zIndex="2" backgroundColor="transparent" backgroundImage="none" onClick="selectCountryFunc"></Button>
+					</View>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			<View id="stateVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/location.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1" >
+					<Label id="stateLbl" left="0" top="8%" color="#A39F9F">State</Label>
+					
+					<View top="0" left="0" zIndex="10" height="64%"  >
+						<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="DONE" name="tf" id="stateTF" top="0" height="100%" left="0" right="0" backgroundColor="white" hintText="Select State" touchEnabled="false" focusable="false"></TextField>
+						<Button width="100%" height="100%" zIndex="2" backgroundColor="transparent" backgroundImage="none" onClick="selectStateFunc"></Button>
+					</View>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			<View id="cityVW"  height="11%" >
+
+				<View width="20%" left="0" top="1" bottom="1">
+					<ImageView  image="/images/i-back.png"></ImageView>
+					<ImageView  image="/images/location.png"></ImageView>
+				</View>
+				<View layout="vertical" left="20%" top="1" bottom="1">
+					<Label id="cityLbl" left="0" top="8%" color="#A39F9F">City</Label>
+					
+					<View top="0" left="0" zIndex="10" backgroundColor="green" height="64%"  >
+						<TextField hintTextColor="#CFCFD3" editable="false" color="black" returnKeyType="DONE" name="tf" id="cityTF" top="0" height="100%" left="0" right="0" backgroundColor="white" hintText="Select City" touchEnabled="false" focusable="false"></TextField>
+						<Button width="100%" height="100%" zIndex="2" backgroundColor="transparent" backgroundImage="none" onClick="selectCityFunc"></Button>
+					</View>
+				</View>
+				<View height="1" backgroundColor="#df431b" bottom="1"></View>
+			</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

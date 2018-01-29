@@ -1,0 +1,61 @@
+"#pickerView[formFactor=tablet]": {
+  backgroundColor: 'white',
+  bottom: 0,
+  height: 400,
+  zIndex: 99
+}
+"#pickerView[formFactor=handheld]": {
+  backgroundColor: 'white',
+  bottom: 0,
+  height: 260,
+  zIndex: 99
+}
+"#toolbar[formFactor=tablet]": {
+  top: 0,
+  barColor: 'white',
+  height:78
+}
+"#toolbar[formFactor=handheld]": {
+  top: 0,
+  barColor: 'white',
+  height:48
+}
+"#picker[formFactor=tablet]": {
+	
+  top: 78,
+  selectionIndicator: true,
+  useSpinner: true
+}
+"#picker[formFactor=handheld]": {
+  top: 48,
+  selectionIndicator: true,
+  useSpinner: true
+}
+"#buttonCancel[formFactor=tablet]": {
+  font:{
+		fontSize: 28,
+		
+	},
+	left:30
+}
+"#buttonCancel[formFactor=handheld]": {
+  font:{
+		fontSize: 14,
+		
+	},
+	left:10
+}
+"#buttonDone[formFactor=tablet]": {
+  font:{
+		fontSize: 28,
+		
+	},
+	right:30
+}
+"#buttonDone[formFactor=handheld]": {
+  font:{
+		fontSize: 14,
+		
+	},
+	right:10
+}

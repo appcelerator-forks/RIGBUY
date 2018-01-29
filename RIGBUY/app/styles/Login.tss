@@ -1,0 +1,45 @@
+
+".container[platform=android]" : {
+  theme:"Theme.Titanium"
+}
+"#staticLbl":{
+	color:"white",
+	textAlign:"center",
+	font:{
+		fontSize:12
+	}
+}
+"#fbBtn":{
+	color:"white",
+	textAlign:"center",
+	font:{
+		fontSize:12
+	}
+}
+"#googleBtn":{
+	color:"white",
+	textAlign:"center",
+	font:{
+		fontSize:12
+	}
+}
+"#emailTF":{
+	font:{
+		fontSize:13
+	}
+}
+"#passwordTF":{
+	font:{
+		fontSize:13
+	}
+}
+"#submitBtn":{
+	font:{
+		fontSize:12
+	}
+}
+"#signUpBtn":{
+	font:{
+		fontSize:12
+	}	
+}

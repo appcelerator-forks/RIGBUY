@@ -1,0 +1,120 @@
+<Alloy>
+	<!-- IOS HOME SCREEN -->
+	<Window id="leftWindow"  left="0" class="container" platform="ios" layout="vertical">
+
+		<View height="20" backgroundColor="#f54224" top="0"></View>
+		<View id="topview"   top="0" left="0" height="35%">
+			<ImageView id="img"  image='/images/appLogo.png' ></ImageView>
+			<!-- <Label id="welcomeLbl" bottom="20" left="5%"  textAlign="center" color="#fff">Welcome</Label> -->
+		</View>
+		<View height="0.8" backgroundColor="#f54224" top="0"></View>
+		<TableView id="rightTable"  onClick="leftMenuOptionSelected" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="false" top="0" separatorColor="#f54224">
+			<FooterView>
+				<View height="1" backgroundColor="#f54224"></View>
+			</FooterView>
+			<TableViewRow width="100%"  leftImage="/images/home.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl1"  class="leftLable" width="Titanium.UI.SIZE" left="55"  focusable="false" touchEnabled="false">Home</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" leftImage="/images/setting.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl2" width="Titanium.UI.SIZE" class="leftLable" left="55"  focusable="false" touchEnabled="false">Account Settings</Label>
+			</TableViewRow>
+			<TableViewRow width="100%"  leftImage="/images/aboutus.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl3" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">About Us</Label>
+			</TableViewRow>
+			<TableViewRow width="100%"  leftImage="/images/contactus.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl4" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Contact Us</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" id="logoutRow"  leftImage="/images/logout.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl5" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Login</Label>
+			</TableViewRow>
+
+		</TableView>
+	</Window>
+	<NavigationWindow id="navWin" platform="ios">
+		<Window id="productWin" class="container" layout="vertical" backgroundColor="white" opacity="0" onOpen="openFunc">
+			<LeftNavButtons platform="ios">
+				<Button image="/images/menu.png"  onClick="openMenu"></Button>
+			</LeftNavButtons>
+			<RightNavButtons platform="ios">
+				<!-- <View layout="horizontal" backgroundColor="pink" width="Ti.UI.SIZE"> -->
+				<Button id="filterBtn" backgroundColor="black" image="/images/filter1.png"  onClick="openFilter"></Button>
+				<Button id="refreshBtn" backgroundColor="green" image="/images/refresh.png"  onClick="refreshFunc"></Button>
+
+				<!-- </View> -->
+			</RightNavButtons>
+			<TitleControl platform="ios">
+				<Label color="white">Products</Label>
+			</TitleControl>
+			<View height="48" backgroundColor="#b4bccc" >
+				<View  width="94%" height="34" borderColor="##9a9fbe" borderWidth="1" backgroundColor="white" borderRadius="17" layout="horizontal">
+					<ImageView image="/images/search.png" zIndex="10" left="5"></ImageView>
+					<TextField id="search" color="black" hintText="Search" onChange="changeFunc" hintTextColor="#c4c4dc" backgroundColor="white" width="82%" height="100%" left="5" ></TextField>
+				</View>
+			</View>
+			<TableView id="productTable" onScroll="scrollFunc" top="0" bottom="0" separatorColor="white" backgroundColor="white" onClick="tableClickFunc">
+				<FooterView>
+					<View height="1"></View>
+				</FooterView>
+			</TableView>
+		</Window>
+	</NavigationWindow>
+
+	<!-- Android Center Window -->
+	<View id="homeView" platform="android">
+		<View id="mainVW" zIndex="1" title="Product" class="container" backgroundColor="white">
+			<View  layout="vertical">
+				<View height="56" backgroundColor="#f54224">
+					<Button id="menuBtn" backgroundImage="none" width="60" image="/images/menu.png" left="10" onClick="openMenu"></Button>
+					<Label id="headerLbl" color="white"  textAlign="center">Product List</Label>
+					<Button id="filterBtn" backgroundImage="none" width="50" image="/images/filter1.png" right="0" onClick="openFilter"></Button>
+					<Button id="refreshBtn" backgroundImage="none" width="50" image="/images/refresh.png" right="50" onClick="refreshFunc"></Button>
+				</View>
+				<View height="55" backgroundColor="#b4bccc" >
+					<View  width="94%" height="42" borderColor="#9a9fbe" borderWidth="1" backgroundColor="white" borderRadius="21" layout="horizontal">
+						<ImageView image="/images/search.png" zIndex="10" left="5"></ImageView>
+						<TextField id="search" color="black" hintText="Search" onChange="changeFunc" hintTextColor="#c4c4dc" backgroundColor="white" width="82%" height="100%" left="5" ></TextField>
+					</View>
+				</View>
+				<TableView  zIndex="1" id="productTable" top="0" bottom="0" separatorColor="white" onClick="tableClickFunc">
+					<FooterView>
+						<View height="1"></View>
+					</FooterView>
+				</TableView>
+			</View>
+		</View>
+		<View id="leftWindow"  left="0" class="container" platform="android" layout="vertical">
+			<View id="topview"   top="0" left="0" >
+				<ImageView id="img"  image='/images/appLogo.png' ></ImageView>
+				<!-- <Label id="welcomeLbl" bottom="20" left="5%"  textAlign="center" color="#fff">Welcome</Label> -->
+			</View>
+			<View height="0.8" backgroundColor="#f54224" top="0"></View>
+			<TableView id="rightTable" rowHeight="40" onClick="leftMenuOptionSelectedAndroid" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="false" top="0" separatorColor="#f54224">
+				<FooterView>
+					<View height="1" backgroundColor="#f54224"></View>
+				</FooterView>
+				<TableViewRow width="100%" id="row1" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/home.png" left= "20"></ImageView>
+					<Label id="rowLbl1" height="Ti.UI.FILL"  class="leftLable" width="Titanium.UI.SIZE" left="20"  focusable="false" touchEnabled="false">Home</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row2" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/setting.png" left= "20"></ImageView>
+					<Label id="rowLbl2"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20"  focusable="false" touchEnabled="false">Account Settings</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row3" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/aboutus.png" left= "20"></ImageView>
+					<Label id="rowLbl3"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">About Us</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row4" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/contactus.png" left= "20"></ImageView>
+					<Label id="rowLbl4"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Contact Us</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row5" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView id="logoutImg" image="/images/logout.png" left= "20"></ImageView>
+					<Label id="rowLbl5"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Login</Label>
+				</TableViewRow>
+
+			</TableView>
+		</View>
+	</View>
+
+</Alloy>

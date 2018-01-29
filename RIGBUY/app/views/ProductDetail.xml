@@ -1,0 +1,74 @@
+<Alloy>
+	<Window class="container" title="Product Details" backButtonTitle="" backgroundColor="white" onOpen="openFunc">
+		<ScrollView height="92%" top="0"  layout="vertical">
+		<ImageView id="productImg" top="0" height="38%" width="100%" image="/images/default.jpg"></ImageView>		
+		<View   height="14%">
+			<View layout="horizontal" width="Ti.UI.SIZE">
+				<ImageView left="4%" image="/images/aimg.png"></ImageView>
+				<!-- <View left="10" height="Ti.UI.SIZE" width="50%" layout="vertical"> -->
+				<View left="10" height="Ti.UI.SIZE" width="78%" layout="vertical">
+					<!-- <Label id="agentLbl" color="#9f9f9f" left="0" textAlign="left">Agent</Label> -->
+					<Label id="nameLbl" top="5" maxLines="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" color="#000000" left="0" textAlign="left">Dilip Kumar Solanki</Label>
+					<Label id="dateLbl" top="5" color="#9f9f9f" left="0" textAlign="left">Posted on 12 Oct,2017</Label>
+				</View>
+				<View height="Ti.UI.FILL" width="1"></View>
+			</View>
+			<!-- <View right="4%" height="Ti.UI.SIZE" width="28%" layout="vertical">
+				<Label id="contactLbl" color="#000000" left="0" textAlign="left">+91-XXXXXXXXXX</Label>
+				 <Button id="viewContactBtn" top="6" width="100%" backgroundColor="#CB261F" color="white" title="VIEW PHONE NO." backgroundImage="none"></Button>
+			</View> -->
+		</View>
+		<View height="1" backgroundColor="#CB261F"></View>
+		<View  height="Ti.UI.SIZE" layout="vertical">
+			<Label id="propertyLbl" color="#000000" left="5%" textAlign="left" top="10">Property Details</Label>
+			<View top="15" width="90%"  height="Ti.UI.SIZE" >
+				<View   width="50%" left="0" top="0" layout="horizontal" height="Ti.UI.SIZE">
+					<ImageView image="/images/dimg.png" top="4" left="0"></ImageView>
+					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
+					<View left="10" top="0" layout="vertical" height="Ti.UI.SIZE">
+						<Label id="amtstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Price</Label>
+						<Label id="amtLbl" top="0" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" color="#000000"  left="0" maxLines="2" right="0"  ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">1700</Label>
+					</View>
+				</View>
+				<View width="50%" right="0" top="0" layout="horizontal" height="Ti.UI.SIZE">
+					<ImageView top="4" image="/images/locationIcon.png" left="0"></ImageView>
+					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
+					<View left="10" top="0" layout="vertical" height="Ti.UI.SIZE">
+						<Label id="locationstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Location</Label>
+						<Label id="locationLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0"  right="0" textAlign="left">Vijay Nagar, Indore MP</Label>
+					</View>
+				</View>
+			</View>
+			<View top="15" width="90%"  height="Ti.UI.SIZE">
+				<View   width="50%" left="0" top="0" layout="horizontal"  height="Ti.UI.SIZE">
+					<ImageView image="/images/configueIcon.png" left="0" top="4"></ImageView>
+					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
+					<View left="10" layout="vertical" height="Ti.UI.SIZE">
+						<Label id="configstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Features</Label>
+						<Label id="configLbl" top="0" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" color="#000000"  left="0" maxLines="2" right="0"  ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">1 BKH</Label>
+					</View>
+				</View>
+				<View top="0"  width="50%" right="0" layout="horizontal"  height="Ti.UI.SIZE">
+					<ImageView image="/images/statusIcon.png" left="0" top="4"></ImageView>
+					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
+					<View left="10" layout="vertical" height="Ti.UI.SIZE">
+						<Label id="statusstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Product Type</Label>
+						<Label id="statusLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0" maxLines="2" right="0"  ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Immediate Available</Label>
+					</View>
+				</View>
+			</View>
+			 
+			
+		</View>
+		<View top="20" width="90%" height="Ti.UI.SIZE" layout="vertical"> 
+				<Label id="descStaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Description</Label>
+				<Label id="descLbl" top="5" color="#000000" left="0" right="0" textAlign="left"></Label>
+			</View>
+		</ScrollView>
+		<View height="8%" borderColor="#CB261F" borderWidth="1"  bottom="0">
+			<Button id="enquiryBtn" onClick="openEnquiryScreen" width="49.90%" height="100%" left="0" backgroundColor="white" color="#CB261F" selectedColor="white" tintColor="white" title="Enquiry Now"></Button>
+			<View width="1dp" backgroundColor="#CB261F"></View>
+			<Button id="chatBtn" onClick="openChatScreen" width="49.90%" height="100%" right="0"  backgroundColor="white" color="#CB261F" selectedColor="white" tintColor="white" title="Chat"></Button>
+		</View>
+	</Window>
+</Alloy>

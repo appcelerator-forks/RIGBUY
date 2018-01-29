@@ -1,0 +1,32 @@
+<Alloy>
+	<Window class="container" backgroundColor="#f54224" onClick="windowClick" onOpen="openFunc">
+		<!-- <ImageView image="/images/login-back.png" height="100%" width="100%"></ImageView> -->
+		<Button id="closeBtn" top="20" left="5" width="60" backgroundColor="transparent" color="white" height="36" zIndex="99"  onClick="closeFunc" title="Close"></Button>
+		<ScrollView id="containerVW" opacity="0">
+		<ImageView image="/images/logo.png" top="5%"></ImageView>
+		<Label id="staticLbl" top="38%">BUY, SELL & RENT | SIMPLE, QUICK & SAFE</Label>
+		
+		<View top="46%" width="82.82%" backgroundColor="white" height="7%" borderRadius="4" layout="horizontal">
+			<ImageView image="/images/mail.png" left="3%" touchEnabled="false" focusable="fasle"></ImageView>
+			<TextField hintTextColor="#CFCFD3" keyboardType="Titanium.UI.KEYBOARD_TYPE_EMAIL" color="black"  id="emailTF" name="tf" left="10" backgroundColor="white" height="100%" width="75%" hintText="Email"></TextField>
+			
+		</View>
+		<View top="55%" width="82.82%" backgroundColor="white" height="7%" borderRadius="4" layout="horizontal">
+			<ImageView image="/images/pwd.png" left="3%" touchEnabled="false" focusable="fasle"></ImageView>
+			<TextField hintTextColor="#CFCFD3" color="black"  id="passwordTF" passwordMask="true" maxLength="30" name="tf" left="10" backgroundColor="white" height="100%" width="75%" hintText="Password"></TextField>
+			 
+		</View>
+		<Button id="submitBtn" top="64%" height="7%" width="82.82%"  backgroundColor="#C92827" onClick="submitFunc" color="white" title="SUBMIT"></Button>
+		<View backgroundColor="white" height="1" width="40%" top="73.5%"></View>
+		<View top="76%" width="82.82%" height="7.0%">
+			<Button id="fbBtn" width="100%" height="100%" backgroundColor="#4368AB" onClick="loginFB" title="Facebook"></Button>
+			<ImageView image="/images/fl.png" left="2%" touchEnabled="false" focusable="fasle"></ImageView>
+		</View>
+		<View top="85%" width="82.82%" height="7.0%">
+			<Button id="googleBtn" width="100%" height="100%" backgroundColor="#2C8ADA" onClick="loginGoogle" title="Google"></Button>
+			<ImageView image="/images/gl.png" left="2%" touchEnabled="false" focusable="fasle"></ImageView>
+		</View>
+		<Button id="signUpBtn" top="93.20%" height="5%" color="white" width="82.82%"  backgroundColor="transparent" onClick="signup" title="Create Account"></Button>
+		</ScrollView>
+	</Window>
+</Alloy>

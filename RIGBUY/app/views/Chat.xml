@@ -1,0 +1,4 @@
+<Alloy>
+	<Window class="container" title="Chat" backButtonTitle="" backgroundColor="white" onOpen="openFunc">
+	</Window>
+</Alloy>

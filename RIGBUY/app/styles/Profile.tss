@@ -1,0 +1,17 @@
+
+".container" : {
+  
+}
+"#editBtn[platform=ios]":{
+	top:20
+}
+"#editBtn[platform=android]":{
+	top:0
+}
+"MenuItem": {
+    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS
+}
+
+"#editBtn": {
+    icon: "/images/edt.png"
+}

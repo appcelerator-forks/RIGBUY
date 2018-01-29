@@ -1,0 +1,64 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" title="Enquiry" backgroundColor="white" onOpen="openFunc" onClick="winClick">
+		<ScrollView id="containerVW">
+			<View width="87%" top="10%" height="11%">
+				<Label id="fullnameLbl" color="#A39F9F" top="0" left="0">Full Name</Label>
+				<TextField id="nameTF" hintTextColor="#CFCFD3" backgroundColor="white" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="86%" hintText="Enter full name" color="black" onReturn="nameReturnFunc"></TextField>
+				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
+					<ImageView image="/images/user.png"></ImageView>
+				</View> 
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View width="87%" top="24%" height="11%">
+				<Label id="emailLbl" color="#A39F9F" top="0" left="0">Email</Label>
+				<TextField name="tf" hintTextColor="#CFCFD3" backgroundColor="white" id="emailTF"  returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="86%" hintText="Enter email" color="black" onReturn="emailReturnFunc"></TextField>
+				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
+					<ImageView image="/images/mail.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View width="87%" top="37%" height="11%">
+				<Label id="phoneLbl" color="#A39F9F" top="0" left="0">Phone Number</Label>
+				<TextField platform="ios" id="phoneTF" keyboardType="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="86%" onReturn="phoneReturnFunc" hintText="Enter phone number" color="black">
+					<KeyboardToolbar >
+						<Toolbar >
+							<Items >
+
+								<FlexSpace/>
+								<FlexSpace/>
+								<Button onClick="phoneReturnFunc">Next</Button>
+							</Items>
+						</Toolbar>
+					</KeyboardToolbar>
+				</TextField>
+				<TextField platform="android" hintTextColor="#CFCFD3" backgroundColor="white" id="phoneTF" keyboardType="Titanium.UI.KEYBOARD_TYPE_PHONE_PAD" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="86%" onReturn="phoneReturnFunc" hintText="Enter phone number" color="black"></TextField>
+				<View right="8" height="64%" bottom="1" width="Ti.UI.SIZE">
+					<ImageView image="/images/phone.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View width="87%" top="50%" height="25%">
+				<Label id="descLbl" color="#A39F9F" top="0" left="0">Description</Label>
+				<View left="5" bottom="1" height="80%" width="94%">
+					<TextArea onChange="changeFunc" name="tf" id="descTF" suppressReturn="true" platform="ios" returnKeyType="Titanium.UI.RETURNKEY_DONE"  height="100%" width="100%" hintText="Enter Description" color="black"  >
+						<KeyboardToolbar >
+							<Toolbar >
+								<Items >
+
+									<FlexSpace/>
+									<FlexSpace/>
+									<Button onClick="descDoneFunc">Done</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextArea>
+					
+					<Label id="descHintTextLbl" color="#CFCFD3" top="5" left="5" platform="ios">Enter Description</Label>
+				</View>
+				Ï<TextArea name="tf" hintTextColor="#CFCFD3" id="descTF" suppressReturn="true" platform="android" hintText="Enter Description" returnKeyType="Titanium.UI.RETURNKEY_DONE" left="8" bottom="10" height="80%" width="94%" hintText="Enter Description" color="black" backgroundColor="white"></TextArea>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<Button id="enquirySubmitBtn" width="87%" title="SUBMIT" color="white" backgroundColor="#f54224" borderRadius="5"  height="6.69%" top="84%" onClick="submitFunc" ></Button>
+		</ScrollView>
+	</Window>
+</Alloy>

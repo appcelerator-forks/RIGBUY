@@ -1,0 +1,127 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" title="Add Products" onClick="winClick" onOpen="openFunc" backgroundColor="white">
+		<ActionBar platform="android" id="actionbar" title="Add Products" displayHomeAsUp="true" onHomeIconItemSelected="doMenuClick" />
+		<ScrollView layout="vertical" top="0" bottom="0">
+
+			<View id="nameVW" width="87%" top="10" height="60">
+				<Label id="fullnameLbl" color="#A39F9F" top="0" left="0">Name</Label>
+				<TextField id="nameTF"  backgroundColor="white" hintTextColor="#CFCFD3" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" name="tf" maxLength="50" left="8" bottom="1" height="64%" width="94%" hintText="Enter Product Name" color="black" onReturn="nameReturnFunc"></TextField>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="featuresVW" width="87%"  top="10" height="60">
+				<Label id="featureLbl" color="#A39F9F" top="0" left="0">Features</Label>
+				<TextField backgroundColor="white" name="tf" hintTextColor="#CFCFD3" id="featureTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Enter Features" color="black" onReturn="featureReturnFunc"></TextField>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="priceVW" width="87%"  top="10" height="60">
+				<Label id="priceLbl" color="#A39F9F" top="0" left="0">Price</Label>
+				<TextField name="tf" platform="ios" keyboardType="Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD" backgroundColor="white" hintTextColor="#CFCFD3" id="priceTF" color="black" maxLength="100" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Enter Price" color="black">
+					<KeyboardToolbar >
+						<Toolbar >
+							<Items >
+
+								<FlexSpace/>
+								<FlexSpace/>
+								<Button onClick="priceReturnFunc">Done</Button>
+							</Items>
+						</Toolbar>
+					</KeyboardToolbar>
+				</TextField>
+				<TextField name="tf" platform="android" keyboardType="Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD" backgroundColor="white" hintTextColor="#CFCFD3" id="priceTF" color="black" maxLength="100" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Enter Price" color="black" onReturn="priceReturnFunc"></TextField>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="currencyVW" width="87%"  top="10" height="60">
+				<Label id="currencyLbl" color="#A39F9F" top="0" left="0">Currency Type</Label>
+				<TextField editable="false" name="tf" backgroundColor="white" hintTextColor="#CFCFD3" id="currencyTF" color="black" maxLength="50" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Currency" color="black" ></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="currencyClickFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="categoryVW" width="87%"  top="10" height="60">
+				<Label id="categoryLbl" color="#A39F9F" top="0" left="0">Category</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="categoryTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Category" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="categoryClickFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="productTypeVW" width="87%"  top="10" height="60">
+				<Label id="typeLbl" color="#A39F9F" top="0" left="0">Product Type</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="typeTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Product Type" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="productTypeClickFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="statusVW" width="87%"  top="10" height="60">
+				<Label id="statusLbl" color="#A39F9F" top="0" left="0">Status</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="statusTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Status" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="selectstatusFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="countryVW" width="87%"  top="10" height="60">
+				<Label id="countryLbl" color="#A39F9F" top="0" left="0">Country</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="countryTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select Country" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="selectCountryFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="stateVW" width="87%"  top="10" height="60">
+				<Label id="stateLbl" color="#A39F9F" top="0" left="0">State</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="stateTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select State" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="selectStateFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="cityVW" width="87%"  top="10" height="60">
+				<Label id="cityLbl" color="#A39F9F" top="0" left="0">City</Label>
+				<TextField name="tf" editable="false" backgroundColor="white" hintTextColor="#CFCFD3" id="cityTF" color="black" returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Select City" color="black"></TextField>
+				<View right="0" width="Ti.UI.SIZE" width="100%" zIndex="10" height="64%" bottom="1"  onClick="selectCityFunc">
+					<ImageView right="0" image="/images/droup-down.png"></ImageView>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="addressVW" width="87%"  top="10" height="60">
+				<Label id="addressLbl" color="#A39F9F" top="0" left="0">Address</Label>
+				<TextField name="tf" backgroundColor="white" hintTextColor="#CFCFD3" id="addressTF" color="black"  returnKeyType="Titanium.UI.RETURNKEY_NEXT" left="8" bottom="1" height="64%" width="94%" hintText="Enter Address" color="black" onReturn="addressReturnFunc"></TextField>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="descVW" width="87%"  top="10" height="100">
+				<Label id="descLbl"  color="#A39F9F" top="0" left="0">Description</Label>
+				<View left="5" bottom="1" height="80%" width="94%">
+					<TextArea backgroundColor="white" onChange="changeFunc" name="tf" id="descTF" suppressReturn="false" platform="ios"   height="100%" width="100%" hintText="Enter Description" color="black">
+						<KeyboardToolbar >
+							<Toolbar >
+								<Items >
+
+									<FlexSpace/>
+									<FlexSpace/>
+									<Button onClick="descDoneFunc">Done</Button>
+								</Items>
+							</Toolbar>
+						</KeyboardToolbar>
+					</TextArea>
+					<TextArea backgroundColor="white" name="tf" hintTextColor="#CFCFD3" id="descTF" suppressReturn="true" platform="android" hintText="Enter Description" left="8" bottom="1" height="96%" width="94%" hintText="Enter Description" color="black" ></TextArea>
+					<Label id="descHintTextLbl" color="#CFCFD3" top="5" left="5" platform="ios">Enter Description</Label>
+				</View>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View id="imgVW" width="87%"  top="10" height="60">
+				<Label id="imageLbl" color="#A39F9F" top="0" left="0">Image</Label>
+				<Button backgroundColor="#CFCFD3" backgroundImage="none" id="imageButton" left="8" bottom="1" height="50%" width="25%" title="Choose File" onClick="uploadPhotoFunc"></Button>
+				<Label id="imagenameLbl" color="#000000" left="30%" right="0" height="50%" bottom="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END">File Name</Label>
+				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
+			</View>
+			<View height="40" id="btnVW" width="87%">
+				<Button id="addItemSubmitBtn" height="Ti.UI.FILL" right="0" width="40%" title="SUBMIT" color="white" backgroundColor="#f54224" borderRadius="5"   top="10" onClick="submitFunc" ></Button>
+				<Button id="cancelBtn" height="Ti.UI.FILL" left="0" width="40%" title="CANCEL" color="white" backgroundColor="#f54224" borderRadius="5"   top="10" onClick="cancelFunc" ></Button>
+			</View>
+			<View height="10" top="0"></View>
+		</ScrollView>
+	</Window>
+</Alloy>

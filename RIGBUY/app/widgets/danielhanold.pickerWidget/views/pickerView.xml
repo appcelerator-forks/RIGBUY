@@ -1,0 +1,33 @@
+<Alloy>
+	<View id="pickerView" layout="vertical" opacity="0" >
+		<View height="Ti.UI.SIZE">
+			<View id="toolbar" top="0"  platform="ios" backgroundColor="#f54224">
+				<!-- <Items id="toolBtn"> -->
+				<View width="70" onClick="onCancel"  left="0">
+					<Button id="buttonCancel" title="Cancel"   color="white"  height="Ti.UI.FILL" onClick="onCancel" />
+				</View>
+				<!-- <FlexSpace/> -->
+				<View width="70" onClick="onDone" right="0">
+					<Button id="buttonDone" title="Done"   height="Ti.UI.FILL" color="white"/>
+				</View>
+				<!-- </Items> -->
+			</View>
+			
+			<!-- <Toolbar id="toolbar" platform="ios" if="Alloy.Globals.languageAr" barColor="#A3A3A5">
+			<Items id="toolBtn">
+			<Button id="buttonDone" title="L('doneButton', 'فعله')" onClick="onDone" height="Ti.UI.FILL"  color="white" backgroundImage="none"/>
+			<FlexSpace/>
+			<Button id="buttonCancel" title="L('cancelButton', 'إلغاء')" color="white" height="Ti.UI.FILL"  backgroundImage="none" onClick="onCancel" />
+			</Items>
+			</Toolbar> -->
+			<View id="toolbar" platform="android">
+				<Button id="buttonCancel" onClick="onCancel" title="L('cancelButton', 'Cancel')"/>
+				<Button id="buttonDone" onClick="onDone" title="L('doneButton', 'Done')" />
+			</View>
+		</View>
+		<View top="0" bottom="0">
+			<Picker id="picker" top="0" height="Ti.UI.FILL" locale="en" width="Ti.UI.FILL"/>
+		</View>
+
+	</View>
+</Alloy>

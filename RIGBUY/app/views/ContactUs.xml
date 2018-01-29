@@ -1,0 +1,19 @@
+<Alloy>
+	<Window class="container"  name="contact" navTintColor="#f54224" platform="ios" title="Contact Us" backButtonTitle="" backButtonTitleImage="none" onOpen="openFunc">
+		<LeftNavButtons platform="ios">
+			<Button id="menuBtn" image="/images/menu.png" backgroundImage="none"  onClick="openMenu"></Button>
+		</LeftNavButtons>
+		<ScrollView top="0" bottom="0">
+			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+		</ScrollView>
+	</Window>
+	<View platform="android" layout="vertical" class="container"  name="contact" navTintColor="#f54224"  backgroundColor="white">
+		<View height="56" backgroundColor="#f54224">
+			<Button id="menuBtn" backgroundImage="none" width="60" image="/images/menu.png" left="10" onClick="openMenu"></Button>
+			<Label id="headerLbl" color="white"  textAlign="center">Contact Us</Label>
+		</View>
+		<ScrollView top="0" bottom="0">
+			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+		</ScrollView>
+	</View>
+</Alloy>

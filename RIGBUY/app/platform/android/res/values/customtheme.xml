@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="MyTheme" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">#f54224</item>
+		<item name="android:textColorPrimary">#FFFFFF</item>
+		<item name="android:statusBarColor">#f54224</item>
+		<item name="colorPrimaryDark">#f54224</item>
+		<item name="actionMenuTextColor">#FFFFFF</item>
+		<item name="android:actionMenuTextColor">#FFFFFF</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:colorAccent">#ffffff</item>
+		<item name="android:textAllCaps">false</item>
+		<item name="android:editTextStyle">@style/editText</item>
+	</style>
+	<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:textColorPrimary">#FFFFFF</item>
+		<item name="android:textAllCaps">false</item>
+	</style>
+	<style name="editText" parent="@android:style/Widget.EditText">
+		<item name="android:textCursorDrawable">@null</item>
+		<item name="android:paddingTop">0dp</item>
+		<item name="android:paddingBottom">0dp</item>
+		<item name="android:paddingLeft">0dp</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+
+	<!-- <style name="Theme.NoTitleBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+	<item name="colorPrimary">#ffffff</item>
+	</style> -->
+	<style name="Theme.Transparent" parent="@style/Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsFloating">false</item>
+		<item name="android:backgroundDimEnabled">false</item>
+
+	</style>
+
+</resources>

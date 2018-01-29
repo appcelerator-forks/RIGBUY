@@ -1,0 +1,26 @@
+<Alloy>
+	<Window id="settingWin" platform="ios"  class="container" backgroundColor="white" name="setting" navTintColor="#f54224"  onOpen="openFunc">
+		<LeftNavButtons platform="ios">
+			<Button id="menuBtn" backgroundImage="none"  onClick="openMenu"></Button>
+		</LeftNavButtons>
+		<TitleControl platform="ios">
+			<Label color="white">Account Settings</Label>
+		</TitleControl>
+		<TableView id="settingTable" top="0" bottom="0" onClick="tableClickFunc">
+			<FooterView>
+				<View height="1"></View>
+			</FooterView>
+		</TableView>
+	</Window>
+	<View id="settingWin" layout="vertical" zIndex="2" platform="android" class="container" backgroundColor="white" name="setting"  onOpen="openFunc">
+		<View height="56" backgroundColor="#f54224">
+			<Button id="menuBtn" backgroundImage="none" width="60" image="/images/menu.png" left="10" onClick="openMenu"></Button>
+			<Label id="headerLbl" color="white"  textAlign="center">Settings</Label>
+		</View>
+		<TableView id="settingTable" separatorColor="#dcdcdc" top="0" backgroundColor="white" bottom="0" onClick="tableClickFunc">
+			<FooterView>
+				<View height="1"></View>
+			</FooterView>
+		</TableView>
+	</View>
+</Alloy>

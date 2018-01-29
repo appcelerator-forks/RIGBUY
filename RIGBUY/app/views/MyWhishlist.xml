@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" backgroundColor="white"  title="My WishList" onOpen="openFunc">
+		<TableView id="myItemTable" top="2%" bottom="0" separatorColor="white" onClick="tableClickFunc">
+				<FooterView>
+					<View height="1"></View>
+				</FooterView>
+			</TableView>
+	</Window>
+</Alloy>

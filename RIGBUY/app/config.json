@@ -1,0 +1,14 @@
+{
+    "global": {},
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:android": {},
+    "os:ios": {},
+    "os:windows": {},
+    "dependencies": {
+        "nl.fokkezb.toast": "1.0",
+        "Loader": "1.0",
+        "danielhanold.pickerWidget": "1.0"
+    }
+}

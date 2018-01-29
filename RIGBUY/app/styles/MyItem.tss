@@ -1,0 +1,11 @@
+
+".container" : {
+  
+}
+"MenuItem": {
+    showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS
+}
+
+"#addBtn": {
+    icon: "/images/add.png"
+}

@@ -1,0 +1,15 @@
+
+".container" : {
+  
+}
+"#settingTable":{
+	separatorInsets:{
+		left:0,
+		right:0
+	}
+}
+"#headerLbl":{
+	font:{
+		fontSize:20
+	}
+}
