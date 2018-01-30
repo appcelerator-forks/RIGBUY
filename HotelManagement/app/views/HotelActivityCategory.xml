@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" backButtonTitleImage="none" >
+		<Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
+	</Window>
+</Alloy>

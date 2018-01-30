@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Қонақ үйді басқару үйі</string>
+    <string name="navigation_drawer_open">Шарлау тартпасын ашу</string>
+    <string name="navigation_drawer_close">Шарлау тартпасын жабыңыз</string>
+    <string name="username">Келушілер коды</string>
+    <string name="password">Бөлме нөмірі</string>
+    <string name="home">Үй</string>
+    <string name="food_menu">Тағам мәзірі</string>
+    <string name="hotel_activity">Қонақ үй қызметі</string>
+    <string name="touristic_places">Touristic Places</string>
+    <string name="about_us">Біз туралы</string>
+    <string name="write_to_us">Wбіз үшін рита</string>
+    <string name="logout">Шығу</string>
+    <string name="login">Кіру</string>
+    <string name="logout_dialog">Сіз сенімдіміз, шығу керек</string>
+    <string name="about">БІЗ ТУРАЛЫ</string>
+    <string name="write">АҚШ-қа жазыңыз</string>
+    <string name="action_logout">Шығу</string>
+    <string name="welcome">Қош келдіңіз</string>
+    <string name="location">Орналасуы</string>
+    <string name="mycart">My Cart</string>
+    <!--slide one-->
+    <string name="slide_one_title">Тағам мәзірі</string>
+    <string name="slide_one_desc">Тағам мәзіріндегі ең атрибрактикалық келісімді зерттеңіз.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Қонақ үй қызметі</string>
+    <string name="slide_two_desc">Біздің қонақүйде ойындар мен ойын-сауық бағдарламалары ұсынылады</string>
+    <!--slide three-->
+    <string name="slide_three_title">Туристік орын</string>
+    <string name="slide_three_desc">Біздің қонақ үй туристік орын туралы мәліметтер береді</string>
+    <!--slide four-->
+    <string name="slide_four_title">Тағамдардың тізімі</string>
+    <string name="slide_four_desc">Азық-түлік тізімінде азық-түліктердің көптігі азық-түлікті тек бір рет басуға болады</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Интернетке қосылуды тексеріп, әрекетті қайталаңыз</string>
+    <string name="Ok">ЖАРАЙДЫ МА</string>
+    <string name="cancel">Болдырмау</string>
+    <string name="network_validation">Сұрау мерзімі аяқталды</string>
+    <string name="quantity">Саны</string>
+    <string name="start">START</string>
+    <string name="next">КЕЛЕСІ</string>
+    <string name="previous">Алдыңғы</string>
+    <string name="skip">SKIP</string>
+    <string name="loading">Өтінемін күте тұрыңыз...</string>
+    <string name="foodItem">Тамақ өнімдері</string>
+</resources>

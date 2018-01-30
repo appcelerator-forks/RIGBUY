@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Domus Hotel Management</string>
+    <string name="navigation_drawer_open">Navigation aperta drawer</string>
+    <string name="navigation_drawer_close">Navigation prope drawer</string>
+    <string name="username">Code visitor</string>
+    <string name="password">Numerus cellae</string>
+    <string name="home">domum</string>
+    <string name="food_menu">Menu</string>
+    <string name="hotel_activity">Actio deversorium</string>
+    <string name="touristic_places">Loci touristic</string>
+    <string name="about_us">De nobis</string>
+    <string name="write_to_us">Ad Nobis scribe</string>
+    <string name="logout">Log sunt</string>
+    <string name="login">login</string>
+    <string name="logout_dialog">Certus es, volo ut logout</string>
+    <string name="about">DE NOBIS</string>
+    <string name="write">Scribentes nobis</string>
+    <string name="action_logout">PP</string>
+    <string name="welcome">gratissimum</string>
+    <string name="location">Location</string>
+    <string name="mycart">to Cart</string>
+    <!--slide one-->
+    <string name="slide_one_title">Menu</string>
+    <string name="slide_one_desc">Explore maxime in cibum menu multum atrctive.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Actio deversorium</string>
+    <string name="slide_two_desc">In deversorium offert nobis frui ludos Lorem ludos et in quibus actiones</string>
+    <!--slide three-->
+    <string name="slide_three_title">Locus touristic</string>
+    <string name="slide_three_desc">Details providere nostri Hotel de loco touristic</string>
+    <!--slide four-->
+    <string name="slide_four_title">cibus List</string>
+    <string name="slide_four_desc">Lots of cibum continere cibum album ut vos can click unum solum cibum</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Placere reprehendo vestri et conexio, iterum conare.</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="network_validation">Postulante opportuno</string>
+    <string name="quantity">quantitas</string>
+    <string name="start">MISSUS</string>
+    <string name="next">DEINDE</string>
+    <string name="previous">priorem</string>
+    <string name="skip">PRAETEREO</string>
+    <string name="loading">Please ...</string>
+    <string name="foodItem">Item cibum</string>
+</resources>

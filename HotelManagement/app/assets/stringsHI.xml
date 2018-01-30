@@ -1,0 +1,42 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="username">पआगंतुक कोड</string>
+	<string name="password">कमरा संख्या</string>
+	<string name="home">मुख्य</string>
+	<string name="food_menu">भोजन का मेन्यू</string>
+	<string name="hotel_activity">होटल गतिविधि</string>
+	<string name="touristic_places">पर्यटन स्थल</string>
+	<string name="about_us">हमारे बारे में</string>
+	<string name="write_to_us">हमें लिखें</string>
+	<string name="logout">लोग आउट</string>
+	<string name="login">लॉग इन करें</string>
+	<string name="logout_dialog">क्या आप वाकई लॉगआउट करना चाहते हैं?</string>
+	<string name="about">हमारे बारे में</string>
+	<string name="write">हमें लिखें</string>
+	<string name="welcome">स्वागत हे</string>
+	<string name="location">स्थान</string>
+	<string name="mycart">मेरी गाड़ी</string>
+	<!--slide one-->
+	<string name="slide_one_title">भोजन का मेन्यू</string>
+	<string name="slide_one_desc">खाद्य मेनू में सबसे अधिक एट्रिक्टिव सौदे का अन्वेषण करें</string>
+	<!--slide two-->
+	<string name="slide_two_title">होटल गतिविधि</string>
+	<string name="slide_two_desc">हमारे होटल में गेम और गतिविधियां प्रदान की जाती हैं जिसमें ग्राहक गेम का आनंद लेते हैं</string>
+	<!--slide three-->
+	<string name="slide_three_title">पर्यटन स्थल</string>
+	<string name="slide_three_desc">हमारे होटल पर्यटन के स्थान के बारे में जानकारी प्रदान करते हैं</string>
+	<!--slide four-->
+	<string name="slide_four_title">खाद्य सूची</string>
+	<string name="slide_four_desc">भोजन की सूची बहुत सारी खाद्य पदार्थों को नियंत्रित करती है, आप भोजन को केवल एक क्लिक के आदेश दे सकते हैं</string>
+	<string name="internat_connection_message">अपने इंटरनेट कनेक्शन की जाँच करें और पुन: प्रयास करें</string>
+	<string name="Ok">ठीक</string>
+	<string name="cancel">रद्द करना</string>
+	<string name="network_validation">अनुरोध का समय समाप्त हुआ</string>
+	<string name="quantity">मात्रा</string>
+    <string name="start">प्रारंभ</string>
+    <string name="next">आगामी</string>
+    <string name="previous">पिछला</string>
+    <string name="skip">छोड़ें</string>
+    <string name="loading">कृपया प्रतीक्षा करें...</string>
+    <string name="foodItem">खाद्य - सामग्री</string>
+</resources>

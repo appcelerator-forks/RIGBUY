@@ -1,0 +1,24 @@
+<Alloy>
+	<NavigationWindow>
+		<Window class="container" barColor="#dc1474" onClick="winClickFunc">
+			<TitleControl>
+				<Label color="white">HotelManagment</Label>
+			</TitleControl>
+			<ScrollView>
+				<ImageView image="/images/logoLogin.png" top="15.94%"></ImageView>
+				<View id="registrationVW" width="92%" top="52%" height="10%" >
+					<View backgroundColor="#858484" width="100%" bottom="0" height="1"></View>
+					<Label id="registrationLbl" top="0" left="0" opacity="0" color="#dc1474">Registration Number</Label>
+					<TextField id="registrationTF" returnKeyType="NEXT" name="tf" onReturn="registrationReturnFunc" onChange="changeRegistrationFunc" backgroundColor="white" bottom="1" height="48%" left="0" width="100%" hintText="Registration Number"></TextField>
+				</View>
+				<View id="roomVW" width="92%" top="64%" height="10%" >
+					<View backgroundColor="#858484" width="100%" bottom="0" height="1" zIndex="1"></View>
+					<Label id="roomLbl" top="0" left="0" opacity="0" color="#dc1474">Room Number</Label>
+					<TextField id="roomTF" returnKeyType="DONE" name="tf" passwordMask="true" onChange="changeRoomFunc" backgroundColor="white" bottom="1" height="48%" left="0" width="90%" hintText="Room Number"></TextField>
+					<Button id="eyeBtn" onClick="maskHideFunc" backgroundImage="none" image="/images/eye.png" bottom="1" right="0" height="48%" width="10%" zIndex="19"></Button>>
+				</View>
+				<Button id="loginBtn" onClick="loginFunc" title="Login"  width="92%" top="80%" height="7%"  backgroundColor="#dc0474"></Button>>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

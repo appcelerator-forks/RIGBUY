@@ -1,0 +1,43 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+    <string name="username"> ビジターコード</string>
+    <string name="password">部屋番号</string>
+    <string name="home">メイン</string>
+    <string name="food_menu">食品メニュー</string>
+    <string name="hotel_activity">ホテルのアクティビティー</string>
+    <string name="touristic_places">観光地</string>
+    <string name="about_us">私たちに関しては</string>
+    <string name="write_to_us">私たちに書く</string>
+    <string name="logout">ログアウト</string>
+    <string name="login">ログイン</string>
+    <string name="logout_dialog">あなたは確かです、ログアウトしますか？</string>
+    <string name="about">私たちに関しては</string>
+    <string name="write">私たちに書</string>
+    <string name="action_logout">ログアウト</string>
+    <string name="welcome">ようこそ</string>
+    <string name="location">ロケーション</string>
+    <string name="mycart">私のカート</string>
+    <!--slide one-->
+    <string name="slide_one_title">食品メニュー</string>
+    <string name="slide_one_desc">食べ物メニューの中で最も挑戦的な取り引きを探そう。</string>
+    <!--slide two-->
+    <string name="slide_two_title">ホテルのアクティビティー</string>
+    <string name="slide_two_desc">ホテルでは、お客様がゲームを楽しむゲームやアクティビティを提供しています</string>
+    <!--slide three-->
+    <string name="slide_three_title">ツーリストプレイス</string>
+    <string name="slide_three_desc">当ホテルは観光地の詳細を提供しています</string>
+    <!--slide four-->
+    <string name="slide_four_title">食品リスト</string>
+    <string name="slide_four_desc">/食べ物リストにはたくさんの食物が入っています</string>
+    <string name="internat_connection_message">インターネット接続を確認して、もう一度お試しください。</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">キャンセル</string>
+    <string name="network_validation">要求がタイムアウトしました</string>
+    <string name="quantity">量</string>
+    <string name="start">開始</string>
+    <string name="next">開始</string>
+    <string name="previous">前</string>
+    <string name="skip">スキップ</string>
+    <string name="loading">お待ちください...</string>
+    <string name="foodItem">食物</string>
+</resources>

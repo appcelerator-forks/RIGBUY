@@ -1,0 +1,48 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">호텔 경영 홈</string>
+    <string name="navigation_drawer_open">탐색 창 열기</string>
+    <string name="navigation_drawer_close">탐색 창 닫기</string>
+    <string name="username">방문자 코드</string>
+    <string name="password">방 번호</string>
+    <string name="home">집</string>
+    <string name="food_menu">음식 메뉴</string>
+    <string name="hotel_activity">호텔 활동</string>
+    <string name="touristic_places">여행지</string>
+    <string name="about_us">회사 소개</string>
+    <string name="write_to_us">우리에게 쓰기</string>
+    <string name="logout">로그 아웃</string>
+    <string name="login">로그인</string>
+    <string name="logout_dialog">로그 아웃 하시겠습니까?</string>
+    <string name="about">회사 소개</string>
+    <string name="write">미국에 쓰십시오.</string>
+    <string name="action_logout">로그 아웃</string>
+    <string name="welcome">환영</string>
+    <string name="location">위치</string>
+    <string name="mycart">내 카트</string>
+    <!--slide one-->
+    <string name="slide_one_title">음식 메뉴</string>
+    <string name="slide_one_desc">음식 메뉴에서 가장 격렬한 거래를 탐험 해보십시오..</string>
+    <!--slide two-->
+    <string name="slide_two_title">호텔 활동</string>
+    <string name="slide_two_desc">저희 호텔에서는 고객이 게임을 즐기는 게임과 활동을 제공합니다.</string>
+    <!--slide three-->
+    <string name="slide_three_title">Touristic Place</string>
+    <string name="slide_three_desc">저희 호텔은 관광지에 대한 자세한 정보를 제공합니다.</string>
+    <!--slide four-->
+    <string name="slide_four_title">음식 목록</string>
+    <string name="slide_four_desc">음식 목록에는 음식을 한 번만 주문할 수있는 많은 음식이 들어 있습니다.</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">인터넷 연결을 확인하고 다시 시도하십시오.</string>
+    <string name="Ok">승인 </string>
+    <string name="cancel">취소</string>
+    <string name="quantity">수량</string>
+    <string name="start">스타트</string>
+    <string name="next">다음 것</string>
+    <string name="previous">너무 이른</string>
+    <string name="skip">버킷</string>
+    <string name="loading">기다려주십시오 ...</string>
+    <string name="foodItem">식품 품목</string>
+</resources>

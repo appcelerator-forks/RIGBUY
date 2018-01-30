@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+    <string name="title_activity_hotel_management_home">Hotel Management Home</string>
+    <string name="navigation_drawer_open">�ppna navigationsl�da</string>
+    <string name="navigation_drawer_close">St�ng navigationsl�da</string>
+    <string name="username">Visitor Code</string>
+    <string name="password">Rumsnummer</string>
+    <string name="home">Hem</string>
+    <string name="food_menu">Mat meny</string>
+    <string name="hotel_activity">Hotellaktivitet</string>
+    <string name="touristic_places">Turistplatser</string>
+    <string name="about_us">Om oss</string>
+    <string name="write_to_us">Skriv till oss</string>
+    <string name="logout">Logga ut</string>
+    <string name="login">Logga in</string>
+    <string name="logout_dialog">�r du s�ker, vill logga ut</string>
+    <string name="about">OM OSS</string>
+    <string name="write">SKRIV TILL OSS</string>
+    <string name="action_logout">Logga ut</string>
+    <string name="welcome">V�lkommen</string>
+    <string name="location">Plats</string>
+    <string name="mycart">Min vagn</string>
+    <!--slide one-->
+    <string name="slide_one_title">Mat meny</string>
+    <string name="slide_one_desc">Utforska den mest atrctive aff�ren i matmenyn.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Hotellaktivitet</string>
+    <string name="slide_two_desc">I v�rt hotell erbjuds spel och aktiviteter d�r kunden njuter av spel</string>
+    <!--slide three-->
+    <string name="slide_three_title">Turistplats</string>
+    <string name="slide_three_desc">V�rt hotell ger information om den turistiska platsen</string>
+    <!--slide four-->
+    <string name="slide_four_title">Matlista</string>
+    <string name="slide_four_desc">Matlista inneh�ller mycket mat du kan best�lla maten bara ett klick</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Kontrollera din internetanslutning och försök igen.</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">Annullera</string>
+    <string name="network_validation">Förfrågan slutade</string>
+    <string name="quantity">Kvantitet</string>
+    <string name="start">START</string>
+    <string name="next">NÄSTA</string>
+    <string name="previous">Tidigare</string>
+    <string name="skip">HOPPA</string>
+    <string name="loading">Vänta...</string>
+    <string name="foodItem">Livsmedel</string>
+</resources>

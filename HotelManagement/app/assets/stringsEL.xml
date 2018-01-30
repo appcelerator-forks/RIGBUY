@@ -1,0 +1,49 @@
+<resources>
+<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Αρχική σελίδα διαχείρισης ξενοδοχείων</string>
+    <string name="navigation_drawer_open">Άνοιγμα συρταριού πλοήγησης</string>
+    <string name="navigation_drawer_close">Κλείστε το συρτάρι πλοήγησης</string>
+    <string name="username">Κωδικός επισκεπτών</string>
+    <string name="password">Αριθμός δωματίου</string>
+    <string name="home">Σπίτι</string>
+    <string name="food_menu">Κατάλογος φαγητού</string>
+    <string name="hotel_activity">Δραστηριότητα ξενοδοχείου</string>
+    <string name="touristic_places">Τουριστικά μέρη</string>
+    <string name="about_us">Σχετικά με εμάς</string>
+    <string name="write_to_us">Γράψτε σε μας</string>
+    <string name="logout">Αποσυνδέση</string>
+    <string name="login">Σύνδεση</string>
+    <string name="logout_dialog">Είστε βέβαιοι ότι θέλετε να αποσυνδεθείτε</string>
+    <string name="about">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</string>
+    <string name="write">ΓΡΑΠΤΕ ΣΤΙΣ ΗΠΑ</string>
+    <string name="action_logout">Αποσυνδέση</string>
+    <string name="welcome">καλως ΗΡΘΑΤΕ</string>
+    <string name="location">Τοποθεσία</string>
+    <string name="mycart">Καλάθι μου</string>
+    <!--slide one-->
+    <string name="slide_one_title">Κατάλογος φαγητού</string>
+    <string name="slide_one_desc">Εξερευνήστε το πιο συναρπαστικό deal στο μενού Food.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Δραστηριότητα ξενοδοχείου</string>
+    <string name="slide_two_desc">Στο ξενοδοχείο μας προσφέρονται παιχνίδια και δραστηριότητες στις οποίες ο πελάτης απολαμβάνει παιχνίδια</string>
+    <!--slide three-->
+    <string name="slide_three_title">Τουριστικός Χώρος</string>
+    <string name="slide_three_desc">Το ξενοδοχείο μας παρέχει λεπτομέρειες για τον τουριστικό χώρο</string>
+    <!--slide four-->
+    <string name="slide_four_title">Λίστα τροφίμων</string>
+    <string name="slide_four_desc">Ο κατάλογος τροφίμων περιέχει πολλά τρόφιμα που μπορείτε να παραγγείλετε με ένα μόνο κλικ</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Ελέγξτε τη σύνδεση στο Internet και δοκιμάστε ξανά</string>
+    <string name="Ok">Εντάξει</string>
+    <string name="cancel">Ματαίωση</string>
+    <string name="network_validation">Το αίτημα έληξε</string>
+    <string name="quantity">Ποσότητα</string>
+    <string name="start">ΑΡΧΗ</string>
+    <string name="next">ΕΠΟΜΕΝΟ</string>
+    <string name="previous">Προηγούμενος</string>
+    <string name="skip">ΠΑΡΑΛΕΙΠΩ</string>
+    <string name="loading">Παρακαλώ περιμένετε...</string>
+    <string name="foodItem">Στοιχείο Τροφίμων</string>
+</resources>

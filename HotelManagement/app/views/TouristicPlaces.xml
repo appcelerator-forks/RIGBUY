@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" backButtonTitleImage="none" onOpen="openFunc" name="TouristicPlaces">
+		<Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
+	</Window>
+</Alloy>

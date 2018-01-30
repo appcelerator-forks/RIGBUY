@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.hotelmanagment.app</id>
+    <name>HotelManagement</name>
+    <version>1.0</version>
+    <publisher>hemantsolanki</publisher>
+    <url/>
+    <description>undefined</description>
+    <copyright>2017 by hemantsolanki</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>false</analytics>
+    <guid>88187578-37be-4e47-9ddd-cfe57d7e5932</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="run-on-main-thread" type="bool">true</property>
+    <ios>
+        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <use-app-thinning>true</use-app-thinning>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleLightContent</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">dk.napp.slidemenu</module>
+        <module platform="commonjs">nl.fokkezb.html2as</module>
+    </modules>
+    <deployment-targets>
+        <target device="mobileweb">false</target>
+        <target device="android">false</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+    </deployment-targets>
+    <sdk-version>5.5.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5a703b7bd45ed65108dc40d3</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">GOf5XuAazTCoUkOQyu81x0o07WfqmCMa</property>
+    <property name="acs-oauth-key-development" type="string">XZhKtPqkIQ4k9cvjhwbMvrKbxt0aJrSG</property>
+    <property name="acs-api-key-development" type="string">XLQuFhHbiOrMz5X8NvyL4CcJgFmCS4Cz</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">lf6yy6qVwXHvhVfuJ9</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">OENFZJcHle2XE4uNMGXqr8cXCsldg3hY</property>
+    <property name="acs-oauth-key-production" type="string">AxMiaVvOE90YZsSaIQp1hTyJ3n3X72Fj</property>
+    <property name="acs-api-key-production" type="string">fKe6PlLP96EyyEdWxVNuL4Ztr52uh1yH</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">sMQxuLQAhObx4MA6j8</property>
+    <property name="appc-org-id" type="string">220959560603109</property>
+    <property name="appc-creator-user-id" type="string">025572e5-ba70-4868-9445-60d8f18a1be5</property>
+</ti:app>

@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+    <string name="title_activity_hotel_management_home">Hotel Management Home</string>
+    <string name="navigation_drawer_open">Deschideți sertarul de navigare</string>
+    <string name="navigation_drawer_close">Inchide sertarul de navigare</string>
+    <string name="username">Codul vizitatorului</string>
+    <string name="password">Numărul de cameră</string>
+    <string name="home">Acasă</string>
+    <string name="food_menu">Meniu de mancare</string>
+    <string name="hotel_activity">Activitatea hotelieră</string>
+    <string name="touristic_places">Locuri turistice</string>
+    <string name="about_us">Despre noi</string>
+    <string name="write_to_us">Scrie-ne</string>
+    <string name="logout">Deconectați-vă</string>
+    <string name="login">Logare</string>
+    <string name="logout_dialog">Sigur doriți să vă deconectați</string>
+    <string name="about">DESPRE NOI</string>
+    <string name="write">SCRIE-NE</string>
+    <string name="action_logout">Deconectare</string>
+    <string name="welcome">Bine ati venit</string>
+    <string name="location">Locație</string>
+    <string name="mycart">Caruciorul meu</string>
+    <!--slide one-->
+    <string name="slide_one_title">Meniu de mancare</string>
+    <string name="slide_one_desc">Explorați cea mai atractivă afacere din meniul Alimente.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Activitatea hotelieră</string>
+    <string name="slide_two_desc">În hotelul nostru oferă jocuri și activități în care clientul se bucură de jocuri</string>
+    <!--slide three-->
+    <string name="slide_three_title">Locul turistic</string>
+    <string name="slide_three_desc">Hotelul nostru oferă detalii despre locul turistic</string>
+    <!--slide four-->
+    <string name="slide_four_title">Lista de produse alimentare</string>
+    <string name="slide_four_desc">Lista de alimente conține o mulțime de alimente, puteți comanda mâncarea numai cu un singur clic</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Verificați conexiunea la internet și încercați din nou.</string>
+    <string name="Ok">O.K</string>
+    <string name="cancel">Anulare</string>
+    <string name="network_validation">Cererea a expirat</string>
+    <string name="quantity">Cantitate</string>
+    <string name="start">START</string>
+    <string name="next">URMĂTOR →</string>
+    <string name="previous">Anterior</string>
+    <string name="skip">OCOLIRE</string>
+    <string name="loading">Te rog asteapta...</string>
+    <string name="foodItem">Postul alimentar</string>
+</resources>

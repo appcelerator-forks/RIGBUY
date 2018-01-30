@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Управление отелями</string>
+    <string name="navigation_drawer_open">Открыть навигационный ящик</string>
+    <string name="navigation_drawer_close">Закрыть навигационный ящик</string>
+    <string name="username">Код посетителя</string>
+    <string name="password">Номер комнаты</string>
+    <string name="home">Главная</string>
+    <string name="food_menu">Меню еды</string>
+    <string name="hotel_activity">Деятельность отеля</string>
+    <string name="touristic_places">Туристические места</string>
+    <string name="about_us">О нас</string>
+    <string name="write_to_us">Написать нам</string>
+    <string name="logout">Выйти</string>
+    <string name="login">Авторизоваться</string>
+    <string name="logout_dialog">Вы уверены, хотите выйти из системы</string>
+    <string name="about">О НАС</string>
+    <string name="write">НАПИСАТЬ НА США</string>
+    <string name="action_logout">Выйти</string>
+    <string name="welcome">желанный</string>
+    <string name="location">Место нахождения</string>
+    <string name="mycart">Моя тележка</string>
+    <!--slide one-->
+    <string name="slide_one_title">Меню еды</string>
+    <string name="slide_one_desc">Исследуйте самую активную сделку в меню продуктов питания.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Деятельность отеля</string>
+    <string name="slide_two_desc">В нашем отеле предлагаются игры и мероприятия, в которых клиент наслаждается играми</string>
+    <!--slide three-->
+    <string name="slide_three_title">Туристическое место</string>
+    <string name="slide_three_desc">Наш отель предоставляет подробную информацию о туристическом месте</string>
+    <!--slide four-->
+    <string name="slide_four_title">Список продуктов</string>
+    <string name="slide_four_desc">В списке продуктов содержится много пищи, которую вы можете заказать в еде только одним кликом</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Проверьте подключение к Интернету и повторите попытку.</string>
+    <string name="Ok">ОК</string>
+    <string name="cancel">Отмена</string>
+    <string name="network_validation">Истекло время ожидания запроса</string>
+    <string name="quantity">Количество</string>
+    <string name="start">НАЧАЛО</string>
+    <string name="next">СЛЕДУЮЩИЙ</string>
+    <string name="previous">предыдущий</string>
+    <string name="skip">ПРОПУСКАТЬ</string>
+    <string name="loading">Пожалуйста, подождите...</string>
+    <string name="foodItem">Продукты питания</string>
+    </resources>

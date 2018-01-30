@@ -1,0 +1,8 @@
+<Alloy>
+	<Window class="container"  backButtonTitle="" backButtonTitleImage="none" onOpen="openFunc" backgroundColor="black">
+		<Label id="AboutUsLbl" top="6%" color="white"></Label>
+		<ScrollView top="16%" bottom="0">
+			<Label id="webview" color="white" top="0" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+		</ScrollView>
+	</Window>
+</Alloy>

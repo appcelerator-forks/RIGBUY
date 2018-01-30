@@ -1,0 +1,43 @@
+<resources>
+<string name="app_name">HotelManagement</string>
+    <string name="username">رمز الزائر</string>
+    <string name="password">رقم الغرفة</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="food_menu">قائمة الطعام</string>
+    <string name="hotel_activity">نشاط الفندق</string>
+    <string name="touristic_places">اماكن سياحية</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="write_to_us">الكتابة لنا</string>
+    <string name="logout">الخروج</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="logout_dialog">هل تريد بالتأكيد تسجيل الخروج</string>
+    <string name="about">معلومات عنا</string>
+    <string name="write">الكتابة لنا</string>
+    <string name="action_logout">الخروج</string>
+    <string name="welcome">أهلا بك</string>
+    <string name="location">موقعك</string>
+    <string name="mycart">عربة التسوق</string>
+    <!--slide one-->
+    <string name="slide_one_title">قائمة الطعام</string>
+    <string name="slide_one_desc">استكشاف معظم صفقة أتركتيف في قائمة الطعام.</string>
+    <!--slide two-->
+    <string name="slide_two_title">نشاط الفندق</string>
+    <string name="slide_two_desc">يوفر فندقنا ألعاب وأنشطة تتمتع الألعاب</string>
+    <!--slide three-->
+    <string name="slide_three_title">اماكن سياحية</string>
+    <string name="slide_three_desc">> تفاصيل حول المكان السياحي</string>
+    <!--slide four-->
+    <string name="slide_four_title">قائمة الطعام</string>
+    <string name="slide_four_desc">قائمة الطعام كونتين الكثير من المواد الغذائية يمكنك طلب الطعام بنقرة واحدة فقط</string>
+    <string name="internat_connection_message">الرجاء التحقق من اتصالك بالإنترنت وإعادة المحاولة</string>
+    <string name="Ok">حسنا</string>
+    <string name="cancel">إلغاء</string>
+    <string name="network_validation">انتهت مهلة الطلب</string>
+    <string name="quantity">كمية</string>
+    <string name="start">بداية</string>
+    <string name="next">التالى</string>
+    <string name="previous">سابق</string>
+    <string name="تخطى">SKIP</string>
+    <string name="loading">أرجو الإنتظار...</string>
+    <string name="foodItem">مادة غذائية</string>
+</resources>

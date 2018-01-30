@@ -1,0 +1,50 @@
+
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Otel İşletmeciliği Anasayfa</string>
+    <string name="navigation_drawer_open">Gezinme çekmecesini aç</string>
+    <string name="navigation_drawer_close">Gezinme çekmecesini kapat</string>
+    <string name="username">Ziyaretçi Kodu</string>
+    <string name="password">Oda numarası</string>
+    <string name="home">Ev</string>
+    <string name="food_menu">Yemek menusu</string>
+    <string name="hotel_activity">Otel Aktiviteleri</string>
+    <string name="touristic_places">Turistik yerler</string>
+    <string name="about_us">Hakkımızda</string>
+    <string name="write_to_us">Bize yazın</string>
+    <string name="logout">Çıkış Yap</string>
+    <string name="login">Oturum aç</string>
+    <string name="logout_dialog">Emin misiniz, çıkış yapmak istiyor musunuz</string>
+    <string name="about">HAKKIMIZDA</string>
+    <string name="write">BİZE YAZIN</string>
+    <string name="action_logout">Çıkış Yap</string>
+    <string name="welcome">Hoşgeldiniz</string>
+    <string name="location">yer</string>
+    <string name="mycart">Benim kartım</string>
+    <!--slide one-->
+    <string name="slide_one_title">Yemek menusu</string>
+    <string name="slide_one_desc">Food menüsünde en çok konuşma fırsatını keşfedin.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Otel Aktiviteleri</string>
+    <string name="slide_two_desc">Otelimizde, müşterinin oyun oynayabileceği oyunlar ve etkinlikler bulunmaktadır</string>
+    <!--slide three-->
+    <string name="slide_three_title">Turistik yer</string>
+    <string name="slide_three_desc">Otelimiz turistik yer hakkında ayrıntılı bilgi vermektedir.</string>
+    <!--slide four-->
+    <string name="slide_four_title">Yiyecek Listesi</string>
+    <string name="slide_four_desc">Yiyecek listesi kontaine çok sayıda gıda size yiyecek sipariş edebilirsiniz sadece bir tıklama</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin.</string>
+    <string name="Ok">Tamam</string>
+    <string name="cancel">İptal etmek</string>
+    <string name="network_validation">İstek zaman aşımına uğradı</string>
+    <string name="quantity">miktar</string>
+    <string name="start">BAŞLA</string>
+    <string name="next">SONRAKİ</string>
+    <string name="previous">Önceki</string>
+    <string name="skip">ATLA</string>
+    <string name="loading">Lütfen bekle...</string>
+    <string name="foodItem">Gıda maddesi</string>
+</resources>

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" backButtonTitleImage="none">
+		<ScrollView backgroundColor="black" layout="vertical">
+			<ImageView id="tourImage" top="25%" height="45%" width="100%" image="http://www.lorempixel.com/700/600/"></ImageView>
+			<Label id="descLbl" top="10%" width="96%" color="white" textAlign="justify"></Label>
+			
+		</ScrollView>
+	</Window>
+</Alloy>

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container" title="My Cart" backButtonTitle="" backgroundColor="#E5E6E8" onOpen="openFunc">
+		<TableView backgroundColor="transparent" separatorColor="transparent" id="cartTableView">
+			<FooterView>
+				<View backgroundColor="transparent" height="1"></View>
+			</FooterView>
+		</TableView>
+	</Window>
+</Alloy>

@@ -1,0 +1,149 @@
+<Alloy>
+	<Window id="leftWindow" name="homewin" left="0" backgroundColor="#dc0474"  layout="vertical" class="container" platform="ios">
+		<View height="20" backgroundColor="#dc0474" top="0">
+		</View>
+		<View id="topview" backgroundColor="white"  top="0" left="0" height="30%">
+			<ImageView height="Ti.UI.FILL" width="Ti.UI.FILL" image='/images/header.png' >
+			</ImageView>
+			<Label id="welcomeLbl" bottom="20" left="5%"  textAlign="center" color="#fff">
+				Welcome
+			</Label>
+		</View>
+		<View height="0.6dp" width="Ti.UI.FILL" backgroundColor="#DCDCDC">
+		</View>
+		<View backgroundColor="#dc0474" top="0">
+			<TableView id="rightTable" separatorColor="transparent" backgroundColor="#dc0474" class="table" onClick="leftMenuOptionSelected" focusable="true" scrollable="false">
+				<FooterView>
+					<View height="0.6dp" backgroundColor="transparent">
+					</View>
+				</FooterView>
+				<TableViewRow id="homeRow" class="tableRow"  width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="homeimge" class="img" image="/images/home.png">
+					</ImageView>
+					<Label id="homeRowLbl" color="white"  class="leftLable" width="Titanium.UI.SIZE"  focusable="false" touchEnabled="false">
+						Home
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="foodMenuRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="foodMenuimge" class="img"  image="/images/food.png">
+					</ImageView>
+					<Label id="foodMenuLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false" touchEnabled="false">
+						Food Menu
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="hotelActivityRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="hotelActivityimge" class="img"  image="/images/hotelActivity.png">
+					</ImageView>
+					<Label id="hotelActivityLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false"  touchEnabled="false">
+						Hotel Activity
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="touristicPlaceRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="touristicPlaceimge" class="img"  image="/images/tour.png">
+					</ImageView>
+					<Label id="touristicPlaceLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false"  touchEnabled="false">
+						Touristic Places
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="aboutUsRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="aboutUsimge" class="img"  image="/images/aboutUs.png">
+					</ImageView>
+					<Label id="aboutUsLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false"  touchEnabled="false">
+						About Us
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="rateUsRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="rateUsimge" class="img"  image="/images/rateUs.png">
+					</ImageView>
+					<Label id="rateUsLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false"  touchEnabled="false">
+						Rate Us
+					</Label>
+				</TableViewRow>
+				<TableViewRow id="logoutRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+					<ImageView id="logoutimge" class="img"  image="/images/logout.png">
+					</ImageView>
+					<Label id="logoutLbl"  width="Titanium.UI.SIZE" class="leftLable" focusable="false"  touchEnabled="false">
+						Logout
+					</Label>
+				</TableViewRow>
+			</TableView>
+		</View>
+	</Window>
+	<Window id="rightWindow" name="homewin"  backgroundColor="#dc0474"  layout="vertical" class="container" platform="ios">
+		<View height="20" backgroundColor="#dc0474" top="0">
+		</View>
+		<View id="topview1"  top="20" right="0" height="30%" >
+			<ImageView height="Ti.UI.FILL" width="Ti.UI.FILL" image='/images/header.png' >
+			</ImageView>
+			<Label id="welcomeLbl1" bottom="30" right="5%"  textAlign="center" color="#fff">
+				Welcome
+			</Label>
+		</View>
+		<View height="0.6dp" width="Ti.UI.FILL" backgroundColor="#DCDCDC">
+		</View>
+		<TableView id="rightTable" backgroundColor="#dc0474" class="table" separatorColor="transparent" onClick="leftMenuOptionSelected" focusable="true">
+			<FooterView>
+				<View height="0.6dp" backgroundColor="transparent">
+				</View>
+			</FooterView>
+			<TableViewRow id="homeRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="homeimge1" class="arabicImg"  image="/images/home.png">
+				</ImageView>
+				<Label id="homeRowLbl1" color="white"  class="arabicleftLable" width="Titanium.UI.SIZE"   focusable="false" touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+			<TableViewRow id="foodMenuRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="foodMenuimge1" class="arabicImg" image="/images/food.png">
+				</ImageView>
+				<Label id="foodMenuLbl1" color="white"  width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+			<TableViewRow id="hotelActivityRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="hotelActivityimge1" class="arabicImg" image="/images/hotelActivity.png">
+				</ImageView>
+				<Label id="hotelActivityLbl1" color="white" width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"  touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+			<TableViewRow id="touristicPlaceRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="touristicPlaceimge1" class="arabicImg" image="/images/tour.png">
+				</ImageView>
+				<Label id="touristicPlaceLbl1" color="white" width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"  touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+			<TableViewRow id="aboutUsRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="aboutUsimge1" class="arabicImg" image="/images/aboutUs.png">
+				</ImageView>
+				<Label id="aboutUsLbl1" color="white" width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"  touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+			<TableViewRow id="rateUsRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="rateUsimge1" class="arabicImg" image="/images/rateUs.png">
+				</ImageView>
+				<Label id="rateUsLbl1" color="white" width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"  touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>s
+			<TableViewRow id="logoutRow" class="tableRow" width="100%" selectedBackgroundColor="#993f6c">
+				<ImageView id="logoutimge1" class="arabicImg" image="/images/logout.png">
+				</ImageView>
+				<Label id="logoutLbl1" color="white" width="Titanium.UI.SIZE" class="arabicleftLable" focusable="false"  touchEnabled="false">
+					
+				</Label>
+			</TableViewRow>
+		</TableView>
+	</Window>
+	<NavigationWindow id="navWindow" platform="ios" bubbleParent="false">
+		<Window class="container" id="homeWin" name="homewin"  backgroundColor="white" onOpen="openFun">
+			<View id="containerVW" opacity="0">
+				<View id="engView" visible="true"  layout="vertical">
+					<Require type="widget" src="com.prodz.tiflexigrid" id="fg"/>
+				</View>
+			</View>
+		</Window>
+	</NavigationWindow>
+</Alloy>

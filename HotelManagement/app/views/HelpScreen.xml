@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container" id="helpScreen" fullscreen="true" onClose="closeFunc" >
+		<ScrollableView id="scrollableView" onScrollEnd="scrollFun" opacity="0" showPagingControl="true" pageIndicatorColor="gray" pagingControlColor="black"  currentPageIndicatorColor="white"></ScrollableView>
+		<Button id="nextBtn" title="NEXT" width="90" color="white" top="88%" right="0" onClick="nextFunc"></Button>
+		<Button id="skipBtn" title="SKIP" width="80" color="white" top="88%" left="0" onClick="skipFunc"></Button>
+	</Window>
+</Alloy>

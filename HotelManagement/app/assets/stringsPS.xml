@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">د هوټل مدیریت کور</string>
+    <string name="navigation_drawer_open">د نیولو نیولو ډریور</string>
+    <string name="navigation_drawer_close">بند نیویارک دروند</string>
+    <string name="username">د لیدونکي کوډ</string>
+    <string name="password">د کوټې شمېره</string>
+    <string name="home">کور</string>
+    <string name="food_menu">خواړو مینځل</string>
+    <string name="hotel_activity">د هوټل فعالیت</string>
+    <string name="touristic_places">سیاحت ځایونه</string>
+    <string name="about_us">زموږ په اړه</string>
+    <string name="write_to_us">موږ ته ولیکئ</string>
+    <string name="logout">وتل</string>
+    <string name="login">Login</string>
+    <string name="logout_dialog">ایا تاسو باوري یاست، د ننوتلو لپاره غواړئ</string>
+    <string name="about">زموږ په اړه</string>
+    <string name="write">د متحده ایالاتو ته مراجعه وکړئ</string>
+    <string name="action_logout">وتل</string>
+    <string name="welcome">ښه راغلاست</string>
+    <string name="location">ځای</string>
+    <string name="mycart">زما کارټ</string>
+    <!--slide one-->
+    <string name="slide_one_title">خواړو مینځل</string>
+    <string name="slide_one_desc">د خوړو په مینځ کې د ترټولو لوی خارجي معامله وپلټئ.</string>
+    <!--slide two-->
+    <string name="slide_two_title">د هوټل فعالیت</string>
+    <string name="slide_two_desc">زموږ په هوټل کې لوبې او هغه فعالیتونه وړاندې کوي چې پیرودونکي یې لوبې کوي</string>
+    <!--slide three-->
+    <string name="slide_three_title">ټرسټیکټ ځای</string>
+    <string name="slide_three_desc">زموږ هوټل د سیاحت ځای په اړه جزئيات وړاندې کوي</string>
+    <!--slide four-->
+    <string name="slide_four_title">د خوراکي توکو لیست</string>
+    <string name="slide_four_desc">د خوراکي توکو لیست</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">مهرباني وکړئ خپل انټرنیټ کنټرټ وګورئ او بیا هڅه وکړئ.</string>
+    <string name="Ok">سمه ده</string>
+    <string name="cancel">لغوه کړه</string>
+    <string name="network_validation">غوښتنه وخت تېر شو</string>
+    <string name="quantity">مقدار</string>
+    <string name="start">START</string>
+    <string name="next">بل</string>
+    <string name="previous">مخکنی</string>
+    <string name="skip">SKIP</string>
+    <string name="loading">هیله کوم لږ صبر وکړه...</string>
+    <string name="foodItem">د خواړه توکي</string>
+</resources>

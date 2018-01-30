@@ -1,0 +1,49 @@
+
+'Window[platform=ios formFactor=handheld]': {
+	backgroundColor: '#ffffff',
+	titleAttributes:  {
+		color: '#ffffff',
+		font: {
+			fontSize: 16,
+			fontFamily: "Roboto-Regular"
+		}
+	},
+	navTintColor: "#dc0474",
+	barColor: "#dc0474",
+	translucent: false,
+	statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
+}
+
+'Window[platform=ios if=Alloy.Globals.iPhoneTallSixPlus]': {
+	backgroundColor: '#ffffff', // white background instead of default transparent or black
+	titleAttributes:  {
+		color: '#ffffff',
+		font: {
+			fontSize: 18,
+			fontFamily: "Roboto-Regular"
+		}
+	},
+	
+	navTintColor: "#dc0474",
+	barColor: "#dc0474",
+	translucent: false,
+	statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
+}
+
+'Label[platform=ios formFactor=handheld]': {
+
+	
+	font: {
+		fontSize: 16,
+		fontFamily: "Roboto-Regular"
+	}
+}
+
+'Label[platform=ios if=Alloy.Globals.iPhoneTallSixPlus]': {
+
+	
+	font: {
+		fontSize: 18,
+		fontFamily: "Roboto-Regular"
+	}
+}

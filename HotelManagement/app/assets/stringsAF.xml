@@ -1,0 +1,49 @@
+<resources>
+<string name="app_name">HotelManagement</string>
+<string name="title_activity_hotel_management_home">Hotel Management Home</string>
+    <string name="navigation_drawer_open">Open navigasie laai</string>
+    <string name="navigation_drawer_close">Maak die navigasielaaier toe</string>
+    <string name="username">Besoekerskode</string>
+    <string name="password">Kamer nommer</string>
+    <string name="home">huis</string>
+    <string name="food_menu">Kos Menu</string>
+    <string name="hotel_activity">Hotelaktiwiteit</string>
+    <string name="touristic_places">Toeristiese Plekke</string>
+    <string name="about_us">Oor ons</string>
+    <string name="write_to_us">Skryf aan ons</string>
+    <string name="logout">Teken uit</string>
+    <string name="login">Teken aan</string>
+    <string name="logout_dialog">Is jy seker, wil jy uitloggen</string>
+    <string name="about">OOR ONS</string>
+    <string name="write">SKRYF AAN ONS</string>
+    <string name="action_logout">Teken uit</string>
+    <string name="welcome">Welkom</string>
+    <string name="location">plek</string>
+    <string name="mycart">My winkelwagen</string>
+    <!--slide one-->
+    <string name="slide_one_title">Kos Menu</string>
+    <string name="slide_one_desc">Verken die mees atrctive deal in Food menu.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Hotel Activity</string>
+    <string name="slide_two_desc">In ons hotel bied speletjies en aktiwiteite waarin klante geniet speletjies</string>
+    <!--slide three-->
+    <string name="slide_three_title">Toeristiese Plek</string>
+    <string name="slide_three_desc">Ons hotel bied besonderhede oor die toeristiese plek</string>
+    <!--slide four-->
+    <string name="slide_four_title">Koslys</string>
+    <string name="slide_four_desc">Koslys bevat baie kos wat jy die kos slegs een kliek kan bestel</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	<string name="internat_connection_message">Kontroleer asseblief jou internetverbinding en probeer weer</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">kanselleer</string>
+    <string name="network_validation">Die versoek het uitgestel</string>
+    <string name="quantity">Quantity</string>
+    <string name="start">hoeveelheid</string>
+    <string name="next">VOLGENDE</string>
+    <string name="previous">vorige</string>
+    <string name="skip">HUPPEL</string>
+    <string name="loading">Wag asseblief...</string>
+    <string name="foodItem">Kos Item</string>
+</resources>

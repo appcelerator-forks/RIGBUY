@@ -1,0 +1,50 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Gestione alberghiera</string>
+    <string name="navigation_drawer_open">Apri il cassetto di navigazione</string>
+    <string name="navigation_drawer_close">Chiudere il cassetto di navigazione</string>
+    <string name="username">Codice del visitatore</string>
+    <string name="password">Numero di Camera</string>
+    <string name="home">Casa</string>
+    <string name="food_menu">Menu</string>
+    <string name="hotel_activity">Attivit alberghiera</string>
+    <string name="touristic_places">Posti turistici</string>
+    <string name="about_us">Riguardo a noi</string>
+    <string name="write_to_us">Scrivici</string>
+    <string name="logout">Disconnettersi</string>
+    <string name="login">Accesso</string>
+    <string name="logout_dialog">Sei sicuro di voler uscire</string>
+    <string name="about">RIGUARDO A NOI</string>
+    <string name="write">SCRIVICI</string>
+    <string name="action_logout">Disconnettersi</string>
+    <string name="welcome">benvenuto</string>
+    <string name="location">Posizione</string>
+    <string name="mycart">My Cart</string>
+    <!--slide one-->
+    <string name="slide_one_title">Menu</string>
+    <string name="slide_one_desc">Esplora affare pi avvincente nel menu Cibo.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Attivit alberghiera</string>
+    <string name="slide_two_desc">Nel nostro hotel offre giochi e attivit in cui i clienti godono di giochi</string>
+    <!--slide three-->
+    <string name="slide_three_title">Luogo turistico</string>
+    <string name="slide_three_desc">Il nostro hotel fornisce dettagli sul luogo turistico</string>
+    <!--slide four-->
+    <string name="slide_four_title">Lista degli alimenti</string>
+    <string name="slide_four_desc">La lista degli alimenti contiene un sacco di cibo  possibile ordinare il cibo solo un clic</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    
+    <string name="internat_connection_message">per favore controlla la tua connessione Internet e prova di nuovo</string>
+    <string name="Ok">ok</string>
+    <string name="cancel">Annulla</string>
+    <string name="network_validation">La richiesta è scaduta</string>
+    <string name="quantity">Quantità</string>
+    <string name="start">INIZIO</string>
+    <string name="next">IL PROSSIMO</string>
+    <string name="previous">Precedente</string>
+    <string name="skip">SALTA</string>
+    <string name="loading">Attendere prego...</string>
+    <string name="foodItem">Articolo alimentare</string>
+</resources>

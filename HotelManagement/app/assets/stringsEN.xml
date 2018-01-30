@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">HotelManagement</string>
+    <string name="title_activity_hotel_management_home">HotelManagementHome</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="username">Visitor Code</string>
+    <string name="password">Room Number</string>
+    <string name="home">Home</string>
+    <string name="food_menu">Food Menu</string>
+    <string name="hotel_activity">Hotel Activity</string>
+    <string name="touristic_places">Touristic Places</string>
+    <string name="about_us">About Us</string>
+    <string name="write_to_us">Write To Us</string>
+    <string name="logout">Log out</string>
+    <string name="login">Login</string>
+    <string name="logout_dialog">Are you sure,want to logout</string>
+    <string name="about">ABOUT US</string>
+    <string name="write">WRITE TO US</string>
+    <string name="action_logout">Logout</string>
+    <string name="welcome">Welcome</string>
+    <string name="location">Location</string>
+    <string name="mycart">My Cart</string>
+    <!--slide one-->
+    <string name="slide_one_title">Food Menu</string>
+    <string name="slide_one_desc">Explore the most atrctive deal in Food menu.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Hotel Activity</string>
+    <string name="slide_two_desc">In our hotel offers games and activities in which customer enjoy games</string>
+    <!--slide three-->
+    <string name="slide_three_title">Touristic Place</string>
+    <string name="slide_three_desc">Our Hotel provide details about the touristic place</string>
+    <!--slide four-->
+    <string name="slide_four_title">Food List</string>
+    <string name="slide_four_desc">Food list containe lots of food you can order the food only one click</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+
+
+    <string-array name="image_ids">
+        <item>@drawable/image_1</item>
+        <item>@drawable/image_2</item>
+        <item>@drawable/image_3</item>
+        <item>@drawable/image_4</item>
+        <item>@drawable/image_5</item>
+    </string-array>
+
+    <string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+    <string name="dummy_button">Dummy Button</string> 
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="internat_connection_message">Please check your internet connection and try again.</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="network_validation">The request timed out</string>
+    <string name="quantity">Quantity</string>
+    <string name="start">START</string>
+    <string name="next">NEXT</string>
+    <string name="previous">Previous</string>
+    <string name="skip">SKIP</string>
+    <string name="loading">Please Wait...</string>
+    <string name="foodItem">Food Item</string>
+
+
+</resources>

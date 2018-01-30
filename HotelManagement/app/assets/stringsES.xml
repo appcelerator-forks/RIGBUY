@@ -1,0 +1,42 @@
+<resources>
+<string name="app_name">HotelManagement</string>
+	<string name="username">Código de visitante</string>
+	<string name="password">Número de habitación</string>
+	<string name="home">Casa</string>
+	<string name="food_menu">Menú</string>
+	<string name="hotel_activity">Actividad del Hotel</string>
+	<string name="touristic_places">Lugares turísticos</string>
+	<string name="about_us">Sobre nosotros</string>
+	<string name="write_to_us">Escríbenos</string>
+	<string name="logout">Cerrar sesión</string>
+	<string name="login">Iniciar sesión</string>
+	<string name="logout_dialog">¿Estás seguro, quieres desconectarte?</string>
+	<string name="about">Sobre nosotros</string>
+	<string name="write">Escríbenos</string>
+	<string name="welcome">Bienvenido</string>
+	<string name="location">Ubicación</string>
+	<string name="mycart">mi carrito</string>
+	<!--slide one-->
+	<string name="slide_one_title">Menú</string>
+	<string name="slide_one_desc">Explore la oferta más atractiva en el menú de Alimentos.</string>
+	<!--slide two-->
+	<string name="slide_two_title">Actividad del Hotel</string>
+	<string name="slide_two_desc">En nuestro hotel ofrece juegos y actividades en las que los clientes disfrutan de los juegos</string>
+	<!--slide three-->
+	<string name="slide_three_title">Lugar turístico</string>
+	<string name="slide_three_desc">Nuestro hotel proporciona detalles sobre el lugar turístico</string>
+	<!--slide four-->
+	<string name="slide_four_title">Lista de alimentos</string>
+	<string name="slide_four_desc">La lista de alimentos contiene mucha comida, puedes pedir la comida solo un clic</string>
+	<string name="internat_connection_message">Por favor, compruebe su conexión a Internet y vuelva a intentarlo</string>
+    <string name="Ok">De acuerdo</string>
+    <string name="cancel">Cancelar</string>
+    <string name="network_validation">La petición caducó</string>
+    <string name="quantity">Cantidad</string>
+    <string name="start">COMIENZO</string>
+    <string name="next">SIGUIENTE</string>
+    <string name="previous">Anterior</string>
+    <string name="skip">OMITIR</string>
+    <string name="loading">Por favor espera...</string>
+    <string name="foodItem">Alimento</string>
+</resources>

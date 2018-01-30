@@ -1,0 +1,49 @@
+<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">Rumah Manajemen Hotel</string>
+    <string name="navigation_drawer_open">Buka laci navigasi</string>
+    <string name="navigation_drawer_close">Tutup laci navigasi</string>
+    <string name="username">Kode pengunjung</string>
+    <string name="password">Nomor kamar</string>
+    <string name="home">Rumah</string>
+    <string name="food_menu">Menu makanan</string>
+    <string name="hotel_activity">Aktivitas Hotel</string>
+    <string name="touristic_places">Tempat Wisata</string>
+    <string name="about_us">Tentang kami</string>
+    <string name="write_to_us">Menulis untuk Kami</string>
+    <string name="logout">Keluar</string>
+    <string name="login">Masuk</string>
+    <string name="logout_dialog">Yakin ingin keluar</string>
+    <string name="about">TENTANG KAMI</string>
+    <string name="write">TULIS KE AS</string>
+    <string name="action_logout">Keluar</string>
+    <string name="welcome">SELAMAT DATANG</string>
+    <string name="location">Lokasi</string>
+    <string name="mycart">Keranjang saya</string>
+    <!--slide one-->
+    <string name="slide_one_title">Menu makanan</string>
+    <string name="slide_one_desc">Jelajahi kesepakatan paling atrctif di menu Makanan.</string>
+    <!--slide two-->
+    <string name="slide_two_title">Aktivitas Hotel</string>
+    <string name="slide_two_desc">Di hotel kami menawarkan permainan dan aktivitas dimana pelanggan menikmati permainan</string>
+    <!--slide three-->
+    <string name="slide_three_title">Tempat Wisata</string>
+    <string name="slide_three_desc">Hotel kami memberikan rincian tentang tempat wisata</string>
+    <!--slide four-->
+    <string name="slide_four_title">Daftar makanan</string>
+    <string name="slide_four_desc">Makanan daftar containe banyak makanan Anda dapat memesan makanan hanya satu klik</string>
+
+    <string name="my_preferences">com.abc.com.MyPref</string>
+    <string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+    <string name="internat_connection_message">Silakan periksa koneksi internet Anda dan coba lagi</string>
+    <string name="Ok">baik</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="network_validation">Permintaan habis waktunya</string>
+    <string name="quantity">Kuantitas</string>
+    <string name="start">MULAI</string>
+    <string name="next">BERIKUTNYA</string>
+    <string name="previous">Sebelumnya</string>
+    <string name="skip">MELEWATKAN</string>
+    <string name="loading">Mohon tunggu...</string>
+    <string name="foodItem">Jenis makanan</string>
+</resources>

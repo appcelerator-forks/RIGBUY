@@ -1,0 +1,264 @@
+".container": {}
+
+"#homeLbl[formFactor=handheld]":{
+	font:{
+		fontSize: 16,
+		fontFamily: "Roboto",
+		fontType: "Regular",
+		fontStyle: "Sharp"
+	}
+}
+"#homeLbl[formFactor=tablet]":{
+	font:{
+		fontSize: 22,
+		fontFamily: "Roboto",
+		fontType: "Regular",
+		fontStyle: "Sharp"
+	}
+}
+
+"#imgVwuser[formFactor=handheld]":{
+	height: 80,
+	width: 80,
+	borderRadius: 40,
+	borderWidth: 1,
+	borderColor: "#D5B34A"
+}
+"#imgVwuser[if=Alloy.Globals.iPhoneTallSixPlus]":{
+	height: 100,
+	width: 100,
+	borderRadius: 50,
+	borderWidth: 2,
+	borderColor: "#D5B34A"
+}
+
+"#homeWin":{
+
+	titleid: "home_title_home",
+	font:{
+		fontSize: 14,
+		fontFamily: "Roboto",
+		fontType: "Regular",
+		fontStyle: "Sharp"
+	}
+}
+".tableRow[formFactor=handheld]": {
+	height: 40,
+	color:"white"
+}
+
+".tableRow[if=Alloy.Globals.iPhoneTallSixPlus]": {
+	height: 50,
+	color:"white" 
+}
+
+
+
+"#welcomeView[formFactor=tablet]":{
+
+	//height: 50
+}
+"#welcomeView[formFactor=handheld]":{
+
+	//height: 40
+}
+"#footerView[formFactor=tablet]":{
+
+	top: 50
+}
+"#footerView[formFactor=handheld]":{
+
+	top: 40
+}
+
+"#homeiconVw[formFactor=tablet]":{
+
+	//top: 52
+}
+"#homeiconVw[formFactor=handheld]":{
+
+	//top: 42
+}
+// "#supervisorBtn[if=Alloy.Globals.languageEn]":{
+// left: 0
+// }
+// "#supervisorBtn[if=Alloy.Globals.languageAr]":{
+// right: 0
+// }
+// "#guardBtn[if=Alloy.Globals.languageEn]":{
+// right: 0
+// }
+// "#guardBtn[if=Alloy.Globals.languageAr]":{
+// left: 0
+// }
+// "#contactUsBtn[if=Alloy.Globals.languageEn]":{
+// left:0
+// }
+// "#contactUsBtn[if=Alloy.Globals.languageAr]":{
+// right: 0
+// }
+// "#contractBtn[if=Alloy.Globals.languageEn]":{
+// right: 0
+// }
+// "#contractBtn[if=Alloy.Globals.languageAr]":{
+// left: 0
+// }
+// "#reviewBtn[if=Alloy.Globals.languageEn]":{
+// left: 0
+// }
+// "#reviewBtn[if=Alloy.Globals.languageAr]":{
+// right: 0
+// }
+// "#timeSheetBtn[if=Alloy.Globals.languageEn]":{
+// right: 0
+// }
+// "#timeSheetBtn[if=Alloy.Globals.languageAr]":{
+// left: 0
+// }
+".table":{
+	separatorInsets:{
+		left: 0,
+		right: 0
+	}
+}
+"#logoImg":{
+	right: Alloy.Globals.padding
+}
+"#logoImgAr":{
+	left: Alloy.Globals.padding
+}
+".imgClass[if=Alloy.Globals.languageEn formFactor=handheld]":{
+	right: Alloy.Globals.padding
+}
+".imgClass[if=Alloy.Globals.languageAr formFactor=handheld]":{
+	left: Alloy.Globals.padding
+}
+".imgClass[if=Alloy.Globals.languageEn formFactor=tablet]":{
+	right: Alloy.Globals.padding
+}
+".imgClass[if=Alloy.Globals.languageAr formFactor=tablet]":{
+	left: Alloy.Globals.padding
+}
+
+"#welcomeVW":{
+	left: Alloy.Globals.padding
+}
+"#welcomeVWAr":{
+	right: Alloy.Globals.padding
+}
+".welcomeLblClass[if=Alloy.Globals.iPhoneTall]":{
+
+	font:{
+		fontSize: 12,
+		fontFamily: "Roboto-Regular"
+	}
+}
+".welcomeLblClass[if=Alloy.Globals.iPhoneTallSixPlus]":{
+
+	font:{
+		fontSize: 16,
+		fontFamily: "Roboto-Regular"
+	}
+}
+".welcomeLblClass[if=Alloy.Globals.iPhoneSix]":{
+
+	font:{
+		fontSize: 15,
+		fontFamily: "Roboto-Regular"
+	}
+}
+".welcomeLblClass[if=Alloy.Globals.iPhone5s]":{
+	font:{
+		fontSize: 13,
+		fontFamily: "Roboto-Regular"
+	}
+}
+"#welcomeLblAr":{
+	right: 0,
+	textAlign: "right"
+}
+"#welcomeLbl":{
+	left: 0,
+	textAlign: "left"
+}
+".leftLable[formFactor=handheld]":{
+	color: "#fff",
+	font: {
+		fontSize: 13,
+		fontFamily: "Roboto-Regular"
+	},
+	left:Alloy.Globals.padding1
+}
+".leftLable[if=Alloy.Globals.iPhoneTallSixPlus]":{
+	color: "#fff",
+	font: {
+		fontSize: 16,
+		fontFamily: "Roboto-Regular"
+	},
+	left:Alloy.Globals.padding1
+}
+".arabicleftLable[formFactor=handheld]":{
+	color: "#fff",
+	font: {
+		fontSize: 13,
+		fontFamily: "Roboto-Regular"
+	},
+	right:Alloy.Globals.padding1
+}
+".arabicleftLable[if=Alloy.Globals.iPhoneTallSixPlus]":{
+	color: "#fff",
+	font: {
+		fontSize: 16,
+		fontFamily: "Roboto-Regular"
+	},
+	right:Alloy.Globals.padding1
+}
+".arabicImg[formFactor=handheld]":{
+
+	right:Alloy.Globals.padding
+}
+".arabicImg[formFactor=tablet]":{
+	right:Alloy.Globals.padding
+}
+".img[formFactor=handheld]":{
+
+	left:Alloy.Globals.padding
+}
+".img[formFactor=tablet]":{
+	left:Alloy.Globals.padding
+}
+"#welcomeLbl[formFactor=handheld]": {
+	font: {
+		fontSize: 22,
+		fontFamily: "Roboto-Bold",
+		fontWeight:"bold"
+	},
+	height:Ti.UI.SIZE,
+	ellipsize: true
+}
+"#welcomeLbl[if=Alloy.Globals.iPhoneTallSixPlus]": {
+	font: {
+		fontSize: 25,
+		fontFamily: "Roboto-Bold",
+		fontWeight:"bold"
+	},
+	height:Ti.UI.SIZE,
+
+	ellipsize: true
+}
+"#welcomeLbl1[formFactor=handheld]": {
+	font: {
+		fontSize: 20,
+		fontFamily: "Roboto-Regular"
+	},
+	height:Ti.UI.SIZE,
+	ellipsize: true
+}
+"#welcomeLbl1[if=Alloy.Globals.iPhoneTallSixPlus]": {
+	font: {
+		fontSize: 22,
+		fontFamily: "Roboto-Regular"
+	},
+	height:Ti.UI.SIZE,
+	ellipsize: true
+}
