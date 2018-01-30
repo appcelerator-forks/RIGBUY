@@ -367,30 +367,32 @@ function FBCallback(e) {
  *
  */
 function loginService(type, fbdata) {
-
+	var obj = {};
 	if (type == "normal") {
-
+		obj.email = $.emailTF.value.trim();
+		obj.password = $.passwordTF.value.trim();
+		obj.deviceToken = "1";
+		obj.lat = Alloy.Globals.latitude;
+		obj.long = Alloy.Globals.longitude;
+		obj.deviceType = Titanium.Platform.osname;
 		Ti.App.Properties.setBool("socialLogin", false);
-		var a = 'email=' + $.emailTF.value.trim();
-		a = a + '&password=' + $.passwordTF.value.trim();
-		a = a + '&deviceToken=' + "1";
-		a = a + '&deviceType=' + Titanium.Platform.osname;
 	} else {
 		Ti.App.Properties.setBool("socialLogin", true);
-		var a = 'socialId=' + fbdata.id;
-		a = a + 'email=' + fbdata.email;
-		a = a + 'image_url=' + fbdata.photo;
-		a = a + 'name=' + fbdata.name;
-		a = a + 'lat=' + Alloy.Globals.latitude;
-		a = a + 'long=' + Alloy.Globals.longitude;
-		a = a + '&deviceToken=' + "1";
-		a = a + '&deviceType=' + Titanium.Platform.osname;
+		
+		obj.socialId = fbdata.id;
+		obj.email = fbdata.email;
+		obj.image_url = fbdata.photo;
+		obj.name = fbdata.name;
+		obj.lat = Alloy.Globals.latitude;
+		obj.long = Alloy.Globals.longitude;
+		obj.deviceToken = "1";
+		obj.deviceType = Titanium.Platform.osname;
 	}
-	Ti.API.info("Signup response : " + JSON.stringify(a));
+	Ti.API.info("Signup response : " + JSON.stringify(obj));
 	var SERVICE_USER_LOGIN = Alloy.Globals.Constants.SERVICE_USER_LOGIN;
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		Communicator.post(DOMAIN_URL + SERVICE_USER_LOGIN, loginServiceCallback, a);
+		Communicator.post(DOMAIN_URL + SERVICE_USER_LOGIN, loginServiceCallback, obj);
 		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_USER_LOGIN);
 	} else {
 		Alloy.Globals.LoadingScreen.close();
@@ -418,6 +420,8 @@ function loginServiceCallback(e) {
 					Ti.App.Properties.setString("userid", response.records.userId);
 					Ti.App.Properties.setString("password", $.passwordTF.value.trim());
 					Ti.App.Properties.setBool("isLogin", true);
+					Alloy.Globals.logoutRow.remove(Alloy.Globals.loginLbl);
+					Alloy.Globals.logoutRow.add(Alloy.Globals.loginLbl);
 					Alloy.Globals.loginLbl.text = "Logout";
 					if (OS_IOS) {
 						Alloy.Globals.logoutImg.leftImage = "/images/logout.png";
@@ -472,7 +476,7 @@ function loginServiceCallback(e) {
 					}
 
 					$.Login.close();
-					
+
 				} else {
 					Alloy.Globals.Alert(response.msg);
 				}
@@ -497,7 +501,6 @@ function loginServiceCallback(e) {
 	Alloy.Globals.LoadingScreen.close();
 
 }
-
 
 if (OS_IOS) {
 	Alloy.Globals.geoCall();

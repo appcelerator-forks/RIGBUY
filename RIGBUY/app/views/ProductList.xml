@@ -51,9 +51,12 @@
 					<TextField id="search" color="black" hintText="Search" onChange="changeFunc" hintTextColor="#c4c4dc" backgroundColor="white" width="82%" height="100%" left="5" ></TextField>
 				</View>
 			</View>
-			<TableView id="productTable" onScroll="scrollFunc" top="0" bottom="0" separatorColor="white" backgroundColor="white" onClick="tableClickFunc">
+			<TableView id="productTable" onScroll="lazyLoad" top="0" bottom="0" separatorColor="white" backgroundColor="white" onClick="tableClickFunc">
 				<FooterView>
-					<View height="1"></View>
+				<View backgroundColor="transparent" height="40" >
+					<ActivityIndicator id="actInd" color="#000000" indicatorColor="#000" message="Loading..."></ActivityIndicator>
+					<Label id="msgLbl" color="black" visible="false" top="3"></Label>
+				</View>
 				</FooterView>
 			</TableView>
 		</Window>
@@ -75,9 +78,12 @@
 						<TextField id="search" color="black" hintText="Search" onChange="changeFunc" hintTextColor="#c4c4dc" backgroundColor="white" width="82%" height="100%" left="5" ></TextField>
 					</View>
 				</View>
-				<TableView  zIndex="1" id="productTable" top="0" bottom="0" separatorColor="white" onClick="tableClickFunc">
+				<TableView  zIndex="1" onScroll="lazyLoad" id="productTable" top="0" bottom="0" separatorColor="white" onClick="tableClickFunc">
 					<FooterView>
-						<View height="1"></View>
+					<View backgroundColor="transparent" height="40" >
+						<ActivityIndicator id="actInd" color="#000000" indicatorColor="#000" message="Loading..."></ActivityIndicator>
+						<Label id="msgLbl" color="black" visible="false" top="3"></Label>
+					</View>
 					</FooterView>
 				</TableView>
 			</View>
@@ -108,7 +114,7 @@
 					<ImageView image="/images/contactus.png" left= "20"></ImageView>
 					<Label id="rowLbl4"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Contact Us</Label>
 				</TableViewRow>
-				<TableViewRow width="100%" id="row5" layout="horizontal" selectedBackgroundColor="#CED1DB">
+				<TableViewRow  width="100%" id="row5" layout="horizontal" selectedBackgroundColor="#CED1DB">
 					<ImageView id="logoutImg" image="/images/logout.png" left= "20"></ImageView>
 					<Label id="rowLbl5"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Login</Label>
 				</TableViewRow>

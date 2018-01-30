@@ -131,11 +131,11 @@ function populateOptionsDialog() {
 				});
 				pickerData.push(pickerRow);
 			};
-		} else if (args.id == "SelectShift") {
+		} else if (args.id == "subcategory") {
 			for (var i = 0; i < pickerValueArray.length; i++) {
 				var pickerRow = Ti.UI.createPickerRow({
-					title : pickerValueArray[i].shift,
-					shift_id : pickerValueArray[i].shift_id,
+					title : pickerValueArray[i].subcategory_name,
+					category_id : pickerValueArray[i].id,
 					index : i
 				});
 				pickerData.push(pickerRow);
@@ -345,11 +345,11 @@ function populatePicker() {
 					});
 					pickerData.push(pickerRow);
 				};
-			} else if (args.id == "SelectShift") {
+			} else if (args.id == "subcategory") {
 				for (var i = 0; i < pickerValueArray.length; i++) {
 					var pickerRow = Ti.UI.createPickerRow({
-						title : pickerValueArray[i].shift,
-						shift_id : pickerValueArray[i].shift_id,
+						title : pickerValueArray[i].subcategory_name,
+						category_id : pickerValueArray[i].id,
 						index : i
 					});
 					pickerData.push(pickerRow);
@@ -607,10 +607,10 @@ function getSelectedRowTitle(index) {
 			obj.title = picker.getSelectedRow(index).title;
 			obj.index = picker.getSelectedRow(index).index;
 			return obj;
-		} else if (args.id == "SelectShift") {
+		} else if (args.id == "subcategory") {
 			var obj = {};
 			obj.title = picker.getSelectedRow(index).title;
-			obj.shift_id = picker.getSelectedRow(index).shift_id;
+			obj.category_id = picker.getSelectedRow(index).category_id;
 			obj.index = picker.getSelectedRow(index).index;
 			return obj;
 		} else if (args.id == "SelectCompanyList") {
@@ -782,10 +782,10 @@ function done(e) {
 						obj.index = e.source.options[e.index].index;
 
 						var data = obj;
-					} else if (args.id == "SelectShift") {
+					} else if (args.id == "subcategory") {
 						var obj = {};
-						obj.shift = e.source.options[e.index].title;
-						obj.shift_id = e.source.options[e.index].shift_id;
+						obj.title = e.source.options[e.index].title;
+						obj.category_id = e.source.options[e.index].category_id;
 						obj.index = e.source.options[e.index].index;
 
 						var data = obj;
@@ -937,7 +937,7 @@ function done(e) {
 	}
 
 }
-  
+
 /**
  * Close the window.
  */

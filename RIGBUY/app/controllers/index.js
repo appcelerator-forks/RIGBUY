@@ -81,7 +81,7 @@ Alloy.Globals.openHome = function(response, loginObj) {
 			leftDrawerWidth : drawerWidth,
 			backgroundColor : "white",
 			opacity : 1,
-			// navBarHidden:true,
+			theme:"Theme.NoActionBar",
 			backgroundColor : "white",
 			// animationMode : NappDrawerModule.ANIMATION_SCALE,
 			closeDrawerGestureMode : NappDrawerModule.CLOSE_MODE_MARGIN,

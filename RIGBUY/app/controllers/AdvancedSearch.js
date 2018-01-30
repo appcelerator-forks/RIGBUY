@@ -16,10 +16,12 @@ $.countryTF.value = "";
 $.cityTF.value = "";
 if (Alloy.Globals.filterSelectionObj != null && Alloy.Globals.filterSelectionObj != undefined) {
 	$.categoryTF.category_id = Alloy.Globals.filterSelectionObj.categoryId;
+	$.categoryTF.value = Alloy.Globals.filterSelectionObj.category;
+	$.subcategoryTF.value = Alloy.Globals.filterSelectionObj.subcategory;
+	$.subcategoryTF.category_id = Alloy.Globals.filterSelectionObj.subCategoryId;
 	$.stateTF.state_id = Alloy.Globals.filterSelectionObj.stateId;
 	$.countryTF.country_id = Alloy.Globals.filterSelectionObj.countryId;
 	$.cityTF.city_id = Alloy.Globals.filterSelectionObj.cityId;
-	$.categoryTF.value = Alloy.Globals.filterSelectionObj.category;
 	$.stateTF.value = Alloy.Globals.filterSelectionObj.state;
 	$.countryTF.value = Alloy.Globals.filterSelectionObj.country;
 	$.cityTF.value = Alloy.Globals.filterSelectionObj.city;
@@ -134,7 +136,7 @@ function submitFunc(e) {
 	obj.category = $.categoryTF.value;
 	obj.categoryId = $.categoryTF.category_id;
 	obj.subcategory = $.subcategoryTF.value;
-	obj.subcategoryId = $.subcategoryTF.category_id;
+	obj.subCategoryId = $.subcategoryTF.category_id;
 	obj.productType = "";
 	obj.price = $.priceTF.value;
 	obj.countryId = $.countryTF.country_id;
@@ -247,7 +249,7 @@ function subcategoryClickFunc(e) {
 			subcategoryCheck = 0;
 
 			Alloy.createWidget('danielhanold.pickerWidget', {
-				id : 'category',
+				id : 'subcategory',
 				outerView : $.AdvancedSearch,
 				hideNavBar : false,
 				type : 'single-column',
@@ -486,7 +488,7 @@ function getsubCategoryService(id) {
 
 	if (Ti.Network.online) {
 
-		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getcategoryById&categoryId=" + id, getsubCategoryServiceCallback);
+		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getSubCategoryById&subCategoryId=" + id, getsubCategoryServiceCallback);
 
 	} else {
 

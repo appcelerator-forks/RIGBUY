@@ -28,6 +28,8 @@ if (args.from == "add") {
 	$.descTF.value = args.data.product_description;
 	$.categoryTF.value = args.data.category_name;
 	$.categoryTF.category_id = args.data.category_id;
+	$.subcategoryTF.value = args.data.subcategory_name;
+	$.subcategoryTF.category_id = args.data.subcategory_id;
 
 	$.priceTF.value = args.data.price;
 	$.typeTF.value = args.data.product_type;
@@ -313,7 +315,7 @@ function subcategoryClickFunc(e) {
 			subcategoryCheck = 0;
 
 			Alloy.createWidget('danielhanold.pickerWidget', {
-				id : 'category',
+				id : 'subcategory',
 				outerView : $.AdvancedSearch,
 				hideNavBar : false,
 				type : 'single-column',
@@ -700,6 +702,7 @@ function addProductService() {
 	var obj = {};
 	obj.userId = Ti.App.Properties.getString("userid");
 	obj.categoryId = $.categoryTF.category_id;
+	obj.subCategoryId = $.subcategoryTF.category_id;
 	obj.productType = $.typeTF.product_id;
 	obj.name = $.nameTF.value;
 	obj.description = $.descTF.value;
@@ -826,7 +829,7 @@ function getsubCategoryService(id) {
 
 	if (Ti.Network.online) {
 
-		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getcategoryById&categoryId=" + id, getsubCategoryServiceCallback);
+		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getSubCategoryById&subCategoryId=" + id, getsubCategoryServiceCallback);
 
 	} else {
 

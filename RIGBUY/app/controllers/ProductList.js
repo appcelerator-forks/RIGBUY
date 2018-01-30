@@ -1,6 +1,11 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 Alloy.Globals.loginLbl = $.rowLbl5;
+var isLoading = false;
+var position = 0;
+var count = 0;
+var totalRecords = 0;
+var page = 1;
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 if (OS_ANDROID) {
@@ -8,6 +13,7 @@ if (OS_ANDROID) {
 } else {
 	Alloy.Globals.logoutImg = $.logoutRow;
 }
+Alloy.Globals.logoutRow = $.row5;
 if (Ti.App.Properties.getBool("isLogin")) {
 	$.rowLbl5.text = "Logout";
 	if (OS_IOS) {
@@ -69,9 +75,10 @@ if (OS_IOS) {
 } else {
 	var rowHeight = Alloy.Globals.Measurement.pxToDP(Titanium.Platform.displayCaps.platformHeight) * 0.2428;
 }
-
+var count = 0;
 var productRow = function(detail) {
 	tableData = [];
+	count += detail.length;
 	for (var i = 0; i < detail.length; i++) {
 
 		var tableRow = Ti.UI.createTableViewRow({
@@ -194,7 +201,7 @@ var productRow = function(detail) {
 			backgroundImage : "none",
 			name : "favBtn",
 			color : "white",
-			image : "/images/unfavorites.png",
+			image : (detail[i].fav == 0) ? "/images/unfavorites.png" : "/images/add-to-favorites.png",
 			zIndex : 30,
 			toggle : false,
 			favId : detail[i].id
@@ -214,8 +221,58 @@ var productRow = function(detail) {
 
 		tableData.push(tableRow);
 	}
-	$.productTable.setData(tableData);
+	$.productTable.appendRow(tableData);
 };
+
+// cross-platform event listener for lazy tableview loading
+function lazyLoad(_evt) {
+	$.search.blur();
+	if (OS_IOS) {
+
+		if ((position && _evt.contentOffset.y > position) && (_evt.contentOffset.y + _evt.size.height > _evt.contentSize.height)) {
+			if (isLoading)
+				return;
+			isLoading = true;
+
+			$.actInd.show();
+
+			$.actInd.message = "Loading...";
+			if (totalRecords > count) {
+				page++;
+				Alloy.Globals.getProductListervice("", "");
+			} else {
+				$.actInd.hide();
+				$.msgLbl.visible = true;
+				$.msgLbl.text = "No more to load";
+				isLoading = false;
+			}
+
+		}
+
+		position = _evt.contentOffset.y;
+	} else {
+
+		if (position && _evt.firstVisibleItem >= position && _evt.totalItemCount <= (_evt.firstVisibleItem + _evt.visibleItemCount)) {
+			if (isLoading)
+				return;
+			isLoading = true;
+			page++;
+			$.actInd.show();
+			$.actInd.message = "Loading...";
+			if (totalRecords > count) {
+				page++;
+				Alloy.Globals.getProductListervice("", "");
+			} else {
+				$.actInd.hide();
+				$.msgLbl.visible = true;
+				$.msgLbl.text = "No more to load";
+				isLoading = false;
+			}
+
+		}
+		position = _evt.firstVisibleItem;
+	}
+}
 
 function changeFunc(e) {
 	var searchTxt = e.source.value;
@@ -541,13 +598,13 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 4:
 		focus = true;
 		$.rightTable.focusable = true;
-		// if (Ti.App.Properties.getBool("isLogin")) {
-			// logout();
-		// } else {
-			// var regScreen = Alloy.createController("Login", "menu").getView();
-			// regScreen.open();
-		// }
-		logout();
+		if (Ti.App.Properties.getBool("isLogin")) {
+			logout();
+		} else {
+			var regScreen = Alloy.createController("Login", "menu").getView();
+			regScreen.open();
+		}
+		// logout();
 
 		break;
 
@@ -559,6 +616,7 @@ function leftMenuOptionSelectedAndroid(e) {
 	}, 500);
 }
 
+var row = $.rowLbl5;
 var flag = false;
 function logout(e) {
 	var dialog = Ti.UI.createAlertDialog({
@@ -571,51 +629,35 @@ function logout(e) {
 		if (k.index === 0) {
 			Ti.API.info('The cancel button was clicked');
 		} else {
-			// Ti.App.Properties.setBool("isLogin", false);
-			// Ti.App.Properties.setString("email", "");
-			// Ti.App.Proper	ties.setString("userid", "");
-			// Ti.App.Properties.setString("password", "");
-//  
-			// Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
-			// Alloy.Globals.currentWindow = null;
-			// Alloy.Globals.productDetailObj = null;
-			// Alloy.Globals.isScreen = "";
-			// Alloy.Globals.socialLogin = false;
-			// if (Alloy.Globals.google) {
-				// Alloy.Globals.google.signOut();
-			// }
-			// if (OS_ANDROID) {
-				// Alloy.Globals.drawer.toggleLeftWindow();
-			// } else {
-				// Alloy.Globals.openLeft();
-			// }
-			// if (OS_IOS) {
-				// $.logoutRow.leftImage = "/images/login.png";
-			// } else {
-				// $.logoutImg.image = "/images/login.png";
-			// }
-			// Alloy.Globals.Alert("Logout Successfully");
-			// $.rowLbl5.text = "Login";
-			if (flag) {
-				if (OS_IOS) {
-					$.logoutRow.leftImage = "/images/login.png";
-				} else {
-					$.logoutImg.image = "/images/login.png";
-				}
-				Alloy.Globals.Alert("1");
-				
-				$.rowLbl5.setText("Login");
-				flag = false;
-			} else {
-				if (OS_IOS) {
-					$.logoutRow.leftImage = "/images/logout.png";
-				} else {
-					$.logoutImg.image = "/images/logout.png";
-				}
-				Alloy.Globals.Alert("2	");
-				$.rowLbl5.setText("Logout");
-				flag = true;
+			Ti.App.Properties.setBool("isLogin", false);
+			Ti.App.Properties.setString("email", "");
+			Ti.App.Properties.setString("userid", "");
+			Ti.App.Properties.setString("password", "");
+
+			Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+			Alloy.Globals.currentWindow = null;
+			Alloy.Globals.productDetailObj = null;
+			Alloy.Globals.isScreen = "";
+			Alloy.Globals.socialLogin = false;
+			if (Alloy.Globals.google) {
+				Alloy.Globals.google.signOut();
 			}
+			if (OS_ANDROID) {
+				Alloy.Globals.drawer.toggleLeftWindow();
+			} else {
+				Alloy.Globals.openLeft();
+			}
+			if (OS_IOS) {
+				$.logoutRow.leftImage = "/images/login.png";
+			} else {
+				$.logoutImg.image = "/images/login.png";
+			}
+
+			$.row5.remove($.rowLbl5);
+			$.row5.add($.rowLbl5);
+			$.rowLbl5.text = "Login";
+			Alloy.Globals.Alert("Logout Successfully");
+
 		}
 
 	});
@@ -644,11 +686,7 @@ function openFilter(e) {
 	}, 1000);
 }
 
-function scrollFunc() {
-	$.search.blur();
-}
-
-Alloy.Globals.getProductListervice = function(from, obj) {
+Alloy.Globals.getProductListervice = function(from, obj, page) {
 
 	if (Ti.Network.online) {
 
@@ -656,7 +694,8 @@ Alloy.Globals.getProductListervice = function(from, obj) {
 			Alloy.Globals.LoadingScreen.open();
 			Alloy.Globals.filterSelectionObj = obj;
 			Ti.API.info("DATA : " + JSON.stringify(obj));
-			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct", getProductListerviceCallback, obj);
+			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + page, getProductListerviceCallback, obj);
+			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + page);
 			return;
 		}
 		if (from != "wishList") {
@@ -665,6 +704,9 @@ Alloy.Globals.getProductListervice = function(from, obj) {
 		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct", getProductListerviceCallback);
 		Ti.API.info('URL ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct");
 	} else {
+		$.actInd.hide();
+		$.msgLbl.visible = false;
+		isLoading = false;
 
 		Alloy.Globals.Alert("Please check your internet connection and try again.");
 
@@ -681,8 +723,10 @@ function getProductListerviceCallback(e) {
 			if (response != null) {
 				Ti.API.info('response.action_success = ' + JSON.stringify(response));
 				if (response.status == "1") {
+					totalRecords = response.total;
 					productRow(response.record);
 					productListArray = response.record;
+
 				} else {
 					Alloy.Globals.Alert("No product found");
 					productListArray = [];
@@ -703,6 +747,9 @@ function getProductListerviceCallback(e) {
 		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
+	$.actInd.hide();
+	$.msgLbl.visible = false;
+	isLoading = false;
 	if (Alloy.Globals.LoadingScreen) {
 
 		Alloy.Globals.LoadingScreen.close();
