@@ -40,6 +40,26 @@ var selectedImage = "";
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 function openFunc(e) {
+	if (OS_ANDROID) {
+		if (this.getActivity()) {
+			// need to explicitly use getXYZ methods
+			var actionBar = this.getActivity().getActionBar();
+
+			if (actionBar) {
+				// Now we can do stuff to the actionbar
+				actionBar.setTitle('Profile');
+
+				actionBar.setDisplayHomeAsUp(true);
+				// show an angle bracket next to the home icon,
+				// indicating to users that the home icon is tappable
+
+				// toggle the left window when the home icon is selected
+				actionBar.setOnHomeIconItemSelected(function() {
+					$.Profile.close();
+				});
+			}
+		}
+	}
 	getCountryService();
 }
 
@@ -618,7 +638,7 @@ function getCountryServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No category found");
+					Ti.API.info("No country found");
 				}
 
 			} else {
@@ -665,7 +685,15 @@ function getStateServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No state found");
+					Alloy.Globals.Alert("No state found");
+					$.countryTF.value = "";
+					countryIndex = 0;
+					$.countryTF.country_id = "";
+
+					$.stateTF.value = "";
+					$.stateTF.state_id = "";
+					$.cityTF.value = "";
+					$.cityTF.city_id = "";
 				}
 
 			} else {
@@ -679,7 +707,15 @@ function getStateServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.countryTF.value = "";
+		countryIndex = 0;
+		$.countryTF.country_id = "";
+
+		$.stateTF.value = "";
+		$.stateTF.state_id = "";
+		$.cityTF.value = "";
+		$.cityTF.city_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -712,7 +748,9 @@ function getCityServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No city found for selected state.");
+					Alloy.Globals.Alert("No city found");
+					$.stateTF.value = "";
+					$.stateTF.state_id = "";
 				}
 
 			} else {
@@ -726,7 +764,9 @@ function getCityServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.stateTF.value = "";
+		$.stateTF.state_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -786,6 +826,9 @@ function updateProfileServiceCallback(e) {
 					// $.emailTF.editable = false;
 					$.locationTF.editable = false;
 					isSave = false;
+					$.emailStaticLbl.text = response.email;
+					$.nameStaticLbl.text = response.name;
+					$.contactStaticLbl.text = response.mobile_phone;
 
 					Alloy.Globals.Alert(response.msg);
 				} else {

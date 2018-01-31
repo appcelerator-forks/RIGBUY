@@ -3,7 +3,7 @@
 		<RightNavButton>
 			<Button image="/images/add.png" onClick="openAddItemScreen"></Button>
 		</RightNavButton>
-		<ActionBar platform="android" id="actionbar" title="My Item" displayHomeAsUp="true" onHomeIconItemSelected="doMenuClick" />
+		
 		<Menu platform="android">
             <MenuItem id="addBtn" title="Edit" onClick="openAddItemScreen" />
         </Menu>

@@ -37,8 +37,8 @@
 					<ImageView top="4" image="/images/locationIcon.png" left="0"></ImageView>
 					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
 					<View left="10" top="0" layout="vertical" height="Ti.UI.SIZE">
-						<Label id="locationstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Location</Label>
-						<Label id="locationLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0"  right="0" textAlign="left">Vijay Nagar, Indore MP</Label>
+						<Label id="statusstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Status</Label>
+						<Label id="statusLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0"  right="0" textAlign="left"></Label>
 					</View>
 				</View>
 			</View>
@@ -55,8 +55,8 @@
 					<ImageView image="/images/statusIcon.png" left="0" top="4"></ImageView>
 					<!-- <View height="Ti.UI.FILL" width="1"></View> -->
 					<View left="10" layout="vertical" height="Ti.UI.SIZE">
-						<Label id="statusstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Product Type</Label>
-						<Label id="statusLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0" maxLines="2" right="0"  ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Immediate Available</Label>
+						<Label id="locationstaticLbl" top="0" color="#9f9f9f" left="0" right="0" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left">Location</Label>
+						<Label id="locationLbl" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP" top="0" color="#000000"  left="0" maxLines="2" right="0"  ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" textAlign="left"></Label>
 					</View>
 				</View>
 			</View>

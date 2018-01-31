@@ -2,13 +2,33 @@
 var args = $.args;
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
+
 function openFunc(e) {
 	Alloy.Globals.getMyItemListervice();
+	if (OS_ANDROID) {
+		if (this.getActivity()) {
+			// need to explicitly use getXYZ methods
+			var actionBar = this.getActivity().getActionBar();
+
+			if (actionBar) {
+				// Now we can do stuff to the actionbar
+				actionBar.setTitle('Add Products');
+
+				actionBar.setDisplayHomeAsUp(true);
+				// show an angle bracket next to the home icon,
+				// indicating to users that the home icon is tappable
+
+				// toggle the left window when the home icon is selected
+				actionBar.setOnHomeIconItemSelected(function() {
+					$.MyItem.close();
+				});
+			}
+		}
+	}
 }
 
-function doMenuClick(e) {
-	$.MyItem.close();
-}
+
+
 
 function openAddItemScreen(e) {
 	var obj = {};
@@ -52,7 +72,7 @@ function tableClickFunc(e) {
 			} else {
 				rowIndex = e.index;
 				deleteItemService(e.row.detail.id);
-				
+
 			}
 
 		});
@@ -88,33 +108,30 @@ var productRow = function(detail) {
 			right : "1%"
 		}));
 		//0-0
-		
+
 		tableRow.getChildren()[0].add(Ti.UI.createImageView({
 			//layout : "center",
 			height : "100%",
 			width : "30%",
 			defaultImage : "/images/defaultImage.png",
 			left : 0,
-			image:detail[i].product_image
+			image : detail[i].product_image
 		}));
-		
-		
-			
-		
+
 		//0-1
-		tableRow.getChildren()[0].add(Ti.UI.createButton({
+		tableRow.getChildren()[0].add(Ti.UI.createView({
 			height : 34 * Alloy.Globals.scaleFactor,
 			width : 34 * Alloy.Globals.scaleFactor,
 			borderRadius : 17 * Alloy.Globals.scaleFactor,
 			backgroundColor : "#565656",
 			name : "fav",
-			image : "/images/unfavorites.png", //add-to-favorites@3x
-			backgroundImage : "none",
 			left : "3%",
-			maxLines : 1,
 			top : "4%",
-			borderColor : "white",
-			borderWidth : 1
+		}));  
+		
+		tableRow.getChildren()[0].getChildren()[1].add(Ti.UI.createImageView({
+			name : "fav",
+			image : (detail[i].fav == 0) ? "/images/unfavorites.png" : "/images/add-to-favorites.png",
 		}));
 		//0-2
 		tableRow.getChildren()[0].add(Ti.UI.createView({
@@ -126,12 +143,12 @@ var productRow = function(detail) {
 		}));
 		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createImageView({
 			left : 0,
-			image : (detail[i].currency == "INR")?"/images/rupees.png":"/images/dollar.png",
+			image : (detail[i].currency == "INR") ? "/images/rupees.png" : "/images/dollar.png",
 		}));
-		//
+		
 		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createLabel({
 			left : 2,
-			width : "40%",
+			width : "65%",
 
 			text : detail[i].price,
 			color : "black",
@@ -143,30 +160,7 @@ var productRow = function(detail) {
 			textAlign : "left",
 			maxLines : 1
 		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createView({
-			height : "80%",
-			width : 0.6,
-			backgroundColor : "gray",
-			left : 0
-		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createImageView({
-			left : 5,
-			image : (detail[i].currency == "INR")?"/images/rupees.png":"/images/dollar.png",
-		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createLabel({
-			left : 2,
-			width : "40%",
-
-			text : "12,000",
-			color : "black",
-			font : {
-				fontSize : 14 * Alloy.Globals.scaleFactor
-			},
-			maxLines : 1,
-			ellipsize : Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
-			height : "100%",
-			textAlign : "left"
-		}));
+			
 		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 20 * Alloy.Globals.scaleFactor,
 			width : "26%",
@@ -179,19 +173,7 @@ var productRow = function(detail) {
 			},
 			textAlign : "left"
 		}));
-		tableRow.getChildren()[0].add(Ti.UI.createLabel({
-			top : 20 * Alloy.Globals.scaleFactor,
-			width : "28%",
-			right : 0,
-			text : "Deposit",
-			color : "black",
-
-			font : {
-				fontSize : 8 * Alloy.Globals.scaleFactor
-			},
-			maxLines : 1,
-			textAlign : "left"
-		}));
+	
 
 		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			left : "32%",
@@ -353,7 +335,7 @@ function deleteItemServiceCallback(e) {
 				if (response.status == "1") {
 					$.myItemTable.deleteRow(rowIndex, true);
 					Alloy.Globals.getMyItemListervice();
-					Alloy.Globals.getProductListervice("wishList");
+					//Alloy.Globals.getProductListervice("wishList");
 				} else {
 					Alloy.Globals.Alert("No item found");
 				}

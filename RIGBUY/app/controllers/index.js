@@ -64,6 +64,7 @@ Alloy.Globals.openHome = function(response, loginObj) {
 		Alloy.Globals.drawer.open();
 	} else {
 		//Alloy.Globals.abx = require('com.alcoapps.actionbarextras');
+		var abx = require('com.alcoapps.actionbarextras');
 		var homeScreen = Alloy.createController("ProductList").getView();
 		var drawerWidth = Alloy.Globals.Measurement.pxToDP(Titanium.Platform.displayCaps.platformWidth) * 0.8;
 		var NappDrawerModule = require('dk.napp.drawer');
@@ -71,17 +72,17 @@ Alloy.Globals.openHome = function(response, loginObj) {
 		Alloy.Globals.centerView = homeScreen.getChildren()[0];
 		Alloy.Globals.drawer = NappDrawerModule.createDrawer({
 			fullscreen : false,
-			//theme : "Theme.Titanium",
+			theme : "Theme.NoActionBar",
 			leftWindow : homeScreen.getChildren()[1],
 			centerWindow : homeScreen.getChildren()[0],
 			fading : 0.2, // 0-1
 			parallaxAmount : 0.2, //0-1
-			exitOnClose : true,
+			exitOnClose : false,
 			shadowWidth : "40dp",
 			leftDrawerWidth : drawerWidth,
 			backgroundColor : "white",
 			opacity : 1,
-			theme:"Theme.NoActionBar",
+			hamburgerIcon : true,
 			backgroundColor : "white",
 			// animationMode : NappDrawerModule.ANIMATION_SCALE,
 			closeDrawerGestureMode : NappDrawerModule.CLOSE_MODE_MARGIN,
@@ -104,6 +105,7 @@ Alloy.Globals.openHome = function(response, loginObj) {
 				if (e.index === e.source.cancel) {
 					Ti.API.info('The cancel button was clicked');
 				} else {
+					Alloy.Globals.drawer.exitOnClose = true;
 					Alloy.Globals.drawer.close();
 					Alloy.Globals.drawer = null;
 				}
@@ -120,13 +122,58 @@ Alloy.Globals.openHome = function(response, loginObj) {
 		});
 		Alloy.Globals.drawer.addEventListener('open', onNavDrawerWinOpen);
 		function onNavDrawerWinOpen(evt) {
-			Alloy.Globals.drawer.getActivity().actionBar.hide();
+			//Alloy.Globals.drawer.getActivity().actionBar.hide();
 			// Alloy.Globals.drawer.animate({
-				// opacity : 1,
-				// duration : 500
+			// opacity : 1,
+			// duration : 500
 			// });
+			var activity = Alloy.Globals.drawer.getActivity();
+			if (activity) {
+				var actionbar = activity.actionBar;
+				actionbar.displayHomeAsUp = true;
+				abx.setTitle("Product List");
+				actionbar.onHomeIconItemSelected = function() {
+					Alloy.Globals.drawer.toggleLeftWindow();
+				};
+				abx.setHomeAsUpIcon("/images/menu.png");
+
+				activity.onCreateOptionsMenu = function(e) {
+					Alloy.Globals.menu = e.menu;
+					
+					Alloy.Globals.refreshItem = e.menu.add({ 
+						title : "Refresh",
+						showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS,
+						icon : "/images/refresh.png",
+					});
+					Alloy.Globals.refreshItem.addEventListener("click", function(e) {
+						Alloy.Globals.filterSelectionObj = null;
+						Alloy.Globals.getProductListervice("", "", "");
+					});
+					Alloy.Globals.searchItem = e.menu.add({
+						title : "Advanced Search",
+						showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS,
+						icon : "/images/filter1.png",
+					});
+					Alloy.Globals.searchItem.addEventListener("click", function(e) {
+						if (Ti.Network.online) {
+							var advancedSearch = Alloy.createController("AdvancedSearch").getView();
+							if (OS_IOS) {
+								Alloy.Globals.navWin.openWindow(advancedSearch);
+							} else {
+								advancedSearch.open();
+							}
+							Alloy.Globals.currentWindow = advancedSearch;
+						} else {
+							Alloy.Globals.Alert("Please check your internet connection and try again.");
+
+						}
+					});
+					
+				};
+				activity.invalidateOptionsMenu();
+			}
 			Alloy.Globals.filterSelectionObj = null;
-			Alloy.Globals.getProductListervice();
+			Alloy.Globals.getProductListervice("", "", "");
 
 		}
 

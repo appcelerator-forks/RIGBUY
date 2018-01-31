@@ -15,8 +15,17 @@
 	<style name="Theme.NoActionBar" parent="@style/Theme.AppCompat">
 		<item name="windowActionBar">false</item>
 		<item name="windowNoTitle">true</item>
+		<item name="colorPrimary">#f54224</item>
 		<item name="android:textColorPrimary">#FFFFFF</item>
+		<item name="android:statusBarColor">#f54224</item>
+		<item name="colorPrimaryDark">#f54224</item>
+		<item name="actionMenuTextColor">#FFFFFF</item>
+		<item name="android:actionMenuTextColor">#FFFFFF</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:colorAccent">#ffffff</item>
 		<item name="android:textAllCaps">false</item>
+		<item name="android:editTextStyle">@style/editText</item>
+		
 	</style>
 	<style name="editText" parent="@android:style/Widget.EditText">
 		<item name="android:textCursorDrawable">@null</item>

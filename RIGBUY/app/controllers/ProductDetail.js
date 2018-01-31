@@ -11,7 +11,7 @@ $.configLbl.text = args.features;
 $.descLbl.text = args.product_description;
 if (args.status == "1") {
 	$.statusLbl.text = "Sell";
-} else {
+} else {	
 	$.statusLbl.text = "Rent";
 }
 function openFunc(e) {
@@ -35,6 +35,7 @@ function openFunc(e) {
 			}
 		}
 	}
+	loadImages(imageArray);
 }
 
 // $.agentLbl.font = {
@@ -313,4 +314,4 @@ function scrollFun(e) {
 
 }
 
-loadImages(imageArray);
+

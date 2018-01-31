@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" backButtonTitle="" title="Add Products" onClick="winClick" onOpen="openFunc" backgroundColor="white">
-		<ActionBar platform="android" id="actionbar" title="Add Products" displayHomeAsUp="true" onHomeIconItemSelected="doMenuClick" />
+		
 		<ScrollView layout="vertical" top="0" bottom="0">
 
 			<View id="nameVW" width="87%" top="10" height="60">

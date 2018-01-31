@@ -85,22 +85,8 @@ var productRow = function(detail) {
 			image:detail[i].product_image
 		}));
 		
+		
 		//0-1
-		tableRow.getChildren()[0].add(Ti.UI.createButton({
-			height : 34 * Alloy.Globals.scaleFactor,
-			width : 34 * Alloy.Globals.scaleFactor,
-			borderRadius : 17 * Alloy.Globals.scaleFactor,
-			backgroundColor : "#565656",
-			name : "fav",
-			image : "/images/unfavorites.png", //add-to-favorites@3x
-			backgroundImage : "none",
-			left : "3%",
-			maxLines : 1,
-			top : "4%",
-			borderColor : "white",
-			borderWidth : 1
-		}));
-		//0-2
 		tableRow.getChildren()[0].add(Ti.UI.createView({
 			top : 0,
 			left : "32%",
@@ -108,14 +94,14 @@ var productRow = function(detail) {
 			height : 18 * Alloy.Globals.scaleFactor,
 			layout : "horizontal"
 		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createImageView({
+		tableRow.getChildren()[0].getChildren()[1].add(Ti.UI.createImageView({
 			left : 0,
 			image : (detail[i].currency == "INR")?"/images/rupees.png":"/images/dollar.png",
 		}));
 		//
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].getChildren()[1].add(Ti.UI.createLabel({
 			left : 2,
-			width : "40%",
+			width : "65%",
 
 			text : detail[i].price,
 			color : "black",
@@ -127,30 +113,7 @@ var productRow = function(detail) {
 			textAlign : "left",
 			maxLines : 1
 		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createView({
-			height : "80%",
-			width : 0.6,
-			backgroundColor : "gray",
-			left : 0
-		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createImageView({
-			left : 5,
-			image :(detail[i].currency == "INR")?"/images/rupees.png":"/images/dollar.png",
-		}));
-		tableRow.getChildren()[0].getChildren()[2].add(Ti.UI.createLabel({
-			left : 2,
-			width : "40%",
-
-			text : "12,000",
-			color : "black",
-			font : {
-				fontSize : 14 * Alloy.Globals.scaleFactor
-			},
-			maxLines : 1,
-			ellipsize : Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
-			height : "100%",
-			textAlign : "left"
-		}));
+			
 		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 20 * Alloy.Globals.scaleFactor,
 			width : "26%",
@@ -163,19 +126,7 @@ var productRow = function(detail) {
 			},
 			textAlign : "left"
 		}));
-		tableRow.getChildren()[0].add(Ti.UI.createLabel({
-			top : 20 * Alloy.Globals.scaleFactor,
-			width : "28%",
-			right : 0,
-			text : "Deposit",
-			color : "black",
-
-			font : {
-				fontSize : 8 * Alloy.Globals.scaleFactor
-			},
-			maxLines : 1,
-			textAlign : "left"
-		}));
+		
 
 		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			left : "32%",
@@ -271,7 +222,7 @@ function removeWishListServiceCallback(e) {
 			if (response != null) {
 				Ti.API.info('response.action_success = ' + JSON.stringify(response));
 				if (response.status == "1") {
-					Alloy.Globals.getProductListervice();
+					//Alloy.Globals.getProductListervice();
 					$.myItemTable.deleteRow(index, true);
 					Alloy.Globals.Alert("Product removed successfully");
 				} else {

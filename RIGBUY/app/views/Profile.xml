@@ -12,11 +12,11 @@
 			<ImageView id="logoVW"  height="50" width="50" left="3%" image="/images/appLogo.png" ></ImageView>
 			<View id="deviceVW" left="5%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
 				<ImageView image="/images/device.png"></ImageView>
-				<Label id="contactStaticLbl" height="20" left="12" color="white">9002030304</Label>
+				<Label id="contactStaticLbl" height="20" left="12" color="white"></Label>
 			</View> 
 			<View id="adminEmailVW" left="5%" layout="horizontal" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
 				<ImageView image="/images/mail.png"></ImageView>
-				<Label id="emailStaticLbl" height="20" left="8" color="white">abc@mailinator.com</Label>
+				<Label id="emailStaticLbl" height="20" left="8" color="white"></Label>
 			</View>
 			<Label id="nameStaticLbl" textAlign="right" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END" maxLines="1"  left="5%" height="25" width="58.90%" color="white">Dilip Solanki</Label>
 			<View id="imgVWContainer"  zIndex="10" borderColor="#C82827" borderWidth="1" right="6%" backgroundColor="#f54224" onClick="uploadPhotoFunc">

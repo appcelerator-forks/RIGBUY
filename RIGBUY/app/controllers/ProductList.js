@@ -5,7 +5,7 @@ var isLoading = false;
 var position = 0;
 var count = 0;
 var totalRecords = 0;
-var page = 1;
+Alloy.Globals.page = 1;
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 if (OS_ANDROID) {
@@ -60,12 +60,12 @@ function openFunc(e) {
 		opacity : 1
 	});
 	Alloy.Globals.filterSelectionObj = null;
-	Alloy.Globals.getProductListervice();
+	Alloy.Globals.getProductListervice("","","");
 }
 
 function refreshFunc(e) {
 	Alloy.Globals.filterSelectionObj = null;
-	Alloy.Globals.getProductListervice("");
+	Alloy.Globals.getProductListervice("","","");
 }
 
 var productListArray = [];
@@ -237,9 +237,11 @@ function lazyLoad(_evt) {
 			$.actInd.show();
 
 			$.actInd.message = "Loading...";
+
 			if (totalRecords > count) {
-				page++;
-				Alloy.Globals.getProductListervice("", "");
+				Alloy.Globals.page++;
+
+				Alloy.Globals.getProductListervice(Alloy.Globals.isFilter, Alloy.Globals.filterSelectionObj,"loading");
 			} else {
 				$.actInd.hide();
 				$.msgLbl.visible = true;
@@ -256,12 +258,13 @@ function lazyLoad(_evt) {
 			if (isLoading)
 				return;
 			isLoading = true;
-			page++;
+
 			$.actInd.show();
 			$.actInd.message = "Loading...";
+			//Ti.API.info(totalRecords+  "    "+count)
 			if (totalRecords > count) {
-				page++;
-				Alloy.Globals.getProductListervice("", "");
+				Alloy.Globals.page++;
+				Alloy.Globals.getProductListervice(Alloy.Globals.isFilter, Alloy.Globals.filterSelectionObj,"loading");
 			} else {
 				$.actInd.hide();
 				$.msgLbl.visible = true;
@@ -494,7 +497,10 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 0:
 
 		if (Alloy.Globals.currentWindow != null) {
-			//Alloy.Globals.abx.title = "Product List";
+			Alloy.Globals.abx.title = "Product List";
+			Alloy.Globals.refreshItem.visible =true;
+			Alloy.Globals.searchItem.visible =true;
+			
 
 			Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
 
@@ -506,7 +512,9 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 1:
 
 		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "setting") {
-			//Alloy.Globals.abx.title = "Account Settings";
+			Alloy.Globals.abx.title = "Account Settings";
+			Alloy.Globals.refreshItem.visible =false;
+			Alloy.Globals.searchItem.visible =false;
 			if (Ti.Network.online) {
 				if (Ti.App.Properties.getBool("isLogin")) {
 					var regScreen = Alloy.createController("Setting").getView();
@@ -542,7 +550,11 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 2:
 
 		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "about") {
-			//Alloy.Globals.abx.title = "About Us";
+			Alloy.Globals.abx.title = "About Us";
+		//	Alloy.Globals.menu.clear();
+			
+			Alloy.Globals.refreshItem.visible =false;
+			Alloy.Globals.searchItem.visible =false;
 
 			if (Ti.Network.online) {
 				var regScreen = Alloy.createController("AboutUs", "menu").getView();
@@ -570,7 +582,9 @@ function leftMenuOptionSelectedAndroid(e) {
 		break;
 	case 3:
 		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "contact") {
-			//Alloy.Globals.abx.title = "Contact Us";
+			Alloy.Globals.abx.title = "Contact Us";
+			Alloy.Globals.refreshItem.visible =false;
+			Alloy.Globals.searchItem.visible =false;
 			if (Ti.Network.online) {
 				var regScreen = Alloy.createController("ContactUs", "menu").getView();
 
@@ -686,23 +700,33 @@ function openFilter(e) {
 	}, 1000);
 }
 
-Alloy.Globals.getProductListervice = function(from, obj, page) {
+Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 
 	if (Ti.Network.online) {
 
 		if (from == "filter") {
-			Alloy.Globals.LoadingScreen.open();
+			Alloy.Globals.isFilter = "filter";
+			if (isLoading != "loading") {
+				Alloy.Globals.LoadingScreen.open();
+			}
+
 			Alloy.Globals.filterSelectionObj = obj;
 			Ti.API.info("DATA : " + JSON.stringify(obj));
 			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + page, getProductListerviceCallback, obj);
-			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + page);
+			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page);
 			return;
+		} else {
+			Alloy.Globals.isFilter = "";
+			if (isLoading != "loading") {
+				Alloy.Globals.page = 1;
+				Alloy.Globals.LoadingScreen.open();
+			}
+
 		}
-		if (from != "wishList") {
-			Alloy.Globals.LoadingScreen.open();
-		}
-		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct", getProductListerviceCallback);
-		Ti.API.info('URL ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct");
+		 
+
+		Communicator.get("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page, getProductListerviceCallback);
+		Ti.API.info('URL ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page);
 	} else {
 		$.actInd.hide();
 		$.msgLbl.visible = false;
@@ -850,10 +874,7 @@ Alloy.Globals.cropImage = function(e) {
 
 };
 
-if (OS_ANDROID) {
-	Alloy.Globals.filterSelectionObj = null;
-	Alloy.Globals.getProductListervice();
-}
+
 
 Alloy.Globals.addFavService = function() {
 	var obj = {};

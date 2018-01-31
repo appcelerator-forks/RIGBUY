@@ -145,8 +145,8 @@ function submitFunc(e) {
 	obj.country = $.countryTF.value;
 	obj.state = $.stateTF.value;
 	obj.city = $.cityTF.value;
-	
-	Alloy.Globals.getProductListervice("filter", obj);
+	Alloy.Globals.page = 1;
+	Alloy.Globals.getProductListervice("filter", obj,"");
 
 	setTimeout(function(e) {
 		$.searchSubmitBtn.focusable == true;
@@ -513,8 +513,8 @@ function getsubCategoryServiceCallback(e) {
 					}
 
 				} else {
-
-					Ti.API.info("No sub category found");
+					
+					Alloy.Globals.Alert("No sub category found");
 				}
 
 			} else {
@@ -529,6 +529,13 @@ function getsubCategoryServiceCallback(e) {
 
 	} else {
 		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.categoryTF.value = "";
+		categoryIndex = 0;
+		$.categoryTF.category_id = "";
+		$.subcategoryTF.value = "";
+		subcategoryIndex = 0;
+		$.subcategoryTF.category_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -609,9 +616,7 @@ function getStateServiceCallback(e) {
 				} else {
 
 					Alloy.Globals.Alert("No state found");
-					$.countryTF.value = "";
-					countryIndex = 0;
-					$.countryTF.country_id = "";
+					
 
 					$.stateTF.value = "";
 					$.stateTF.state_id = "";
@@ -630,7 +635,14 @@ function getStateServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+
+		
+
+		$.stateTF.value = "";
+		$.stateTF.state_id = "";
+		$.cityTF.value = "";
+		$.cityTF.city_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -663,8 +675,7 @@ function getCityServiceCallback(e) {
 
 				} else {
 					Alloy.Globals.Alert("No city found");
-					$.stateTF.value = "";
-					$.stateTF.state_id = "";
+					
 
 					Ti.API.info("No city found for selected state.");
 				}
@@ -680,7 +691,8 @@ function getCityServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}

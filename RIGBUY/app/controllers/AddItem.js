@@ -75,6 +75,26 @@ $.statusVW.height = 60 * Alloy.Globals.scaleFactor;
 $.addressVW.height = 60 * Alloy.Globals.scaleFactor;
 
 function openFunc(e) {
+	if (OS_ANDROID) {
+		if (this.getActivity()) {
+			// need to explicitly use getXYZ methods
+			var actionBar = this.getActivity().getActionBar();
+
+			if (actionBar) {
+				// Now we can do stuff to the actionbar
+				actionBar.setTitle('My Items');
+
+				actionBar.setDisplayHomeAsUp(true);
+				// show an angle bracket next to the home icon,
+				// indicating to users that the home icon is tappable
+
+				// toggle the left window when the home icon is selected
+				actionBar.setOnHomeIconItemSelected(function() {
+					$.AddItem.close();
+				});
+			}
+		}
+	}
 	categoryCheck = 0;
 	subcategoryCheck = 0;
 	countryCheck = 0;
@@ -82,6 +102,8 @@ function openFunc(e) {
 	cityCheck = 0;
 	getCategoryService();
 	getCountryService();
+	
+	
 }
 
 function doMenuClick(e) {
@@ -750,7 +772,7 @@ function addProductServiceCallback(e) {
 				if (response.status == "1") {
 					$.AddItem.close();
 					Alloy.Globals.getMyItemListervice("AddItem");
-					Alloy.Globals.getProductListervice("wishList");
+					//Alloy.Globals.getProductListervice("wishList");
 					Alloy.Globals.Alert(response.msg);
 				} else {
 					Alloy.Globals.Alert(response.msg);
@@ -855,7 +877,13 @@ function getsubCategoryServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No sub category found");
+					$.categoryTF.value = "";
+					categoryIndex = 0;
+					$.categoryTF.category_id = "";
+					$.subcategoryTF.value = "";
+					subcategoryIndex = 0;
+					$.subcategoryTF.category_id = "";
+					Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 				}
 
 			} else {
@@ -869,7 +897,13 @@ function getsubCategoryServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.categoryTF.value = "";
+		categoryIndex = 0;
+		$.categoryTF.category_id = "";
+		$.subcategoryTF.value = "";
+		subcategoryIndex = 0;
+		$.subcategoryTF.category_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -949,7 +983,15 @@ function getStateServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No state found");
+					Alloy.Globals.Alert("No state found");
+					$.countryTF.value = "";
+					countryIndex = 0;
+					$.countryTF.country_id = "";
+
+					$.stateTF.value = "";
+					$.stateTF.state_id = "";
+					$.cityTF.value = "";
+					$.cityTF.city_id = "";
 				}
 
 			} else {
@@ -963,7 +1005,15 @@ function getStateServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.countryTF.value = "";
+		countryIndex = 0;
+		$.countryTF.country_id = "";
+
+		$.stateTF.value = "";
+		$.stateTF.state_id = "";
+		$.cityTF.value = "";
+		$.cityTF.city_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
@@ -996,7 +1046,9 @@ function getCityServiceCallback(e) {
 
 				} else {
 
-					Ti.API.info("No city found for selected state.");
+					Alloy.Globals.Alert("No city found");
+					$.stateTF.value = "";
+					$.stateTF.state_id = "";
 				}
 
 			} else {
@@ -1010,7 +1062,9 @@ function getCityServiceCallback(e) {
 		}
 
 	} else {
-		//	Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+		$.stateTF.value = "";
+		$.stateTF.state_id = "";
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 		Ti.API.info('MSGCODE: ' + Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
