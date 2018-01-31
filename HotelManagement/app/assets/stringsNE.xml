@@ -60,15 +60,15 @@
 	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
 	<string name="dummy_button">डमी बटन</string>
 	<string name="dummy_content">DUMMY \ nCONTENT</string>
-	<string name="internat_connection_message">Please check your internet connection and try again.</string>
-	<string name="Ok">Ok</string>
-	<string name="cancel">Cancel</string>
-	<string name="network_validation">The request timed out</string>
-	<string name="quantity">Quantity</string>
-	<string name="start">START</string>
-	<string name="next">NEXT</string>
-	<string name="previous">Previous</string>
-	<string name="skip">SKIP</string>
-	<string name="loading">Please Wait...</string>
-	<string name="foodItem">Food Item</string>
+	<string name="internat_connection_message">अपने इंटरनेट कनेक्शन की जाँच करें और पुन: प्रयास करें</string>
+	<string name="Ok">ठीक</string>
+	<string name="cancel">रद्द करना</string>
+	<string name="network_validation">अनुरोध का समय समाप्त हुआ</string>
+	<string name="quantity">मात्रा</string>
+    <string name="start">प्रारंभ</string>
+    <string name="next">आगामी</string>
+    <string name="previous">पिछला</string>
+    <string name="skip">छोड़ें</string>
+    <string name="loading">कृपया प्रतीक्षा करें...</string>
+    <string name="foodItem">खाद्य - सामग्री</string>
 </resources>

@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" title="My Cart" backButtonTitle="" backgroundColor="#E5E6E8" onOpen="openFunc">
+	<Window class="container" title="My Cart" backButtonTitle="" backgroundColor="#E5E6E8" onOpen="openFunc" onClose="closeFunc">
 		<TableView backgroundColor="transparent" separatorColor="transparent" id="cartTableView">
 			<FooterView>
 				<View backgroundColor="transparent" height="1"></View>

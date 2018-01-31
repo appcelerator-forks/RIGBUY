@@ -1,6 +1,10 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 var tableData = [];
+Alloy.Globals.isCart =true;
+function closeFunc(e) {
+	Alloy.Globals.isCart = false;
+}
 
 //Set the commmunicator and constant class for Web service calling
 var Communicator = Alloy.Globals.Communicator;
@@ -20,7 +24,6 @@ if (OS_IOS) {
 	});
 	btnVW.add(toggleBtn);
 
-	
 	if (lang == "ar") {
 		toggleBtn.right = 0;
 		toggleBtn.image = "/images/barrow_ar.png";
@@ -162,10 +165,10 @@ Alloy.Globals.createNewsRow = function(detail) {
 };
 
 function openFunc() {
-	mycartService();
+	exports.mycartService();
 }
 
-function mycartService() {
+exports.mycartService=function() {
 
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
@@ -175,7 +178,7 @@ function mycartService() {
 		Alloy.Globals.Alert(Alloy.Globals.langConvert("internat_connection_message"));
 
 	}
-}
+};
 
 function mycartServiceCallback(e) {
 	Ti.API.info("mycartServiceCallback Callback response : " + JSON.stringify(e));

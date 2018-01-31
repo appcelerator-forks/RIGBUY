@@ -2,6 +2,7 @@
  *This function for close the all the child windows
  */
 Alloy.Globals.isLogin = false;
+Alloy.Globals.isCart =false;
 Alloy.Globals.goToHome = function(win) {
 	Ti.API.info('Name--------' + "  " + win);
 	if (win == null) {
@@ -150,43 +151,50 @@ Alloy.Globals.registerPushNotification = function(pushCallback) {
 	}
 	// Process incoming push notifications
 	function receivePush(e) {
-
-		if (e.inBackground) {
-			var mycart = Alloy.createController("MyCart").getView();
-			Alloy.Globals.navWin.openWindow(mycart);
-			setTimeout(function() {
-				if (Alloy.Globals.currentWindow) {
-					Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
-				}
-				Alloy.Globals.currentWindow = mycart;
-			}, 300);
-		} else {
-			var dialog = Ti.UI.createAlertDialog({
-				title : 'Order Notification',
-				message : e.aps.alert,
-				cancel : 1,
-				buttonNames : ["Show", "Cancel"],
-
-			});
-			dialog.show();
-			dialog.addEventListener('click', function(k) {
-				if (k.index === k.source.cancel) {
-					Ti.API.info('The cancel button was clicked');
-				} else {
-
+		try {
+			if (Alloy.Globals.isLogin) {
+				if (e.inBackground) {
 					var mycart = Alloy.createController("MyCart").getView();
 					Alloy.Globals.navWin.openWindow(mycart);
-					setTimeout(function(e) {
+					setTimeout(function() {
 						if (Alloy.Globals.currentWindow) {
 							Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
 						}
 						Alloy.Globals.currentWindow = mycart;
 					}, 300);
+				} else {
+					var msg = e.data.alert;
+					var dialog = Ti.UI.createAlertDialog({
+						title : 'Order Notification',
+						message : msg,
+						cancel : 1,
+						buttonNames : ["Show", "Cancel"],
 
+					});
+					dialog.show();
+					dialog.addEventListener('click', function(k) {
+						if (k.index === k.source.cancel) {
+							Ti.API.info('The cancel button was clicked');
+						} else {
+
+							var mycart = Alloy.createController("MyCart").getView();
+							Alloy.Globals.navWin.openWindow(mycart);
+							setTimeout(function(e) {
+								if (Alloy.Globals.currentWindow) {
+									Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+								}
+								Alloy.Globals.currentWindow = mycart;
+							}, 300);
+
+						}
+					});
 				}
-			});
+				Ti.UI.iOS.setAppBadge(0);
+			}
+		} catch(e) {
+
 		}
-		//Ti.UI.iOS.setAppBadge(0);
+		
 		//alert(1 + " " + e.inBackground + "  " + Alloy.Globals.isLogin);
 		// if (Alloy.Globals.isLogin) {
 		//alert(2 + " " + e.inBackground + "  " + Alloy.Globals.isLogin);
@@ -270,7 +278,6 @@ Alloy.Globals.registerPushNotification(function(e) {
 	Ti.API.info("PUSH :: " + e);
 	Ti.App.Properties.setString("token", e);
 	Alloy.Globals.deviceToken = e;
-	alert(e);
 
 });
 // Ti.UI.iOS.setAppBadge(0);
