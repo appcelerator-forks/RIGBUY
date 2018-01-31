@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">Quản lý khách sạn</string>
+	<string name="title_activity_hotel_management_home">Khách sạnTrang chủ</string>
+	<string name="navigation_drawer_open">Mở ngăn điều hướng</string>
+	<string name="navigation_drawer_close">Đóng ngăn điều khiển điều hướng</string>
+	<string name="username">Mã khách truy cập</string>
+	<string name="password">Số phòng</string>
+	<string name="home">Nhà</string>
+	<string name="food_menu">Thực đơn</string>
+	<string name="hotel_activity">Hoạt động khách sạn</string>
+	<string name="touristic_places">Nơi thu hút khách du lịch</string>
+	<string name="about_us">Về chúng tôi</string>
+	<string name="write_to_us">Viết thư cho chúng tôi</string>
+	<string name="logout">Đăng xuất</string>
+	<string name="login">Đăng nhập</string>
+	<string name="logout_dialog">Bạn có chắc chắn muốn đăng xuất</string>
+	<string name="about">VỀ CHÚNG TÔI</string>
+	<string name="write">VIẾT THƯ CHO CHÚNG TÔI</string>
+	<string name="action_logout">Đăng xuất</string>
+	<string name="welcome">Chào mừng</string>
+	<string name="location">Vị trí</string>
+	<string name="mycart">Giỏ hàng của tôi</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Thực đơn</string>
+	<string name="slide_one_desc">Khám phá hợp đồng hấp dẫn nhất trong thực đơn Thực phẩm.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Hoạt động khách sạn</string>
+	<string name="slide_two_desc">Trong khách sạn của chúng tôi cung cấp các trò chơi và hoạt động trong đó khách hàng được thưởng thức trò chơi</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Địa điểm du lịch</string>
+	<string name="slide_three_desc">Khách sạn của chúng tôi cung cấp thông tin chi tiết về địa điểm du lịch</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Danh sách thực phẩm</string>
+	<string name="slide_four_desc">Danh sách thực phẩm chứa rất nhiều thực phẩm bạn có thể đặt thức ăn chỉ bằng một cú nhấp chuột</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Nút giả</string>
+	<string name="dummy_content">DUMMY \ nCONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

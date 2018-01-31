@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">مدیریت هتل</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">کشوی ناوبری باز کنید</string>
+	<string name="navigation_drawer_close">کشوی ناوبری را بست</string>
+	<string name="username">کد بازدید کننده</string>
+	<string name="password">شماره اتاق</string>
+	<string name="home">خانه</string>
+	<string name="food_menu">منوی غذا</string>
+	<string name="hotel_activity">فعالیت هتل</string>
+	<string name="touristic_places">مکان های توریستی</string>
+	<string name="about_us">دربارهی ما</string>
+	<string name="write_to_us">برای ما نامه بنویسید</string>
+	<string name="logout">خروج</string>
+	<string name="login">ورود</string>
+	<string name="logout_dialog">مطمئنید، میخواهید از سیستم خارج شوید</string>
+	<string name="about">دربارهی ما</string>
+	<string name="write">نوشتن به آمریکا</string>
+	<string name="action_logout">خروج</string>
+	<string name="welcome">خوش آمدی</string>
+	<string name="location">محل</string>
+	<string name="mycart">سبد خرید من</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">منوی غذا</string>
+	<string name="slide_one_desc">کشف معامله گران ترین در منو غذا را ببینید.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">فعالیت هتل</string>
+	<string name="slide_two_desc">در هتل ما ارائه می دهد بازی ها و فعالیت هایی که در آن مشتری از بازی لذت ببرد</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">محل توریستی</string>
+	<string name="slide_three_desc">هتل ما اطلاعاتی در مورد مکان توریستی ارائه می دهد</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">فهرست مواد غذایی</string>
+	<string name="slide_four_desc">لیست غذا شامل بسیاری از غذاها می توانید تنها با یک کلیک غذا را سفارش دهید</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">دکمه ساختگی</string>
+	<string name="dummy_content">DUMMY \ nCONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

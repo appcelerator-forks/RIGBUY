@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">ہوٹل مینجمنٹ</string>
+	<string name="title_activity_hotel_management_home">ہوٹل مینجمنٹ ہوم</string>
+	<string name="navigation_drawer_open">کھولیں نیویگیشن دراج</string>
+	<string name="navigation_drawer_close">بند نیویگیشن دراج</string>
+	<string name="username">وزیٹر کوڈ</string>
+	<string name="password">کمرہ نمبر</string>
+	<string name="home">گھر</string>
+	<string name="food_menu">فوڈ مینو</string>
+	<string name="hotel_activity">ہوٹل کی سرگرمی</string>
+	<string name="touristic_places">سیاحتی مقامات</string>
+	<string name="about_us">ہمارے بارے میں</string>
+	<string name="write_to_us">ہمیں لکھیں</string>
+	<string name="logout">لاگ آوٹ</string>
+	<string name="login">میں لاگ ان کریں</string>
+	<string name="logout_dialog">کیا آپ واقعی ہیں، لاگ آؤٹ کرنا چاہتے ہیں</string>
+	<string name="about">ہمارے بارے میں</string>
+	<string name="write">امریکہ سے وابستہ</string>
+	<string name="action_logout">لاگ آوٹ</string>
+	<string name="welcome">خوش آمدید</string>
+	<string name="location">مقام</string>
+	<string name="mycart">میری ٹوکری</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">فوڈ مینو</string>
+	<string name="slide_one_desc">فوڈ مین مینو میں سب سے زیادہ پرکشش معاہدے کی وضاحت کریں.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">ہوٹل کی سرگرمی</string>
+	<string name="slide_two_desc">ہمارے ہوٹل میں کھیلوں اور سرگرمیوں کی پیشکش کرتا ہے جس میں کسٹمر کھیل سے لطف اندوز ہوتے ہیں</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">سیاحت جگہ</string>
+	<string name="slide_three_desc">ہمارے ہوٹل سیاحت کی جگہ کے بارے میں تفصیلات فراہم کرتی ہے</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">خوراک کی فہرست</string>
+	<string name="slide_four_desc">فوڈ کی فہرست کے کنینٹن بہت سے کھانا آپ کو صرف ایک کلک کھانے کا حکم دے سکتے ہیں</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">ڈمی بٹن</string>
+	<string name="dummy_content">دوہری \ n کنٹرول</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

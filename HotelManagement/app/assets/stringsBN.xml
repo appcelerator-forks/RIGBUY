@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">ন্যাভিগেশন ড্রয়ারের খুলুন</string>
+	<string name="navigation_drawer_close">ন্যাভিগেশন ড্রয়ারের বন্ধ করুন</string>
+	<string name="username">ভিজিটর কোড</string>
+	<string name="password">রুম নম্বর</string>
+	<string name="home">বাড়ি</string>
+	<string name="food_menu">খাদ্য তালিকা</string>
+	<string name="hotel_activity">হোটেল কার্যকলাপ</string>
+	<string name="touristic_places">পর্যটন স্থান</string>
+	<string name="about_us">আমাদের সম্পর্কে</string>
+	<string name="write_to_us">আমাদের লিখুন</string>
+	<string name="logout">প্রস্থান</string>
+	<string name="login">লগইন</string>
+	<string name="logout_dialog">আপনি কি নিশ্চিতভাবে লগ আউট করতে চান?</string>
+	<string name="about">আমাদের সম্পর্কে</string>
+	<string name="write">আমাদের লিখুন</string>
+	<string name="action_logout">প্রস্থান</string>
+	<string name="welcome">স্বাগত</string>
+	<string name="location">অবস্থান</string>
+	<string name="mycart">আমার কার্ট</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">খাদ্য তালিকা</string>
+	<string name="slide_one_desc">খাদ্য মেনুতে সর্বাধিক এড়ানোর চুক্তিটি এক্সপ্লোর করুন</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">হোটেল কার্যকলাপ</string>
+	<string name="slide_two_desc">আমাদের হোটেল গেম এবং কার্যক্রম যা গ্রাহক গেম ভোগ</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">পর্যটন প্লেস</string>
+	<string name="slide_three_desc">আমাদের হোটেল পর্যটক স্থান সম্পর্কে বিস্তারিত প্রদান করে</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">খাদ্য তালিকা</string>
+	<string name="slide_four_desc">খাদ্য তালিকায় প্রচুর পরিমাণ খাবার থাকে তবে আপনি শুধু এক ক্লিক খাদ্য অর্ডার করতে পারেন</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">ডামি বাটন</string>
+	<string name="dummy_content">ডামি \ বিষয়বস্তু</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

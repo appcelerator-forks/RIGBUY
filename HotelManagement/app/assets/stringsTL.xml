@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Buksan ang navigation drawer</string>
+	<string name="navigation_drawer_close">Isara ang drawer ng nabigasyon</string>
+	<string name="username">Code ng Bisita</string>
+	<string name="password">Numero ng Room</string>
+	<string name="home">Bahay</string>
+	<string name="food_menu">Menu ng pagkain</string>
+	<string name="hotel_activity">Aktibidad ng Hotel</string>
+	<string name="touristic_places">Mga Lugar sa Paglalakbay</string>
+	<string name="about_us">Tungkol sa atin</string>
+	<string name="write_to_us">Isulat sa Amin</string>
+	<string name="logout">Mag-log out</string>
+	<string name="login">Mag log in</string>
+	<string name="logout_dialog">Sigurado ka ba, gusto mong mag-logout</string>
+	<string name="about">TUNGKOL SA ATIN</string>
+	<string name="write">Sumulat sa US</string>
+	<string name="action_logout">Mag-log out</string>
+	<string name="welcome">Maligayang pagdating</string>
+	<string name="location">Lokasyon</string>
+	<string name="mycart">Ang aking cart</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Menu ng pagkain</string>
+	<string name="slide_one_desc">Galugarin ang pinaka-atrctive deal sa menu ng Pagkain.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Aktibidad ng Hotel</string>
+	<string name="slide_two_desc">Sa aming hotel ay nag-aalok ng mga laro at mga aktibidad kung saan ang mga bisita ay nag-enjoy ng mga laro</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Touristic Place</string>
+	<string name="slide_three_desc">Ang aming Hotel ay nagbibigay ng mga detalye tungkol sa lugar ng paglilibot</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Listahan ng Pagkain</string>
+	<string name="slide_four_desc">Ang listahan ng pagkain ay naglalaman ng maraming pagkain na maaari mong i-order ang pagkain na isang click lamang</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dummy Button</string>
+	<string name="dummy_content">DUMMY \ NILALAMAN</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

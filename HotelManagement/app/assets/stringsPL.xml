@@ -1,0 +1,74 @@
+﻿<resources>
+	<string name="app_name">Zarząd hotelu</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Otwarta szuflada nawigacji</string>
+	<string name="navigation_drawer_close">Zamknij szufladę nawigacji</string>
+	<string name="username">Kod odwiedzającego</string>
+	<string name="password">Numer pokoju</string>
+	<string name="home">Dom</string>
+	<string name="food_menu">Menu żywności</string>
+	<string name="hotel_activity">Aktywność w hotelu</string>
+	<string name="touristic_places">Miejsca turystyczne</string>
+	<string name="about_us">O nas</string>
+	<string name="write_to_us">Napisz do nas</string>
+	<string name="logout">Wyloguj</string>
+	<string name="login">Zaloguj Się</string>
+	<string name="logout_dialog">Jesteś pewien, chcesz się wylogować</string>
+	<string name="about">O NAS</string>
+	<string name="write">NAPISZ DO NAS</string>
+	<string name="action_logout">Wyloguj</string>
+	<string name="welcome">Witamy</string>
+	<string name="location">Lokalizacja</string>
+	<string name="mycart">Mój wózek</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Menu żywności</string>
+	<string name="slide_one_desc">Zapoznaj się z najbardziej atrakcyjną ofertą w menu Jedzenie.</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Aktywność w hotelu</string>
+	<string name="slide_two_desc">W naszym hotelu oferujemy gry i zabawy, w których klienci lubią gry</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Miejsce turystyczne</string>
+	<string name="slide_three_desc">Nasz hotel podaje szczegóły dotyczące miejsca turystycznego</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Lista żywności</string>
+	<string name="slide_four_desc">Lista żywności zawiera dużo jedzenia można zamówić jedzenie tylko jedno kliknięcie</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Przycisk Dummy</string>
+	<string name="dummy_content">DUMMY \ nCONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

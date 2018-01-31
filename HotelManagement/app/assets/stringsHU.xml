@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">Szálloda vezetősége</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Nyissa meg a navigációs fiókot</string>
+	<string name="navigation_drawer_close">Zárja be a navigációs fiókot</string>
+	<string name="username">Látogatói kód</string>
+	<string name="password">Szoba szám</string>
+	<string name="home">itthon</string>
+	<string name="food_menu">Étel menü</string>
+	<string name="hotel_activity">Szálloda tevékenység</string>
+	<string name="touristic_places">Turista helyek</string>
+	<string name="about_us">Rólunk</string>
+	<string name="write_to_us">Írj nekünk</string>
+	<string name="logout">Kijelentkezés</string>
+	<string name="login">Belépés</string>
+	<string name="logout_dialog">Biztos, hogy ki akar jelentkezni</string>
+	<string name="about">RÓLUNK</string>
+	<string name="write">ÍRJON AZ USÁRA</string>
+	<string name="action_logout">Kijelentkezés</string>
+	<string name="welcome">Üdvözöljük</string>
+	<string name="location">Elhelyezkedés</string>
+	<string name="mycart">Kosaram</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Étel menü</string>
+	<string name="slide_one_desc">Fedezze fel a legmegbízhatóbb üzletet az Élelmiszer menüben.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Szálloda tevékenység</string>
+	<string name="slide_two_desc">Szállodánkban olyan játékokat és tevékenységeket kínál, amelyekben az ügyfelek élvezhetik a játékokat</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Turisztikai hely</string>
+	<string name="slide_three_desc">Szállodánk részletes információkat nyújt a turisztikai helyről</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Élelmiszerlista</string>
+	<string name="slide_four_desc">Élelmiszerlista sok ételt rendelhet az ételt csak egy kattintással</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dummy Button</string>
+	<string name="dummy_content">DUMMY \ Content</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

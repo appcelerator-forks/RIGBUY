@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Naviqasiya çarxını açın</string>
+	<string name="navigation_drawer_close">Naviqasiya çarxını bağlayın</string>
+	<string name="username">Ziyaretçi Kodu</string>
+	<string name="password">Otaq nömrəsi</string>
+	<string name="home">Ev</string>
+	<string name="food_menu">Qida menyusu</string>
+	<string name="hotel_activity">Otel fəaliyyəti</string>
+	<string name="touristic_places">Turistik yerlər</string>
+	<string name="about_us">Bizim haqqımızda</string>
+	<string name="write_to_us">Bizə yazın</string>
+	<string name="logout">Çıxış</string>
+	<string name="login">Daxil ol</string>
+	<string name="logout_dialog">Çıxış etmək istədiyinizə əminəm</string>
+	<string name="about">BİZİM HAQQIMIZDA</string>
+	<string name="write">ABŞ-a yaz</string>
+	<string name="action_logout">Çıxış</string>
+	<string name="welcome">Xoş gəlmisiniz</string>
+	<string name="location">Yerləşmə</string>
+	<string name="mycart">Səbətim</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Qida menyusu</string>
+	<string name="slide_one_desc">Qida menyusunda ən atrctive müqaviləni araşdırın.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Otel fəaliyyəti</string>
+	<string name="slide_two_desc">Otelimizdə müştərilərin oyunları sevindirən oyun və fəaliyyət təklif edir</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Turistik yer</string>
+	<string name="slide_three_desc">Otelimiz turistik plac haqqında ətraflı məlumat verire</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Qida siyahısı</string>
+	<string name="slide_four_desc">Ərzaq siyahısı yalnız bir kliklə yemək sifariş edə bilərsiniz</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dummy Button</string>
+	<string name="dummy_content">DUMMY \ CONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">HotelManagement</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Furaha soojiiyaha</string>
+	<string name="navigation_drawer_close">Soo xir soo saaraha navigation</string>
+	<string name="username">Xeerka booqdaha</string>
+	<string name="password">Tirada qolka</string>
+	<string name="home">Guriga</string>
+	<string name="food_menu">Macluumaadka Cuntada</string>
+	<string name="hotel_activity">Waxqabadka hoteelada</string>
+	<string name="touristic_places">Meelaha Dalxiiska</string>
+	<string name="about_us">Nagu saabsan</string>
+	<string name="write_to_us">Ku Qor Usoo Dhamaan</string>
+	<string name="logout">Ka bax</string>
+	<string name="login">Galitaanka</string>
+	<string name="logout_dialog">Ma hubtaa, inaad rabto inaad gasho</string>
+	<string name="about">NAGU SAABSAN</string>
+	<string name="write">WRITE TO US</string>
+	<string name="action_logout">Ka bax</string>
+	<string name="welcome">Soo dhawee</string>
+	<string name="location">Goobta</string>
+	<string name="mycart">Alaabtayda</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Macluumaadka Cuntada</string>
+	<string name="slide_one_desc">Raadi heshiiska heshiiska ugu caansan ee cuntooyinka cuntada.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Waxqabadka hoteelada</string>
+	<string name="slide_two_desc">Hudheelkayagu wuxuu bixiyaa ciyaaro iyo waxqabadyo oo macaamiisha ku raaxaysta ciyaaraha</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Goobta Dalxiiska</string>
+	<string name="slide_three_desc">Hoteelkayagu wuxuu bixiyaa faahfaahin ku saabsan goobaha dalxiiska</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Liiska cuntada</string>
+	<string name="slide_four_desc">Liiska cuntadu wuxuu qabaa cuntooyin badan oo aad ku dalban karto cuntada kaliya hal gujis</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dumarka Dooma</string>
+	<string name="dummy_content">DUMMY\nCONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

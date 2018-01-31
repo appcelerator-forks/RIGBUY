@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">Mehmonxonalarni boshqarish</string>
+	<string name="title_activity_hotel_management_home">MehmonxonaManagementHome</string>
+	<string name="navigation_drawer_open">Navigatsiya panelini oching</string>
+	<string name="navigation_drawer_close">Navigatsiya panelini yoping</string>
+	<string name="username">Mehmon kodi</string>
+	<string name="password">Xona raqami</string>
+	<string name="home">Bosh sahifa</string>
+	<string name="food_menu">Oziq-ovqat menyusi</string>
+	<string name="hotel_activity">Mehmonxona faoliyati</string>
+	<string name="touristic_places">Turistik joylar</string>
+	<string name="about_us">Biz haqimizda</string>
+	<string name="write_to_us">Bizga yozing</string>
+	<string name="logout">Chiqish</string>
+	<string name="login">Kirish</string>
+	<string name="logout_dialog">Ishonchingiz komil emasmi?</string>
+	<string name="about">BIZ HAQIMIZDA</string>
+	<string name="write">AQShga yozing</string>
+	<string name="action_logout">Chiqish</string>
+	<string name="welcome">Xush kelibsiz</string>
+	<string name="location">Manzil</string>
+	<string name="mycart">Mening savatim</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Oziq-ovqat menyusi</string>
+	<string name="slide_one_desc">Oziq-ovqatlar menyusidagi eng noodatiy bitimni o'rganing.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Mehmonxona faoliyati</string>
+	<string name="slide_two_desc">Mehmonxonamizda mijozlar o'yinlardan zavqlanadigan o'yinlar va tadbirlarni taklif etadi</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Turistik joy</string>
+	<string name="slide_three_desc">Mehmonxona turistik joy haqida batafsil ma'lumot beradi</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Oziq-ovqat ro'yxati</string>
+	<string name="slide_four_desc">Oziq-ovqat ro'yxati juda ko'p oziq-ovqat bilan ta'minlaydi, siz oziq-ovqatni bir marta bosishingiz mumkin</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dummy tugmasi</string>
+	<string name="dummy_content">DUMMY \ CONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

@@ -1,0 +1,59 @@
+﻿<resources>
+	<string name="app_name">Hotelmanagement</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Адкрыць панэль навігацыі</string>
+	<string name="navigation_drawer_close">Зачыніць панэль навігацыі</string>
+	<string name="username">наведвальнік код</string>
+	<string name="password">колькасць нумароў</string>
+	<string name="home">дома</string>
+	<string name="food_menu">харчаванне Меню</string>
+	<string name="hotel_activity">Гатэль актыўнасць</string>
+	<string name="touristic_places">турыстычныя месцы</string>
+	<string name="about_us">Пра нас</string>
+	<string name="write_to_us">Напішыце нам,</string>
+	<string name="logout">выйсці</string>
+	<string name="login">Увайсці</string>
+	<string name="logout_dialog">Вы ўпэўненыя, што жадаеце выйсці</string>
+	<string name="about">ПРА НАС</string>
+	<string name="write">пішыце НАМ</string>
+	<string name="action_logout">выхад</string>
+	<string name="welcome">жаданы</string>
+	<string name="location">размяшчэнне</string>
+	<string name="mycart">мая кошык</string>
+	<!--slide one-->
+	<string name="slide_one_title">харчаванне Меню</string>
+	<string name="slide_one_desc">Дасьледуйце самую atrctive здзелку ў меню ежы.</string>
+	<!--slide two-->
+	<string name="slide_two_title">Гатэль актыўнасць</string>
+	<string name="slide_two_desc">У нашым гатэлі ёсць гульні і мерапрыемствы, у якіх кліент атрымліваць асалоду ад гульнямі</string>
+	<!--slide three-->
+	<string name="slide_three_title">турыстычнае Месца</string>
+	<string name="slide_three_desc">Наш гатэль прадаставіць падрабязную інфармацыю аб турыстычным месцы</string>
+	<!--slide four-->
+	<string name="slide_four_title">Спіс прадуктаў харчавання</string>
+	<string name="slide_four_desc">Спіс прадуктаў харчавання containe шмат ежы Вы можаце замовіць ежу толькі адзін клік</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">фіктыўная Кнопка</string>
+	<string name="dummy_content">DUMMY \ CONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+
+</resources>

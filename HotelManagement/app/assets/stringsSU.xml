@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">Manajemén hotél</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Buka laci navigasi</string>
+	<string name="navigation_drawer_close">Tutup laci navigasi</string>
+	<string name="username">Kode nganjang</string>
+	<string name="password">Jumlah kamar</string>
+	<string name="home">imah</string>
+	<string name="food_menu">dahareun Menu</string>
+	<string name="hotel_activity">Kagiatan hotél</string>
+	<string name="touristic_places">Tempat Touristic</string>
+	<string name="about_us">Tentang Kami</string>
+	<string name="write_to_us">Tulis Ka Kami</string>
+	<string name="logout">Kaluar</string>
+	<string name="login">Lebet</string>
+	<string name="logout_dialog">Anjeun pasti, rék logout</string>
+	<string name="about">TENTANG KAMI</string>
+	<string name="write">Nulis ka AS</string>
+	<string name="action_logout">Kaluar</string>
+	<string name="welcome">wilujeung sumping</string>
+	<string name="location">lokasi</string>
+	<string name="mycart">Gorobag kuring</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">dahareun Menu</string>
+	<string name="slide_one_desc">Ngajajah deal paling atrctive dina menu Dahareun.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Kagiatan hotél</string>
+	<string name="slide_two_desc">Dina hotél kami nawarkeun kaulinan jeung kagiatan nu customer mikaresep kaulinan</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Tempat Touristic</string>
+	<string name="slide_three_desc">Hotel kami nyadiakeun rinci ngeunaan tempat touristic</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Daptar dahareun</string>
+	<string name="slide_four_desc">daftar dahareun containe kavling dahareun anjeun tiasa mesen dahareun ngan hiji klik</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Button dummy</string>
+	<string name="dummy_content">Dummy \ eusi</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>

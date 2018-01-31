@@ -1,0 +1,63 @@
+﻿<resources>
+	<string name="app_name">Řízení hotelu</string>
+	<string name="title_activity_hotel_management_home">HotelManagementHome</string>
+	<string name="navigation_drawer_open">Otevřete navigační zásuvku</string>
+	<string name="navigation_drawer_close">Zavřete navigační zásuvku</string>
+	<string name="username">Kód návštěvníka</string>
+	<string name="password">Číslo pokoje</string>
+	<string name="home">Domov</string>
+	<string name="food_menu">Jídelní menu</string>
+	<string name="hotel_activity">Aktivita hotelu</string>
+	<string name="touristic_places">Turistické místa</string>
+	<string name="about_us">O nás</string>
+	<string name="write_to_us">Napište nám</string>
+	<string name="logout">Odhlásit se</string>
+	<string name="login">Přihlásit se</string>
+	<string name="logout_dialog">Jste si jisti, chcete se odhlásit</string>
+	<string name="about">O NÁS</string>
+	<string name="write">ZAPISTE NÁS</string>
+	<string name="action_logout">Odhlásit se</string>
+	<string name="welcome">Vítejte</string>
+	<string name="location">Umístění</string>
+	<string name="mycart">Můj vozík</string>
+	- <!-- slide one
+	-->
+	<string name="slide_one_title">Jídelní menu</string>
+	<string name="slide_one_desc">Prozkoumejte nejatraktivnější nabídku v jídelním menu.</string>
+	- <!-- slide two
+	-->
+	<string name="slide_two_title">Aktivita hotelu</string>
+	<string name="slide_two_desc">V našem hotelu nabízí hry a aktivity, ve kterých si zákazník vychutnává hry</string>
+	- <!-- slide three
+	-->
+	<string name="slide_three_title">Turistické místo</string>
+	<string name="slide_three_desc">Náš hotel poskytuje podrobnosti o turistickém místě</string>
+	- <!-- slide four
+	-->
+	<string name="slide_four_title">Seznam potravin</string>
+	<string name="slide_four_desc">Potravinový seznam obsahuje množství potravin, které si můžete objednat pouze jedním kliknutím</string>
+	<string name="my_preferences">com.abc.com.MyPref</string>
+	<string name="my_preferences_key">com.abc.com.MyPref.Key</string>
+	-
+	<string-array name="image_ids">
+		<item>@drawable/image_1</item>
+		<item>@drawable/image_2</item>
+		<item>@drawable/image_3</item>
+		<item>@drawable/image_4</item>
+		<item>@drawable/image_5</item>
+	</string-array>
+	<string name="title_activity_full_screen_hotel">FullScreenHotelActivity</string>
+	<string name="dummy_button">Dummy tlačítko</string>
+	<string name="dummy_content">DUMMY \ CONTENT</string>
+	<string name="internat_connection_message">Please check your internet connection and try again.</string>
+	<string name="Ok">Ok</string>
+	<string name="cancel">Cancel</string>
+	<string name="network_validation">The request timed out</string>
+	<string name="quantity">Quantity</string>
+	<string name="start">START</string>
+	<string name="next">NEXT</string>
+	<string name="previous">Previous</string>
+	<string name="skip">SKIP</string>
+	<string name="loading">Please Wait...</string>
+	<string name="foodItem">Food Item</string>
+</resources>
