@@ -76,6 +76,7 @@ if (OS_IOS) {
 		Ti.API.info('Disconnected!');
 		// The Google SignIn API prefers "diconnect" over "logout"
 		Ti.API.info(e.user);
+		Alloy.Globals.LoadingScreen.close();
 		Google.removeEventListener('login', googleResponse);
 
 		loggedIn = false;
@@ -88,10 +89,12 @@ if (OS_IOS) {
 
 	Google.addEventListener('cancel', function(e) {
 		Ti.API.info('Login UI cancelled: ' + e.message);
+		Alloy.Globals.LoadingScreen.close();
 	});
 
 	Google.addEventListener('error', function(e) {
 		Ti.API.info('Login UI errored: ' + e.message);
+		Alloy.Globals.LoadingScreen.close();
 	});
 
 	Google.addEventListener('open', function(e) {
@@ -100,6 +103,8 @@ if (OS_IOS) {
 
 	Google.addEventListener('close', function(e) {
 		Ti.API.info('Login UI closed!');
+		
+		
 	});
 
 } else {
@@ -120,6 +125,15 @@ if (OS_IOS) {
 	});
 
 	Google.addEventListener('connect', function(e) {
+		Ti.API.info(' ***** Connect: ');
+	});
+	Google.addEventListener('error', function(e) {
+		Alloy.Globals.LoadingScreen.close();
+		Ti.API.info(' ***** Err0r: ');
+	});
+	Google.addEventListener('disconnect', function(e) {
+		Alloy.Globals.LoadingScreen.close();
+		Ti.API.info(' ***** disconnect: ');
 	});
 
 	Google.addEventListener('login', function(e) {
@@ -139,6 +153,7 @@ function loginGoogle(e) {
 		$.googleBtn.focusable == false;
 		//Alloy.Globals.google = new Google(ggParams);
 		Ti.API.info('Google Response ');
+		Alloy.Globals.LoadingScreen.open();
 		Google.signIn();
 		//Alloy.Globals.google.logout();
 
@@ -240,8 +255,8 @@ function loginFB(e) {
 				if (e.success) {
 
 					Ti.API.info("Facebook ID 2: " + Ti.App.Properties.getString("facebookAccessToken"));
-					// FBLogin(JSON.parse(e.result));
-					loginService("social", JSON.parse(e.result));
+					FBLogin(JSON.parse(e.result));
+					//loginService("social", JSON.parse(e.result));
 
 				} else {
 					try {
@@ -285,11 +300,12 @@ var fbLoginEvent = function(e) {
 			Ti.API.info('1111');
 			Ti.App.Properties.setString("facebookAccessToken", e.source.accessToken);
 			Ti.API.info("Facebook ID : " + Ti.App.Properties.getString("facebookAccessToken"));
+			Ti.API.info("data : " +JSON.stringify(e.source));
 			var fbData = {};
 			fbData.id = e.source.uid;
 			fbData.accessToken = e.source.accessToken;
-			//FBLogin(fbData);
-			loginService("social", fbData);
+			FBLogin(fbData);
+			
 
 		} else if (e.error) {
 			$.fbBtn.focusable == true;
@@ -316,10 +332,11 @@ function FBLogin(detail) {
 	var accessToken = Ti.App.Properties.getString("facebookAccessToken");
 	Ti.API.info('STEP3');
 	if (Ti.Network.online) {
-		Alloy.Globals.LoadingScreen.open();
+		
 		Communicator.get("https://graph.facebook.com/" + fbID + "?fields=name,picture,email&access_token=" + accessToken, FBCallback);
 		//Ti.API.info('URL ' + "https://graph.facebook.com/" + fbID + "?fields=name,picture,email&access_token=" + accessToken);
 	} else {
+		Alloy.Globals.LoadingScreen.close();
 		$.fbBtn.focusable == true;
 		Alloy.Globals.Alert("Please check your internet connection and try again");
 	}
@@ -340,7 +357,13 @@ function FBCallback(e) {
 				Ti.API.info('response.FBLogin = ' + JSON.stringify(response));
 				//getBlob(response.picture.data.url, response, "facebook");
 				//socialLogin(response, "facebook");
-				Alloy.Globals.LoadingScreen.close();
+				var fbData ={};
+				fbData.name = response.name;
+				fbData.id = response.id;
+				fbData.email = response.email;
+				fbData.photo = response.picture.data.url;
+				loginService("social", fbData);
+				
 			} else {
 				Alloy.Globals.LoadingScreen.close();
 				Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_NO_DATA);
@@ -378,7 +401,7 @@ function loginService(type, fbdata) {
 		Ti.App.Properties.setBool("socialLogin", false);
 	} else {
 		Ti.App.Properties.setBool("socialLogin", true);
-		
+
 		obj.socialId = fbdata.id;
 		obj.email = fbdata.email;
 		obj.image_url = fbdata.photo;
@@ -388,10 +411,11 @@ function loginService(type, fbdata) {
 		obj.deviceToken = "1";
 		obj.deviceType = Titanium.Platform.osname;
 	}
+	Ti.API.info("Social  response : " + JSON.stringify(fbdata));
 	Ti.API.info("Signup response : " + JSON.stringify(obj));
 	var SERVICE_USER_LOGIN = Alloy.Globals.Constants.SERVICE_USER_LOGIN;
 	if (Ti.Network.online) {
-		Alloy.Globals.LoadingScreen.open();
+		
 		Communicator.post(DOMAIN_URL + SERVICE_USER_LOGIN, loginServiceCallback, obj);
 		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_USER_LOGIN);
 	} else {
@@ -420,8 +444,11 @@ function loginServiceCallback(e) {
 					Ti.App.Properties.setString("userid", response.records.userId);
 					Ti.App.Properties.setString("password", $.passwordTF.value.trim());
 					Ti.App.Properties.setBool("isLogin", true);
-					Alloy.Globals.logoutRow.remove(Alloy.Globals.loginLbl);
-					Alloy.Globals.logoutRow.add(Alloy.Globals.loginLbl);
+					if (OS_ANDROID) {
+						Alloy.Globals.logoutRow.remove(Alloy.Globals.loginLbl);
+						Alloy.Globals.logoutRow.add(Alloy.Globals.loginLbl);
+					}
+
 					Alloy.Globals.loginLbl.text = "Logout";
 					if (OS_IOS) {
 						Alloy.Globals.logoutImg.leftImage = "/images/logout.png";

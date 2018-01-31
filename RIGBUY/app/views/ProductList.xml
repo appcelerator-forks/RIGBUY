@@ -65,13 +65,13 @@
 	<!-- Android Center Window -->
 	<View id="homeView" platform="android">
 		<View id="mainVW" zIndex="1" title="Product" class="container" backgroundColor="white">
-			<View  layout="vertical">
-				<View height="56" backgroundColor="#f54224">
+			<View top="0" layout="vertical">
+				<!-- <View height="56" backgroundColor="#f54224">
 					<Button id="menuBtn" backgroundImage="none" width="60" image="/images/menu.png" left="10" onClick="openMenu"></Button>
 					<Label id="headerLbl" color="white"  textAlign="center">Product List</Label>
 					<Button id="filterBtn" backgroundImage="none" width="50" image="/images/filter1.png" right="0" onClick="openFilter"></Button>
 					<Button id="refreshBtn" backgroundImage="none" width="50" image="/images/refresh.png" right="50" onClick="refreshFunc"></Button>
-				</View>
+				</View> -->
 				<View height="55" backgroundColor="#b4bccc" >
 					<View  width="94%" height="42" borderColor="#9a9fbe" borderWidth="1" backgroundColor="white" borderRadius="21" layout="horizontal">
 						<ImageView image="/images/search.png" zIndex="10" left="5"></ImageView>

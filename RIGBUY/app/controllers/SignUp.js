@@ -367,8 +367,10 @@ function signUpServiceCallback(e) {
 					Ti.App.Properties.setBool("isLogin", true);
 					Ti.App.Properties.setBool("socialLogin", false);
 					$.signUpWin.close();
-					Alloy.Globals.logoutRow.remove(Alloy.Globals.loginLbl);
-					Alloy.Globals.logoutRow.add(Alloy.Globals.loginLbl);
+					if (OS_ANDROID) {
+						Alloy.Globals.logoutRow.remove(Alloy.Globals.loginLbl);
+						Alloy.Globals.logoutRow.add(Alloy.Globals.loginLbl);
+					}
 					Alloy.Globals.loginLbl.text = "Logout";
 
 					if (OS_IOS) {

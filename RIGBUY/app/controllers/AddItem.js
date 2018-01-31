@@ -338,7 +338,7 @@ function subcategoryClickFunc(e) {
 
 			Alloy.createWidget('danielhanold.pickerWidget', {
 				id : 'subcategory',
-				outerView : $.AdvancedSearch,
+				outerView : $.AddItem,
 				hideNavBar : false,
 				type : 'single-column',
 				selectedValues : subcategoryIndex,
@@ -517,7 +517,7 @@ function selectStateFunc(e) {
 					Ti.API.info("yes " + JSON.stringify(e.data));
 
 					if (!e.cancel) {
-						$.stateTF.value = e.data.title;
+						$.stateTF.value = e.data.title; 
 						stateIndex = e.data.index;
 						$.stateTF.state_id = e.data.state_id;
 						$.cityTF.value = "";
