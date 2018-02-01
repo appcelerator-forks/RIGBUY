@@ -6,6 +6,7 @@ var position = 0;
 var count = 0;
 var totalRecords = 0;
 Alloy.Globals.page = 1;
+var searchArray = [];
 var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 if (OS_ANDROID) {
@@ -77,10 +78,14 @@ if (OS_IOS) {
 	var rowHeight = Alloy.Globals.Measurement.pxToDP(Titanium.Platform.displayCaps.platformHeight) * 0.2428;
 }
 var count = 0;
-var productRow = function(detail) {
+var productRow = function(detail, isSearch) {
 	tableData = [];
 	count += detail.length;
+
 	for (var i = 0; i < detail.length; i++) {
+		if (isSearch != "search") {
+			searchArray.push(detail[i]);
+		}
 
 		var tableRow = Ti.UI.createTableViewRow({
 			touchEnabled : true,
@@ -222,8 +227,13 @@ var productRow = function(detail) {
 
 		tableData.push(tableRow);
 	}
-	$.productTable.appendRow(tableData);
-};
+	if (isSearch == "search") {
+		$.productTable.setData(tableData);
+	}else{
+		$.productTable.appendRow(tableData);
+	}
+	
+  };
 
 // cross-platform event listener for lazy tableview loading
 function lazyLoad(_evt) {
@@ -281,19 +291,19 @@ function changeFunc(e) {
 	var searchTxt = e.source.value;
 	var newArr = [];
 
-	if (productListArray) {
-		for (var i = 0; i < productListArray.length; i++) {
+	if (searchArray) {
+		for (var i = 0; i < searchArray.length; i++) {
 
-			var rest = productListArray[i].product_name;
+			var rest = searchArray[i].product_name;
 			if (rest.toLowerCase().indexOf(searchTxt.toLowerCase()) != -1) {
-				newArr.push(productListArray[i]);
+				newArr.push(searchArray[i]);
 			} else {
 
 			}
 		}
 	}
 
-	productRow(newArr);
+	productRow(newArr, "search");
 }
 
 var favBtnSource;
@@ -708,6 +718,8 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 		if (from == "filter") {
 			Alloy.Globals.isFilter = "filter";
 			if (isLoading != "loading") {
+				Alloy.Globals.page = 1;
+				searchArray = [];
 				Alloy.Globals.LoadingScreen.open();
 			}
 
@@ -720,6 +732,7 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 			Alloy.Globals.isFilter = "";
 			if (isLoading != "loading") {
 				Alloy.Globals.page = 1;
+				searchArray = []
 				Alloy.Globals.LoadingScreen.open();
 			}
 
@@ -927,7 +940,7 @@ function addFavServiceCallback(e) {
 		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
 
 	}
-	$.filterBtn.focusable = true;
+
 	Alloy.Globals.LoadingScreen.close();
 
 }

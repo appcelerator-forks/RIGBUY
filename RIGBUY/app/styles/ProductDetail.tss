@@ -9,8 +9,20 @@
 	height: "250dp",
 	width: "100%"
 }
-"#slideImage":{
+"#slideImage[platform=android]":{
 	top: "0dp",
 	height:Ti.UI.FILL,
 	width: "100%"
+}
+"#slideImage[platform=ios]":{
+	top: "0dp",
+	height: Ti.UI.FILL,
+	left:0,
+	right:0,
+	zIndex: 1,
+	showPagingControl: true,
+	overlayEnabled: true,
+	pagingControlAlpha: 0.7,
+	pagingControlColor: '#242021',
+	backgroundColor: "gray"
 }

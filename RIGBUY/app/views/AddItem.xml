@@ -121,8 +121,8 @@
 			</View>
 			<View id="imgVW" width="87%"  top="10" height="60">
 				<Label id="imageLbl" color="#A39F9F" top="0" left="0">Image</Label>
-				<Button backgroundColor="#CFCFD3" backgroundImage="none" id="imageButton" left="8" bottom="1" height="50%" width="25%" title="Choose File" onClick="uploadPhotoFunc"></Button>
-				<Label id="imagenameLbl" color="#000000" left="30%" right="0" height="50%" bottom="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END">File Name</Label>
+				<Button backgroundColor="#CFCFD3" backgroundImage="none" id="imageButton" left="8" bottom="1" height="50%" width="25%" title="Choose Image" onClick="uploadPhotoFunc"></Button>
+				<Label id="imagenameLbl" color="#000000" left="30%" right="0" height="50%" bottom="1" ellipsize="Titanium.UI.TEXT_ELLIPSIZE_TRUNCATE_END">Choose Image</Label>
 				<View backgroundColor="#df431b" height="1" width="100%" bottom="0"></View>
 			</View>
 			<View height="40" id="btnVW" width="87%">

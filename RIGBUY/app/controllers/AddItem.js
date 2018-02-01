@@ -23,6 +23,7 @@ if (args.from == "add") {
 	selectedImage = null;
 } else {
 	selectedImage = "";
+	$.imagenameLbl.text = "Image Selected";
 	$.nameTF.value = args.data.product_name;
 	$.featureTF.value = args.data.features;
 	$.descTF.value = args.data.product_description;
@@ -1162,6 +1163,7 @@ function openGallery(media) {
 					var newBlob = Alloy.Globals.ImageFactory.compress((event.media), 0.25);
 
 					selectedImage = "" + Titanium.Utils.base64encode(newBlob);
+					$.imagenameLbl.text = "Image Selected";
 
 				} catch(event) {
 					Ti.API.info(event.message);
@@ -1200,6 +1202,7 @@ function openCamera() {
 						var blob = event.media;
 					}
 					selectedImage = "" + Titanium.Utils.base64encode(blob);
+					$.imagenameLbl.text = "Image Selected";
 
 				} catch(event) {
 					Ti.API.info(event.message);

@@ -70,7 +70,7 @@ Alloy.Globals.Constants = require('Constants');
 Alloy.Globals.Measurement = require('alloy/measurement');
 if (OS_IOS) {
 	defaultWidth = 320;
-	
+
 	//the base size of standard handset iphone (that apps were designed for)
 	deviceWidth = Titanium.Platform.displayCaps.platformWidth;
 	Alloy.Globals.scaleFactor = deviceWidth / defaultWidth;
@@ -118,15 +118,20 @@ Alloy.Globals.goToHome = function(win) {
 		Alloy.Globals.goToHome(win.oldWin);
 	}
 	if (OS_ANDROID) {
-		if (win.name == "setting" || win.name == "about" || win.name == "contact"){
+		if (win.name == "setting" || win.name == "about" || win.name == "contact") {
 			Alloy.Globals.mainVW.remove(win);
-		}else{
+		} else {
 			win.close();
 		}
-			
+
 	} else {
 		win.close({
 			animated : false
 		});
 	}
-}; 
+	try {
+		// Alloy.Globals.refreshItem.visible = true;
+		// Alloy.Globals.searchItem.visible = true;
+	} catch(e) {
+	}
+};
