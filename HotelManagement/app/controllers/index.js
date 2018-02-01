@@ -195,61 +195,7 @@ Alloy.Globals.registerPushNotification = function(pushCallback) {
 
 		}
 		
-		//alert(1 + " " + e.inBackground + "  " + Alloy.Globals.isLogin);
-		// if (Alloy.Globals.isLogin) {
-		//alert(2 + " " + e.inBackground + "  " + Alloy.Globals.isLogin);
-
-		// try {
-
-		// if (e.inBackground == true) {
-		// alert(1);
-		// var mycart = Alloy.createController("MyCart").getView();
-		// Alloy.Globals.navWin.openWindow(mycart);
-		// setTimeout(function() {
-		// if (Alloy.Globals.currentWindow) {
-		// Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
-		// }
-		// Alloy.Globals.currentWindow = mycart;
-		// }, 300);
-		//
-		// }
-		// if (e.inBackground == false) {
-		// alert(2 + " " + dialog + "  " + e.aps.alert);
-		//
-		// // if (dialog) {
-		// // dialog.hide();
-		// // dialog = null;
-		// // }
-		// var dialog = Ti.UI.createAlertDialog({
-		// cancel : 1,
-		// buttonNames : ["Show", "Cancel"],
-		// message : e.aps.alert,
-		// title : "Order Notification",
-		// });
-		// dialog.addEventListener('click', function(k) {
-		// if (k.index === k.source.cancel) {
-		// Ti.API.info('The cancel button was clicked');
-		// } else {
-		//
-		// var mycart = Alloy.createController("MyCart").getView();
-		// Alloy.Globals.navWin.openWindow(mycart);
-		// setTimeout(function(e) {
-		// if (Alloy.Globals.currentWindow) {
-		// Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
-		// }
-		// Alloy.Globals.currentWindow = mycart;
-		// }, 300);
-		//
-		// }
-		// });
-		// dialog.show();
-		// Ti.UI.iOS.setAppBadge(0);
-		//
-		// }
-		// } catch(e) {
-		//
-		// }
-		// }
+		
 
 	}
 
