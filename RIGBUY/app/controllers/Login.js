@@ -397,6 +397,7 @@ function loginService(type, fbdata) {
 		obj.deviceToken = "1";
 		obj.lat = Alloy.Globals.latitude;
 		obj.long = Alloy.Globals.longitude;
+		obj.deviceToken = Alloy.Globals.deviceToken;
 		obj.deviceType = Titanium.Platform.osname;
 		Ti.App.Properties.setBool("socialLogin", false);
 	} else {
@@ -408,10 +409,10 @@ function loginService(type, fbdata) {
 		obj.name = fbdata.name;
 		obj.lat = Alloy.Globals.latitude;
 		obj.long = Alloy.Globals.longitude;
-		obj.deviceToken = "1";
+		obj.deviceToken = Alloy.Globals.deviceToken;
 		obj.deviceType = Titanium.Platform.osname;
 	}
-	Ti.API.info("Social  response : " + JSON.stringify(fbdata));
+	
 	Ti.API.info("Signup response : " + JSON.stringify(obj));
 	var SERVICE_USER_LOGIN = Alloy.Globals.Constants.SERVICE_USER_LOGIN;
 	if (Ti.Network.online) {

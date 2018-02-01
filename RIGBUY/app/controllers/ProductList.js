@@ -719,20 +719,22 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 			Alloy.Globals.isFilter = "filter";
 			if (isLoading != "loading") {
 				Alloy.Globals.page = 1;
+				count=0;
 				searchArray = [];
 				Alloy.Globals.LoadingScreen.open();
 			}
 
 			Alloy.Globals.filterSelectionObj = obj;
 			Ti.API.info("DATA : " + JSON.stringify(obj));
-			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + page, getProductListerviceCallback, obj);
+			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" +  Alloy.Globals.page, getProductListerviceCallback, obj);
 			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page);
 			return;
 		} else {
 			Alloy.Globals.isFilter = "";
 			if (isLoading != "loading") {
 				Alloy.Globals.page = 1;
-				searchArray = []
+				count=0;
+				searchArray = [];
 				Alloy.Globals.LoadingScreen.open();
 			}
 

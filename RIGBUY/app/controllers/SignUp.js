@@ -322,20 +322,23 @@ function openFunc(e) {
  *
  */
 function signUpService() {
-	var a = 'email=' + $.emailTF.value.trim();
-	a = a + '&password=' + $.passwordTF.value.trim();
-	a = a + '&contact=' + $.phoneTF.value.trim();
-	a = a + '&name=' + $.nameTF.value.trim();
-	a = a + '&user_img=' + selectedImage;
-	a = a + '&deviceType=' + Titanium.Platform.osname;
-	a = a + '&deviceToken=' + "1";
-	a = a + '&lat=' + Alloy.Globals.latitude;
-	a = a + '&long=' + Alloy.Globals.longitude;
+	var obj={};
+	obj.email =$.emailTF.value.trim();
+	obj.password =$.passwordTF.value.trim();
+	obj.contact =$.phoneTF.value.trim();
+	obj.name =$.nameTF.value.trim();
+	obj.user_img =selectedImage;
+	obj.deviceToken = Alloy.Globals.deviceToken;
+	obj.deviceType =Titanium.Platform.osname;
+	obj.lat =Alloy.Globals.latitude;
+	obj.long =Alloy.Globals.longitude;
+
+	
 
 	var SERVICE_USER_SIGNUP = Alloy.Globals.Constants.SERVICE_USER_SIGNUP;
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		Communicator.post(DOMAIN_URL + SERVICE_USER_SIGNUP, signUpServiceCallback, a);
+		Communicator.post(DOMAIN_URL + SERVICE_USER_SIGNUP, signUpServiceCallback, obj);
 		Ti.API.info('URL ' + DOMAIN_URL + SERVICE_USER_SIGNUP);
 	} else {
 		$.signupBtn.focusable = true;

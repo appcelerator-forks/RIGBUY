@@ -44,7 +44,7 @@ var card_color = "#333";
 var card_opacity = 0.5;
 var rowMargin = 10;
 
-$.index.open();
+
 
 
 function openChatWindow() {
@@ -60,7 +60,7 @@ function openChatWindow() {
 		});
 	} else {
 		chatContainer = Ti.UI.createScrollView({
-			top : 70,
+			top : 10,
 			bottom : 0,
 			left : 0,
 			width : '100%',
@@ -100,7 +100,7 @@ function openChatWindow() {
 		backgroundColor : 'white',
 		borderColor : "gray",
 		paddingLeft:10,
-		borderRadius : 25,
+		borderRadius :(OS_IOS)? 20:25,
 		
 	});
 	viewTF.add(tfVW);
@@ -115,6 +115,7 @@ function openChatWindow() {
 		hintText:"Type a message",
 		hintTextColor:"gray",
 		color : "black",
+		paddingLeft:10,
 		backgroundColor : 'white',
 		font:{
 			fontSize:14
@@ -132,7 +133,7 @@ function openChatWindow() {
 		height : homeButtonSize - 10,
 		width : '20%',
 		color : titleColor,
-		borderRadius : 25,
+		borderRadius : (OS_IOS)? 20:25,
 		backgroundColor : "#BE3422",		
 	});
 	viewTF.add(sendBtn);
@@ -158,7 +159,7 @@ function openChatWindow() {
 		}
 	});
 
-	$.index.add(chatContainer);
+	$.Chat.add(chatContainer);
 
 }
 openChatWindow();
@@ -182,6 +183,7 @@ function addRow(message, userName, date_val, emailId, config) {
 	
 
 	var row = Ti.UI.createView({
+		
 		backgroundColor : "transparent",
 		height : Titanium.UI.SIZE,
 		touchEnabled : false,
@@ -207,14 +209,15 @@ function addRow(message, userName, date_val, emailId, config) {
 		
 	}
 	row.add(cardViewBack);
-	Ti.API.info('left_val  ' + left_val + " right_val : "+right_val);
+	
 	
 	var profileView = Ti.UI.createView({
 		width : imageSize / 1.4,
 		height : imageSize / 1.4,
 		borderRadius : (imageSize / 1.4) / 2,
-		//bottom : 5,
+		
 		top : 5,
+		bottom : 5,
 		left : 10,
 		zIndex : 99,
 		backgroundColor : (config) ? "#6d1004" : "#303030",
@@ -222,7 +225,7 @@ function addRow(message, userName, date_val, emailId, config) {
 	cardViewBack.add(profileView);	
 
 	var lblFL = Ti.UI.createLabel({
-		text :"Anil",
+		text :"A",
 		font : {
 			fontWeight : 'bold',
 			fontSize : descSize * 2
@@ -290,16 +293,16 @@ function addRow(message, userName, date_val, emailId, config) {
 	// adjust the GUI possition
 	if (config) {		 
 		nameLbl.text = "Hemant";
-		nameLbl.left = 10;
+		nameLbl.left = 15;
 		profileView.right = 5;
 		cardView.right = profileView.width;
-		msgLbl.left = rowMargin;
+		msgLbl.left = 15;
 	} else {		
 		nameLbl.text = "Dhiru";
-		nameLbl.left = 10;
-		profileView.left = 0;
+		nameLbl.left = 15;
+		profileView.left = 5;
 		cardView.left = profileView.width;
-		msgLbl.left = rowMargin;
+		msgLbl.left = 15;
 	}
 
 	chatTV.add(row);
