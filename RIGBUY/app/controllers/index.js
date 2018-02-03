@@ -58,6 +58,8 @@ Alloy.Globals.openHome = function(response, loginObj) {
 		Alloy.Globals.drawer.addEventListener("open", function(e) {
 			this.setPanningMode("FullViewPanning");
 			this.setCenterhiddenInteractivity("TouchDisabledWithTapToClose");
+			Alloy.Globals.filterSelectionObj = null;
+			Alloy.Globals.getProductListervice("", "", "");
 
 		});
 
@@ -139,8 +141,8 @@ Alloy.Globals.openHome = function(response, loginObj) {
 
 				activity.onCreateOptionsMenu = function(e) {
 					Alloy.Globals.menu = e.menu;
-					
-					Alloy.Globals.refreshItem = e.menu.add({ 
+
+					Alloy.Globals.refreshItem = e.menu.add({
 						title : "Refresh",
 						showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS,
 						icon : "/images/refresh.png",
@@ -168,12 +170,14 @@ Alloy.Globals.openHome = function(response, loginObj) {
 
 						}
 					});
-					
+
 				};
 				activity.invalidateOptionsMenu();
 			}
-			Alloy.Globals.filterSelectionObj = null;
-			Alloy.Globals.getProductListervice("", "", "");
+			if (OS_ANDROID) {
+				Alloy.Globals.filterSelectionObj = null;
+				Alloy.Globals.getProductListervice("", "", "");
+			}
 
 		}
 
@@ -186,9 +190,6 @@ Alloy.Globals.openHome = function(response, loginObj) {
 };
 
 Alloy.Globals.openHome();
-
-
-
 
 Alloy.Globals.registerPushNotification = function(pushCallback) {
 
@@ -238,8 +239,6 @@ Alloy.Globals.registerPushNotification = function(pushCallback) {
 		} catch(e) {
 
 		}
-		
-		
 
 	}
 
@@ -268,7 +267,6 @@ Alloy.Globals.registerPushNotification(function(e) {
 	Ti.API.info("PUSH :: " + e);
 	Ti.App.Properties.setString("token", e);
 	Alloy.Globals.deviceToken = e;
-	alert(e);
 
 });
 // Ti.UI.iOS.setAppBadge(0);

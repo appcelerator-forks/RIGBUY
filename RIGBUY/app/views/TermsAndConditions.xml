@@ -1,0 +1,16 @@
+<Alloy>
+	<Window class="container" platform="ios" name="terms" title="Terms & Conditions" navTintColor="#f54224"  backButtonTitle="" backButtonTitleImage="none" onOpen="openFunc">
+		<LeftNavButtons platform="ios">
+			<Button id="menuBtn" image="/images/menu.png" backgroundImage="none"  onClick="openMenu"></Button>
+		</LeftNavButtons>
+		<ScrollView top="0" bottom="0">
+			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+		</ScrollView>
+	</Window>
+	<View class="container" platform="android" name="terms" title="About Us" backgroundColor="white" layout="vertical">
+		
+		<ScrollView top="0" bottom="0">
+			<Label id="webview" color="black" top="2%" left="3%" right="3%" textAlign="justify"  height="Ti.UI.SIZE"></Label>
+		</ScrollView>
+	</View>
+</Alloy>

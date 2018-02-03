@@ -16,13 +16,19 @@
 				<Label id="rowLbl1"  class="leftLable" width="Titanium.UI.SIZE" left="55"  focusable="false" touchEnabled="false">Home</Label>
 			</TableViewRow>
 			<TableViewRow width="100%" leftImage="/images/setting.png" selectedBackgroundColor="#CED1DB">
-				<Label id="rowLbl2" width="Titanium.UI.SIZE" class="leftLable" left="55"  focusable="false" touchEnabled="false">Account Settings</Label>
+				<Label id="rowLbl2" width="Titanium.UI.SIZE" class="leftLable" left="55"  focusable="false" touchEnabled="false">My Account</Label>
 			</TableViewRow>
 			<TableViewRow width="100%"  leftImage="/images/aboutus.png" selectedBackgroundColor="#CED1DB">
 				<Label id="rowLbl3" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">About Us</Label>
 			</TableViewRow>
 			<TableViewRow width="100%"  leftImage="/images/contactus.png" selectedBackgroundColor="#CED1DB">
 				<Label id="rowLbl4" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Contact Us</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" id="logoutRow"  leftImage="/images/logout.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl6" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Privacy Policy</Label>
+			</TableViewRow>
+			<TableViewRow width="100%" id="logoutRow"  leftImage="/images/logout.png" selectedBackgroundColor="#CED1DB">
+				<Label id="rowLbl7" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Terms & Conditions</Label>
 			</TableViewRow>
 			<TableViewRow width="100%" id="logoutRow"  leftImage="/images/logout.png" selectedBackgroundColor="#CED1DB">
 				<Label id="rowLbl5" width="Titanium.UI.SIZE" class="leftLable" left="55" focusable="false" touchEnabled="false">Login</Label>
@@ -104,7 +110,7 @@
 				</TableViewRow>
 				<TableViewRow width="100%" id="row2" layout="horizontal" selectedBackgroundColor="#CED1DB">
 					<ImageView image="/images/setting.png" left= "20"></ImageView>
-					<Label id="rowLbl2"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20"  focusable="false" touchEnabled="false">Account Settings</Label>
+					<Label id="rowLbl2"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20"  focusable="false" touchEnabled="false">My Account</Label>
 				</TableViewRow>
 				<TableViewRow width="100%" id="row3" layout="horizontal" selectedBackgroundColor="#CED1DB">
 					<ImageView image="/images/aboutus.png" left= "20"></ImageView>
@@ -113,6 +119,14 @@
 				<TableViewRow width="100%" id="row4" layout="horizontal" selectedBackgroundColor="#CED1DB">
 					<ImageView image="/images/contactus.png" left= "20"></ImageView>
 					<Label id="rowLbl4"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Contact Us</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row6" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/contactus.png" left= "20"></ImageView>
+					<Label id="rowLbl6"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Privacy Policy</Label>
+				</TableViewRow>
+				<TableViewRow width="100%" id="row7" layout="horizontal" selectedBackgroundColor="#CED1DB">
+					<ImageView image="/images/contactus.png" left= "20"></ImageView>
+					<Label id="rowLbl7"  height="Ti.UI.FILL"  width="Titanium.UI.SIZE" class="leftLable" left="20" focusable="false" touchEnabled="false">Terms & Conditions</Label>
 				</TableViewRow>
 				<TableViewRow  width="100%" id="row5" layout="horizontal" selectedBackgroundColor="#CED1DB">
 					<ImageView id="logoutImg" image="/images/logout.png" left= "20"></ImageView>

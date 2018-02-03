@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container" backButtonTitle="" backgroundColor="white"  title="My Enquiry" onOpen="openFunc">
+		<TableView id="myEnquiryTable" top="0" height="Ti.UI.SIZE" separatorColor="white" onClick="tableClickFunc">
+				<FooterView>
+					<View height="0.6" backgroundColor="#ececec"></View>
+				</FooterView>
+			</TableView>
+	</Window>
+</Alloy>

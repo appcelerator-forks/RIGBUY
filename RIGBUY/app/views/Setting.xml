@@ -4,7 +4,7 @@
 			<Button id="menuBtn" backgroundImage="none"  onClick="openMenu"></Button>
 		</LeftNavButtons>
 		<TitleControl platform="ios">
-			<Label color="white">Account Settings</Label>
+			<Label color="white">My Account</Label>
 		</TitleControl>
 		<TableView id="settingTable" top="0" bottom="0" onClick="tableClickFunc">
 			<FooterView>

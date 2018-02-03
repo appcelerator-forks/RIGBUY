@@ -52,6 +52,12 @@ if (OS_IOS) {
 	$.rowLbl5.font = {
 		fontSize : 14 * Alloy.Globals.scaleFactor
 	};
+	$.rowLbl6.font = {
+		fontSize : 14 * Alloy.Globals.scaleFactor
+	};
+	$.rowLbl7.font = {
+		fontSize : 14 * Alloy.Globals.scaleFactor
+	};
 } else {
 	Alloy.Globals.mainVW = $.mainVW;
 }
@@ -61,8 +67,7 @@ function openFunc(e) {
 		duration : 500,
 		opacity : 1
 	});
-	Alloy.Globals.filterSelectionObj = null;
-	Alloy.Globals.getProductListervice("", "", "");
+
 }
 
 function refreshFunc(e) {
@@ -229,11 +234,11 @@ var productRow = function(detail, isSearch) {
 	}
 	if (isSearch == "search") {
 		$.productTable.setData(tableData);
-	}else{
+	} else {
 		$.productTable.appendRow(tableData);
 	}
-	
-  };
+
+};
 
 // cross-platform event listener for lazy tableview loading
 function lazyLoad(_evt) {
@@ -308,6 +313,7 @@ function changeFunc(e) {
 
 var favBtnSource;
 function tableClickFunc(e) {
+	Ti.API.info('Data : ' + JSON.stringify(e.row.detail));
 	$.search.blur();
 	Ti.API.info(e.source.name);
 	if (e.source.name == "favBtn") {
@@ -347,13 +353,15 @@ function tableClickFunc(e) {
 
 if (OS_IOS) {
 	$.topview.width = Alloy.Globals.homedrawerWidth + 30;
-	$.rightTable.rowHeight = 48 * Alloy.Globals.scaleFactor;
+	$.rightTable.rowHeight = 46 * Alloy.Globals.scaleFactor;
 } else {
-	$.row1.height = 50 * Alloy.Globals.scaleFactor;
-	$.row2.height = 50 * Alloy.Globals.scaleFactor;
-	$.row3.height = 50 * Alloy.Globals.scaleFactor;
-	$.row4.height = 50 * Alloy.Globals.scaleFactor;
-	$.row5.height = 50 * Alloy.Globals.scaleFactor;
+	$.row1.height = 48 * Alloy.Globals.scaleFactor;
+	$.row2.height = 48 * Alloy.Globals.scaleFactor;
+	$.row3.height = 48 * Alloy.Globals.scaleFactor;
+	$.row4.height = 48 * Alloy.Globals.scaleFactor;
+	$.row5.height = 48 * Alloy.Globals.scaleFactor;
+	$.row7.height = 48 * Alloy.Globals.scaleFactor;
+	$.row6.height = 48 * Alloy.Globals.scaleFactor;
 	$.topview.height = 230 * Alloy.Globals.scaleFactor;
 }
 
@@ -471,8 +479,47 @@ function leftMenuOptionSelected(e) {
 		}
 		Alloy.Globals.openLeft();
 		break;
-
 	case 4:
+		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "privacy") {
+
+			if (Ti.Network.online) {
+				var regScreen = Alloy.createController("PrivacyPolicy", "menu").getView();
+
+				Alloy.Globals.navWin.openWindow(regScreen);
+
+				setTimeout(function(e) {
+					Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+					Alloy.Globals.currentWindow = regScreen;
+				}, 200);
+
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again");
+
+			}
+		}
+		Alloy.Globals.openLeft();
+		break;
+	case 5:
+		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "terms") {
+
+			if (Ti.Network.online) {
+				var regScreen = Alloy.createController("TermsAndConditions", "menu").getView();
+
+				Alloy.Globals.navWin.openWindow(regScreen);
+
+				setTimeout(function(e) {
+					Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+					Alloy.Globals.currentWindow = regScreen;
+				}, 200);
+
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again");
+
+			}
+		}
+		Alloy.Globals.openLeft();
+		break;
+	case 6:
 		focus = true;
 		$.rightTable.focusable = true;
 		if (Ti.App.Properties.getBool("isLogin")) {
@@ -521,7 +568,7 @@ function leftMenuOptionSelectedAndroid(e) {
 	case 1:
 
 		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "setting") {
-			Alloy.Globals.abx.title = "Account Settings";
+			Alloy.Globals.abx.title = "My Account";
 			Alloy.Globals.refreshItem.visible = false;
 			Alloy.Globals.searchItem.visible = false;
 			if (Ti.Network.online) {
@@ -617,8 +664,65 @@ function leftMenuOptionSelectedAndroid(e) {
 		}
 		Alloy.Globals.drawer.toggleLeftWindow();
 		break;
-
 	case 4:
+		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "privacy") {
+			Alloy.Globals.abx.title = "Privacy Policy";
+			Alloy.Globals.refreshItem.visible = false;
+			Alloy.Globals.searchItem.visible = false;
+			if (Ti.Network.online) {
+				var regScreen = Alloy.createController("PrivacyPolicy", "menu").getView();
+
+				if (OS_IOS) {
+					Alloy.Globals.navWin.openWindow(regScreen, {
+						animated : false
+					});
+				} else {
+					$.mainVW.add(regScreen);
+				}
+
+				setTimeout(function(e) {
+					Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+					Alloy.Globals.currentWindow = regScreen;
+				}, 200);
+
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again");
+
+			}
+		}
+		Alloy.Globals.drawer.toggleLeftWindow();
+		break;
+
+	case 5:
+		if (Alloy.Globals.currentWindow == null || Alloy.Globals.currentWindow.name != "terms") {
+			Alloy.Globals.abx.title = "Terms & Conditions";
+			Alloy.Globals.refreshItem.visible = false;
+			Alloy.Globals.searchItem.visible = false;
+			if (Ti.Network.online) {
+				var regScreen = Alloy.createController("TermsAndConditions", "menu").getView();
+
+				if (OS_IOS) {
+					Alloy.Globals.navWin.openWindow(regScreen, {
+						animated : false
+					});
+				} else {
+					$.mainVW.add(regScreen);
+				}
+
+				setTimeout(function(e) {
+					Alloy.Globals.goToHome(Alloy.Globals.currentWindow);
+					Alloy.Globals.currentWindow = regScreen;
+				}, 200);
+
+			} else {
+				Alloy.Globals.Alert("Please check your internet connection and try again");
+
+			}
+		}
+		Alloy.Globals.drawer.toggleLeftWindow();
+		break;
+
+	case 6:
 		focus = true;
 		$.rightTable.focusable = true;
 		if (Ti.App.Properties.getBool("isLogin")) {
@@ -627,7 +731,6 @@ function leftMenuOptionSelectedAndroid(e) {
 			var regScreen = Alloy.createController("Login", "menu").getView();
 			regScreen.open();
 		}
-		// logout();
 
 		break;
 
@@ -719,21 +822,21 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 			Alloy.Globals.isFilter = "filter";
 			if (isLoading != "loading") {
 				Alloy.Globals.page = 1;
-				count=0;
+				count = 0;
 				searchArray = [];
 				Alloy.Globals.LoadingScreen.open();
 			}
 
 			Alloy.Globals.filterSelectionObj = obj;
 			Ti.API.info("DATA : " + JSON.stringify(obj));
-			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" +  Alloy.Globals.page, getProductListerviceCallback, obj);
+			Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page, getProductListerviceCallback, obj);
 			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page);
 			return;
 		} else {
 			Alloy.Globals.isFilter = "";
 			if (isLoading != "loading") {
 				Alloy.Globals.page = 1;
-				count=0;
+				count = 0;
 				searchArray = [];
 				Alloy.Globals.LoadingScreen.open();
 			}

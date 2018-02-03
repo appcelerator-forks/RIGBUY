@@ -139,20 +139,20 @@ function loadImages(images) {
 				height : Ti.UI.FILL,
 				width : Ti.UI.FILL,
 				top : 0,
-				image : images[i]
+				image : images[i].image_url
 			});
 			var img = Ti.UI.createImageView({
 				hires : true,
 				height : Ti.UI.FILL,
 				width : Ti.UI.FILL,
 				defaultImage : "/images/Detail_no_Img.png",
-				image : images[i]
+				image : images[i].image_url
 			});
 
-			// if (images[i] == null) {
+			// if (images[i].image_url == null) {
 			// img.image("/images/Detail_no_Img.png");
 			// } else {
-			// img.image(images[i]);
+			// img.image(images[i].image_url);
 			// };
 			// view.add(img.viewProxy);
 			view.add(img);

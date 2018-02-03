@@ -118,7 +118,7 @@ Alloy.Globals.goToHome = function(win) {
 		Alloy.Globals.goToHome(win.oldWin);
 	}
 	if (OS_ANDROID) {
-		if (win.name == "setting" || win.name == "about" || win.name == "contact") {
+		if (win.name == "setting" || win.name == "about" || win.name == "contact"|| win.name == "terms"|| win.name == "privacy") {
 			Alloy.Globals.mainVW.remove(win);
 		} else {
 			win.close();

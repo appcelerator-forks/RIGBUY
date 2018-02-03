@@ -4,10 +4,10 @@ var Communicator = Alloy.Globals.Communicator;
 var DOMAIN_URL = Alloy.Globals.Constants.DOMAIN_URL;
 
 if (Ti.App.Properties.getBool("socialLogin")) {
-	var listArray = ["Profile", "My Item", "My WishList"];
+	var listArray = ["Profile", "My Item", "My WishList", "My Enquiry", "My Chat Request"];
 } else {
 
-	var listArray = ["Profile", "My Item", "My WishList", "Change Password"];
+	var listArray = ["Profile", "My Item", "My WishList", "My Enquiry", "My Chat Request", "Change Password"];
 }
 
 function tableClickFunc(e) {
@@ -36,6 +36,21 @@ function tableClickFunc(e) {
 
 		break;
 	case 3:
+		getEnquiryService();
+
+		break;
+	case 4:
+
+		var chatRequestWin = Alloy.createController("MyChatRequest").getView();
+		if (OS_IOS) {
+			Alloy.Globals.navWin.openWindow(chatRequestWin);
+		} else {
+			chatRequestWin.open();
+		}
+		chatRequestWin.oldWin = $.settingWin;
+		Alloy.Globals.currentWindow = chatRequestWin;
+		break;
+	case 5:
 
 		var changePwd = Alloy.createController("ChangePassword").getView();
 		if (OS_IOS) {
@@ -184,6 +199,62 @@ function getWishListServiceCallback(e) {
 					Alloy.Globals.currentWindow = myWishList;
 				} else {
 					Alloy.Globals.Alert("No data found");
+				}
+
+			} else {
+				Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_NO_DATA);
+
+			}
+		} catch(e) {
+			Ti.API.info('Error getWishList :: ' + e.message);
+
+		}
+
+	} else {
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+
+	}
+
+	Alloy.Globals.LoadingScreen.close();
+
+}
+
+function getEnquiryService() {
+	var obj = {};
+	obj.userId = Ti.App.Properties.getString("userid");
+
+	if (Ti.Network.online) {
+		Alloy.Globals.LoadingScreen.open();
+		Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getEnquiryList", getEnquiryServiceCallback, obj);
+		
+	} else {
+
+		Alloy.Globals.Alert("Please check your internet connection and try again.");
+
+	}
+};
+
+function getEnquiryServiceCallback(e) {
+
+	if (e.success) {
+		try {
+			Ti.API.info('response ' + e.response);
+			var response = JSON.parse(e.response);
+
+			if (response != null) {
+				Ti.API.info('response.action_success = ' + JSON.stringify(response));
+				if (response.status == "1") {
+					var enquiryWin = Alloy.createController("MyEnquiry",response.data).getView();
+					if (OS_IOS) {
+						Alloy.Globals.navWin.openWindow(enquiryWin);
+					} else {
+						enquiryWin.open();
+					}
+					enquiryWin.oldWin = $.settingWin;
+					Alloy.Globals.currentWindow = enquiryWin;
+
+				} else {
+					Alloy.Globals.Alert("No enquiry found");
 				}
 
 			} else {
