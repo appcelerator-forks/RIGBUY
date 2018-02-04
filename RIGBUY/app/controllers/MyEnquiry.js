@@ -28,6 +28,27 @@ function openFunc(e) {
 var index = 0;
 function tableClickFunc(e) {
 
+	if (e.source.name == "delete") {
+		index = e.index;
+		Ti.API.info('e ' + JSON.stringify(e.source));
+		var dialog = Ti.UI.createAlertDialog({
+			cancel : 1,
+			buttonNames : ['No', 'Yes'],
+			message : 'Would you like to delete the enquiry of product '+e.row.detail.product_name+' item?',
+			title : 'RIGBUY'
+		});
+		dialog.addEventListener('click', function(k) {
+			if (k.index === 0) {
+				Ti.API.info('The cancel button was clicked');
+			} else {
+				index = e.index;
+				removeEnquiryService(e.row.detail.id);
+
+			}
+
+		});
+		dialog.show();
+	}
 }
 
 var productRow = function(detail) {
@@ -39,34 +60,36 @@ var productRow = function(detail) {
 			touchEnabled : true,
 			width : "100%",
 			height : Ti.UI.SIZE,
-			layout : "vertical",
-			//backgroundColor : "white",
-			//detail : detail[i],
+			backgroundColor : "white",
+			detail : detail[i],
 			selectedBackgroundColor : "#F8F8F9"
 		});
+		tableRow.add(Ti.UI.createView({
+			left : 10,
+			right : 70 * Alloy.Globals.scaleFactor,
+			height : Ti.UI.SIZE,
+			layout : "vertical",
+		}));
 
-		tableRow.add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 6,
 			left : 10,
-			right : 10,
-
+			right : 0,
 			text : detail[i].product_name,
 			color : "black",
 			font : {
 				fontSize : 15 * Alloy.Globals.scaleFactor
 			},
-
 			textAlign : "left",
-
 		}));
 
-		tableRow.add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 6,
 
 			left : 10,
-			right : 10,
+			right : 0,
 			text : detail[i].email,
-			color : "black",
+			color : "gray",
 			font : {
 				fontSize : 12 * Alloy.Globals.scaleFactor
 			},
@@ -74,39 +97,41 @@ var productRow = function(detail) {
 			textAlign : "left",
 
 		}));
-		tableRow.add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 6,
-
 			left : 10,
-			right : 10,
+			right : 0,
 			text : detail[i].contact,
-			color : "black",
+			color : "gray",
 			font : {
 				fontSize : 12 * Alloy.Globals.scaleFactor
 			},
-
 			textAlign : "left",
-
 		}));
-		tableRow.add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 6,
-
 			left : 10,
-			right : 10,
+			right : 0,
 			text : detail[i].description,
-			color : "black",
+			color : "gray",
 			font : {
 				fontSize : 12 * Alloy.Globals.scaleFactor
 			},
-
 			textAlign : "left",
-
 		}));
-		tableRow.add(Ti.UI.createLabel({
+		tableRow.getChildren()[0].add(Ti.UI.createLabel({
 			top : 6,
 			text : "",
-			height:0
+			height : 0
 
+		}));
+		tableRow.add(Ti.UI.createButton({
+			right : 8,
+			image : "/images/deleteIcon.png",
+			width : 50 * Alloy.Globals.scaleFactor,
+			height : 50 * Alloy.Globals.scaleFactor,
+			name : "delete",
+			backgroundImage:"none"
 		}));
 		tableData.push(tableRow);
 	}
@@ -114,15 +139,15 @@ var productRow = function(detail) {
 };
 productRow(args);
 
-function removeWishListService(productId) {
+function removeEnquiryService(id) {
 	var obj = {};
 	obj.userId = Ti.App.Properties.getString("userid");
-	obj.productId = productId;
+	obj.id = id;
 	Ti.API.info('OBJ : ' + JSON.stringify(obj));
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=removeProductInWishlist", removeWishListServiceCallback, obj);
-		Ti.API.info('URL ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=removeProductInWishlist");
+		Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=deleteEnquiry", removeEnquiryServiceCallback, obj);
+		
 	} else {
 
 		Alloy.Globals.Alert("Please check your internet connection and try again.");
@@ -130,7 +155,7 @@ function removeWishListService(productId) {
 	}
 };
 
-function removeWishListServiceCallback(e) {
+function removeEnquiryServiceCallback(e) {
 
 	if (e.success) {
 		try {
@@ -141,7 +166,7 @@ function removeWishListServiceCallback(e) {
 				Ti.API.info('response.action_success = ' + JSON.stringify(response));
 				if (response.status == "1") {
 					//Alloy.Globals.getProductListervice();
-					$.myItemTable.deleteRow(index, true);
+					$.myEnquiryTable.deleteRow(index, true);
 					Alloy.Globals.Alert("Product removed successfully");
 				} else {
 					Alloy.Globals.Alert("Can't remove this product, Please try again");

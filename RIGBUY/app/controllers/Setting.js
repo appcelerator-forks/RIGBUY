@@ -40,15 +40,8 @@ function tableClickFunc(e) {
 
 		break;
 	case 4:
+		getChatRequestService();
 
-		var chatRequestWin = Alloy.createController("MyChatRequest").getView();
-		if (OS_IOS) {
-			Alloy.Globals.navWin.openWindow(chatRequestWin);
-		} else {
-			chatRequestWin.open();
-		}
-		chatRequestWin.oldWin = $.settingWin;
-		Alloy.Globals.currentWindow = chatRequestWin;
 		break;
 	case 5:
 
@@ -226,7 +219,7 @@ function getEnquiryService() {
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
 		Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=getEnquiryList", getEnquiryServiceCallback, obj);
-		
+
 	} else {
 
 		Alloy.Globals.Alert("Please check your internet connection and try again.");
@@ -235,7 +228,7 @@ function getEnquiryService() {
 };
 
 function getEnquiryServiceCallback(e) {
-
+Ti.API.info('E '+JSON.stringify(e));
 	if (e.success) {
 		try {
 			Ti.API.info('response ' + e.response);
@@ -244,7 +237,7 @@ function getEnquiryServiceCallback(e) {
 			if (response != null) {
 				Ti.API.info('response.action_success = ' + JSON.stringify(response));
 				if (response.status == "1") {
-					var enquiryWin = Alloy.createController("MyEnquiry",response.data).getView();
+					var enquiryWin = Alloy.createController("MyEnquiry", response.data).getView();
 					if (OS_IOS) {
 						Alloy.Globals.navWin.openWindow(enquiryWin);
 					} else {
@@ -262,7 +255,63 @@ function getEnquiryServiceCallback(e) {
 
 			}
 		} catch(e) {
-			Ti.API.info('Error getWishList :: ' + e.message);
+			Ti.API.info('Error getEnquiryService :: ' + e.message);
+
+		}
+
+	} else {
+		Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_STATUS_CODE);
+
+	}
+
+	Alloy.Globals.LoadingScreen.close();
+
+}
+
+function getChatRequestService() {
+	var obj = {};
+	obj.user_id = Ti.App.Properties.getString("userid");
+
+	if (Ti.Network.online) {
+		Alloy.Globals.LoadingScreen.open();
+		Communicator.post("http://rigbuy.com/webservices/index.php?action=chat&actionMethod=myChatRequest", getChatRequestServiceCallback, obj);
+
+	} else {
+
+		Alloy.Globals.Alert("Please check your internet connection and try again.");
+
+	}
+};
+
+function getChatRequestServiceCallback(e) {
+
+	if (e.success) {
+		try {
+			Ti.API.info('response ' + e.response);
+			var response = JSON.parse(e.response);
+
+			if (response != null) {
+				Ti.API.info('response.action_success = ' + JSON.stringify(response));
+				if (response.status == "1") {
+					var chatRequestWin = Alloy.createController("MyChatRequest",response.result).getView();
+					if (OS_IOS) {
+						Alloy.Globals.navWin.openWindow(chatRequestWin);
+					} else {
+						chatRequestWin.open();
+					}
+					chatRequestWin.oldWin = $.settingWin;
+					Alloy.Globals.currentWindow = chatRequestWin;
+
+				} else {
+					Alloy.Globals.Alert("No chat request found");
+				}
+
+			} else {
+				Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_NO_DATA);
+
+			}
+		} catch(e) {
+			Ti.API.info('Error getChatRequestService :: ' + e.message);
 
 		}
 

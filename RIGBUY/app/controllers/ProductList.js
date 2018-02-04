@@ -328,7 +328,10 @@ function tableClickFunc(e) {
 
 	} else if (e.source.name == "chatBtn") {
 		if (Ti.App.Properties.getBool("isLogin")) {
-			var productDetail = Alloy.createController("Chat").getView();
+			var obj = {};
+			obj.from = "productList";
+			obj.data = e.row.detail;
+			var productDetail = Alloy.createController("Chat", e.row.detail).getView();
 			if (OS_IOS) {
 				Alloy.Globals.navWin.openWindow(productDetail);
 			} else {
@@ -755,6 +758,7 @@ function logout(e) {
 		if (k.index === 0) {
 			Ti.API.info('The cancel button was clicked');
 		} else {
+			Alloy.Globals.getProductListervice("login", "", "");
 			Ti.App.Properties.setBool("isLogin", false);
 			Ti.App.Properties.setString("email", "");
 			Ti.App.Properties.setString("userid", "");
@@ -768,11 +772,7 @@ function logout(e) {
 			if (Alloy.Globals.google) {
 				Alloy.Globals.google.signOut();
 			}
-			if (OS_ANDROID) {
-				Alloy.Globals.drawer.toggleLeftWindow();
-			} else {
-				Alloy.Globals.openLeft();
-			}
+
 			if (OS_IOS) {
 				$.logoutRow.leftImage = "/images/login.png";
 			} else {
@@ -821,6 +821,10 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 		if (from == "filter") {
 			Alloy.Globals.isFilter = "filter";
 			if (isLoading != "loading") {
+				$.actInd.hide();
+				$.msgLbl.visible = false;
+				isLoading = false;
+				$.productTable.setData([]);
 				Alloy.Globals.page = 1;
 				count = 0;
 				searchArray = [];
@@ -833,12 +837,21 @@ Alloy.Globals.getProductListervice = function(from, obj, isLoading) {
 			Ti.API.info('URL : ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=listProduct&page=" + Alloy.Globals.page);
 			return;
 		} else {
+
 			Alloy.Globals.isFilter = "";
 			if (isLoading != "loading") {
+				$.actInd.hide();
+				$.msgLbl.visible = false;
+				isLoading = false;
+				//$.productTable.scrollToTop(0);
 				Alloy.Globals.page = 1;
 				count = 0;
 				searchArray = [];
-				Alloy.Globals.LoadingScreen.open();
+				$.productTable.setData([]);
+				if (from != "login") {
+					Alloy.Globals.LoadingScreen.open();
+				}
+
 			}
 
 		}
@@ -872,6 +885,10 @@ function getProductListerviceCallback(e) {
 				} else {
 					Alloy.Globals.Alert("No product found");
 					productListArray = [];
+					if (Alloy.Globals.page > 1) {
+						Alloy.Globals.page--;
+					}
+
 					productRow(productListArray);
 
 				}
@@ -893,7 +910,6 @@ function getProductListerviceCallback(e) {
 	$.msgLbl.visible = false;
 	isLoading = false;
 	if (Alloy.Globals.LoadingScreen) {
-
 		Alloy.Globals.LoadingScreen.close();
 	}
 

@@ -392,6 +392,7 @@ function FBCallback(e) {
 function loginService(type, fbdata) {
 	var obj = {};
 	if (type == "normal") {
+		Alloy.Globals.LoadingScreen.open();
 		obj.email = $.emailTF.value.trim();
 		obj.password = $.passwordTF.value.trim();
 		obj.deviceToken = "1";
@@ -508,6 +509,7 @@ function loginServiceCallback(e) {
 				} else {
 					Alloy.Globals.Alert(response.msg);
 				}
+				Alloy.Globals.getProductListervice("login","","");
 
 			} else {
 				Alloy.Globals.Alert(Alloy.Globals.Constants.MSG_NO_DATA);

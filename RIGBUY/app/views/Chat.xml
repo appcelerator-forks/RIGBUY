@@ -1,4 +1,4 @@
 <Alloy>
-	<Window class="container" title="Chat" backButtonTitle="" backgroundColor="white" onOpen="openFunc">
+	<Window class="container" title="Chat" backButtonTitle="" backgroundColor="white" onOpen="openFunc" onClose="closeFunc" onAndroid:back="closeFunc">
 	</Window>
 </Alloy>

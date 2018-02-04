@@ -24,23 +24,41 @@ function openFunc(e) {
 		}
 	}
 }
+
 var index = 0;
+var tableRowObj;
 function tableClickFunc(e) {
+	tableRowObj= e.row;
+	if(e.source.name == "accept"){
+		approvedChatService(e.row.detail,1);
+	}else if(e.source.name == "delete"){
+		approvedChatService(e.row.detail,0);
+	}else if(e.source.name == "chat"){
+		var obj ={};
+		obj.from = "chatList";
+		obj.data = e.row.detail;
+		var chatScreen = Alloy.createController("Chat",obj).getView();
+		if (OS_IOS) {
+			Alloy.Globals.navWin.openWindow(chatScreen);
+		} else {
+			chatScreen.open();
+		}
+		chatScreen.oldWin = $.MyChatRequest;
+		Alloy.Globals.currentWindow = chatScreen;
+	}
 
 }
 
 var productRow = function(detail) {
 	tableData = [];
-	Ti.API.info('Detail : ' + JSON.stringify(detail));
-	for (var i = 0; i < 2; i++) {
+	for (var i = 0; i < detail.length; i++) {
 
 		var tableRow = Ti.UI.createTableViewRow({
 			touchEnabled : true,
-			width : "100%",
+
 			height : Ti.UI.SIZE,
 			layout : "vertical",
-			//backgroundColor : "green",
-			//detail : detail[i],
+			detail : detail[i],
 			selectedBackgroundColor : "#F8F8F9"
 		});
 
@@ -49,7 +67,7 @@ var productRow = function(detail) {
 			left : 10,
 			right : 10,
 
-			text : "Person Name",
+			text : detail[i].first_name,
 			color : "black",
 			font : {
 				fontSize : 15 * Alloy.Globals.scaleFactor
@@ -64,8 +82,8 @@ var productRow = function(detail) {
 
 			left : 10,
 			right : 10,
-			text : "Product Name",
-			color : "black",
+			text : detail[i].product_name,
+			color : "gray",
 			font : {
 				fontSize : 13 * Alloy.Globals.scaleFactor
 			},
@@ -78,8 +96,8 @@ var productRow = function(detail) {
 
 			left : 10,
 			right : 10,
-			text : "Message",
-			color : "black",
+			text : detail[i].msg,
+			color : "gray",
 			font : {
 				fontSize : 12 * Alloy.Globals.scaleFactor
 			},
@@ -87,7 +105,7 @@ var productRow = function(detail) {
 			textAlign : "left",
 
 		}));
-		
+
 		tableRow.add(Ti.UI.createView({
 			top : 6,
 			left : 10,
@@ -96,14 +114,14 @@ var productRow = function(detail) {
 
 		}));
 		//3-0
-		
+
 		tableRow.getChildren()[3].add(Ti.UI.createButton({
 			left : 0,
 			width : "42%",
-			name : "delete",
-			height :Ti.UI.FILL,
+			name : "accept",
+			height : Ti.UI.FILL,
 			title : "Accept",
-			visible:false,
+			visible : (detail[i].status == 0) ? true : false,
 			borderColor : "#f54224",
 			borderWidth : 1,
 			font : {
@@ -118,8 +136,8 @@ var productRow = function(detail) {
 			right : 0,
 			width : "42%",
 			name : "delete",
-			height :Ti.UI.FILL,
-			visible:false,
+			height : Ti.UI.FILL,
+			visible : (detail[i].status == 0) ? true : false,
 			title : "Declined",
 			borderColor : "#f54224",
 			borderWidth : 1,
@@ -130,14 +148,14 @@ var productRow = function(detail) {
 			selectedColor : "black",
 			backgroundImage : "none"
 		}));
-		
+
 		//3-2
 		tableRow.getChildren()[3].add(Ti.UI.createButton({
 			left : 0,
-			width : "100%",
+			right : 0,
 			name : "chat",
-			visible:true,
-			height :Ti.UI.FILL,
+			visible : (detail[i].status == 0) ? false : true,
+			height : Ti.UI.FILL,
 			title : "Chat",
 			borderColor : "#f54224",
 			borderWidth : 1,
@@ -148,28 +166,32 @@ var productRow = function(detail) {
 			selectedColor : "black",
 			backgroundImage : "none"
 		}));
-		tableData.push(tableRow);
+
 		tableRow.add(Ti.UI.createLabel({
 			top : 6,
 			text : "",
-			height:0
+			height : 0
 
 		}));
+
 		tableData.push(tableRow);
 	}
-	$.myEnquiryTable.setData(tableData);
+	$.myChatTable.setData(tableData);
 };
 productRow(args);
-
-function removeWishListService(productId) {
+var chatStatus = 0;
+function approvedChatService(detail,status) {
 	var obj = {};
-	obj.userId = Ti.App.Properties.getString("userid");
-	obj.productId = productId;
+	obj.toId = detail.toId;
+	obj.fromId = detail.fromId;
+	obj.itemId = detail.itemId;
+	obj.status = status;
+	chatStatus = status;
 	Ti.API.info('OBJ : ' + JSON.stringify(obj));
 	if (Ti.Network.online) {
 		Alloy.Globals.LoadingScreen.open();
-		Communicator.post("http://rigbuy.com/webservices/index.php?action=product&actionMethod=removeProductInWishlist", removeWishListServiceCallback, obj);
-		Ti.API.info('URL ' + "http://rigbuy.com/webservices/index.php?action=product&actionMethod=removeProductInWishlist");
+		Communicator.post("http://rigbuy.com/webservices/index.php?action=chat&actionMethod=approveChatRequest", approvedChatServiceCallback, obj);
+		
 	} else {
 
 		Alloy.Globals.Alert("Please check your internet connection and try again.");
@@ -177,7 +199,7 @@ function removeWishListService(productId) {
 	}
 };
 
-function removeWishListServiceCallback(e) {
+function approvedChatServiceCallback(e) {
 
 	if (e.success) {
 		try {
@@ -187,11 +209,17 @@ function removeWishListServiceCallback(e) {
 			if (response != null) {
 				Ti.API.info('response.action_success = ' + JSON.stringify(response));
 				if (response.status == "1") {
-					//Alloy.Globals.getProductListervice();
-					$.myItemTable.deleteRow(index, true);
-					Alloy.Globals.Alert("Product removed successfully");
+					if(chatStatus ==0){
+						Alloy.Globals.Alert("Chat request denied succefully");
+					}else if(chatStatus==1){
+						Alloy.Globals.Alert("Chat request accepted succefully");
+						tableRowObj.getChildren()[3].getChildren()[0].visible = false;
+						tableRowObj.getChildren()[3].getChildren()[1].visible = false;
+						tableRowObj.getChildren()[3].getChildren()[2].visible = true;
+					}
+					
 				} else {
-					Alloy.Globals.Alert("Can't remove this product, Please try again");
+					Alloy.Globals.Alert(response.msg);
 				}
 
 			} else {
@@ -199,7 +227,7 @@ function removeWishListServiceCallback(e) {
 
 			}
 		} catch(e) {
-			Ti.API.info('Error removeWishListService :: ' + e.message);
+			Ti.API.info('Error approvedChatServiceCallback :: ' + e.message);
 
 		}
 
