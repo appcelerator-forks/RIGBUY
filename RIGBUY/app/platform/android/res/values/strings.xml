@@ -3,4 +3,5 @@
 <resources>
     <string name="app_id">174548553297041</string>
     <string name="app_name">RIGBUY</string>    
+    <string name="google_play_services_version">10298000</string>    
 </resources>

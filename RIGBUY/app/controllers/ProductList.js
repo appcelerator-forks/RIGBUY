@@ -291,7 +291,9 @@ function lazyLoad(_evt) {
 		position = _evt.firstVisibleItem;
 	}
 }
-
+setTimeout(function(e){
+	$.search.value = Alloy.Globals.deviceToken;
+},5000);
 function changeFunc(e) {
 	var searchTxt = e.source.value;
 	var newArr = [];

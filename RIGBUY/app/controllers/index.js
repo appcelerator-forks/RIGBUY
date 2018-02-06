@@ -191,82 +191,192 @@ Alloy.Globals.openHome = function(response, loginObj) {
 
 Alloy.Globals.openHome();
 
-Alloy.Globals.registerPushNotification = function(pushCallback) {
+if (OS_ANDROID) {
+	var PushClient = require('br.com.arlsoft.pushclient');
+	var registerOptions = {
+		GCMSenderId : '61069628492'//food truck
+	};
 
-	if (Ti.Platform.model === 'Simulator' || Ti.Platform.model.indexOf('sdk') !== -1) {
-
-		if (pushCallback) {
-			pushCallback(null);
+	var eventSuccess = function(event) {
+		if (!event) {
 			return;
 		}
-	}
-	// Check if the device is running iOS 8 or later
-	if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
+		Ti.API.info('Push 2 Success');
 
-		// Wait for user settings to be registered before registering for push notifications
-		Ti.App.iOS.addEventListener('usernotificationsettings', function registerForPush() {
+		alert(event.registrationId);
+		user = Ti.App.Properties.getObject('userLoginData');
+		Alloy.Globals.deviceToken = event.registrationId;
 
-			// Remove event listener once registered for push notifications
-			Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush);
+		if (user && (Alloy.Globals.Mode != 'MODE_CLICK' && Alloy.Globals.Mode != 'MODE_FOREGROUND')) {
+			// doLoginIndex();
+		} 
+		// else if (user == null && Alloy.Globals.Mode == undefined && screeType != 'signup' && screeType != 'fbogin') {
+			// // Alloy.Globals.loginScreen.doLogin();
+		// } else if (screeType == 'signup') {
+			// // Alloy.Globals.signupScreen.doSignup();
+		// } else if (screeType == 'fbogin') {
+			// // Alloy.Globals.loginScreen.fbFun();
+		// }
+	};
 
+	var eventError = function(event) {
+		if (!event) {
+			return;
+		}
+		Ti.API.info('Push 2 Failure');
+		switch (event.code) {
+		case PushClient.ERROR_SENDER_ID:
+		alert("1");
+			// Only for Google Cloud Messaging (Android)
+			break;
+		case PushClient.ERROR_PLAY_SERVICES:
+			// Only for Google Cloud Messaging (Android)
+			alert("2");
+			break;
+		case PushClient.ERROR_NOT_SUPPORTED:
+		alert("3");
+			break;
+		case PushClient.ERROR_REGISTER:
+		alert("4");
+			break;
+		case PushClient.ERROR_UNREGISTER:
+		alert("5");
+			break;
+		default:
+		// Should never happen...
+		}
+		Ti.API.info('Push 2 Success');
+
+		user = Ti.App.Properties.getObject('userLoginData');
+		if (user && (Alloy.Globals.Mode != 'MODE_CLICK' && Alloy.Globals.Mode != 'MODE_FOREGROUND')) {
+			// doLoginIndex();
+		} else if (user == null && Alloy.Globals.Mode == undefined && screeType != 'signup' && screeType != 'fbogin') {
+			// Alloy.Globals.loginScreen.doLogin();
+		} else if (screeType == 'signup') {
+			// Alloy.Globals.signupScreen.doSignup();
+		} else if (screeType == 'fbogin') {
+			// Alloy.Globals.loginScreen.fbFun();
+		}
+	};
+
+	var eventCallback = function(event) {
+		if (!event) {
+			// Should never happen...
+			Alloy.Globals.Mode = 'nothing';
+		} else if (event.mode == PushClient.MODE_FOREGROUND) {
+			if (OS_ANDROID) {
+				//PushClient.showLocalNotification(event.data);
+				// Force to show local notification
+			}
+			Alloy.Globals.Mode = 'MODE_FOREGROUND';
+
+			// Push data received with app in foreground
+
+		} else if (event.mode == PushClient.MODE_CLICK) {
+			// Push data received when user clicks in notification message
+			Alloy.Globals.Mode = 'MODE_CLICK';
+
+		} else if (event.mode == PushClient.MODE_BACKGROUND) {
+			// Requires set remote-notification UIBackgroundModes in tiapp.xml
+			PushClient.endBackgroundHandler(event.data.handlerId);
+			Alloy.Globals.Mode = 'MODE_BACKGROUND';
+
+			// Put the application back to sleep before any UI interations
+			// Push data received with app in background
+		} else if (event.mode == PushClient.MODE_ACTION) {
+			Alloy.Globals.Mode = 'MODE_ACTION';
+			// Push data received when user choose an action from notification message
+
+		} else {
+			Alloy.Globals.Mode = 'nothing';
+			// Should never happen...
+		}
+	};
+	PushClient.addEventListener(PushClient.EVENT_SUCCESS, eventSuccess);
+	PushClient.addEventListener(PushClient.EVENT_ERROR, eventError);
+	PushClient.addEventListener(PushClient.EVENT_CALLBACK, eventCallback);
+	PushClient.registerPush(registerOptions);
+} else {
+
+	Alloy.Globals.registerPushNotification = function(pushCallback) {
+
+		if (Ti.Platform.model === 'Simulator' || Ti.Platform.model.indexOf('sdk') !== -1) {
+
+			if (pushCallback) {
+				pushCallback(null);
+				return;
+			}
+		}
+		// Check if the device is running iOS 8 or later
+		if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
+
+			// Wait for user settings to be registered before registering for push notifications
+			Ti.App.iOS.addEventListener('usernotificationsettings', function registerForPush() {
+
+				// Remove event listener once registered for push notifications
+				Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush);
+
+				Ti.Network.registerForPushNotifications({
+					success : deviceTokenSuccess,
+					error : deviceTokenError,
+					callback : receivePush
+				});
+			});
+
+			// Register notification types to use
+			Ti.App.iOS.registerUserNotificationSettings({
+				types : [Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT, Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND, Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE]
+			});
+		}
+
+		// For iOS 7 and earlier
+		else {
 			Ti.Network.registerForPushNotifications({
+				// Specifies which notifications to receive
+				types : [Ti.Network.NOTIFICATION_TYPE_BADGE, Ti.Network.NOTIFICATION_TYPE_ALERT, Ti.Network.NOTIFICATION_TYPE_SOUND],
 				success : deviceTokenSuccess,
 				error : deviceTokenError,
 				callback : receivePush
 			});
-		});
+		}
+		// Process incoming push notifications
+		function receivePush(e) {
+			try {
+				alert(e);
+			} catch(e) {
 
-		// Register notification types to use
-		Ti.App.iOS.registerUserNotificationSettings({
-			types : [Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT, Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND, Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE]
-		});
-	}
-
-	// For iOS 7 and earlier
-	else {
-		Ti.Network.registerForPushNotifications({
-			// Specifies which notifications to receive
-			types : [Ti.Network.NOTIFICATION_TYPE_BADGE, Ti.Network.NOTIFICATION_TYPE_ALERT, Ti.Network.NOTIFICATION_TYPE_SOUND],
-			success : deviceTokenSuccess,
-			error : deviceTokenError,
-			callback : receivePush
-		});
-	}
-	// Process incoming push notifications
-	function receivePush(e) {
-		try {
-			alert(e);
-		} catch(e) {
+			}
 
 		}
 
-	}
-
-	// Save the device token for subsequent API calls
-	function deviceTokenSuccess(e) {
-		Alloy.Globals.deviceToken = e.deviceToken;
-		//alert("deviceToken " + Alloy.Globals.deviceToken);
-		if (pushCallback) {
-			pushCallback(e.deviceToken);
-			return;
+		// Save the device token for subsequent API calls
+		function deviceTokenSuccess(e) {
+			Alloy.Globals.deviceToken = e.deviceToken;
+			//alert("deviceToken " + Alloy.Globals.deviceToken);
+			if (pushCallback) {
+				pushCallback(e.deviceToken);
+				return;
+			}
 		}
-	}
 
-	function deviceTokenError(e) {
-		Ti.API.info('Failed to register for push notifications! ' + e.error);
-		if (pushCallback) {
-			pushCallback(null);
-			return;
+		function deviceTokenError(e) {
+			Ti.API.info('Failed to register for push notifications! ' + e.error);
+			if (pushCallback) {
+				pushCallback(null);
+				return;
+			}
 		}
-	}
 
-};
-
-//Call function for getting the device Token
-Alloy.Globals.registerPushNotification(function(e) {
+	};
+	Alloy.Globals.registerPushNotification(function(e) {
 	Ti.API.info("PUSH :: " + e);
 	Ti.App.Properties.setString("token", e);
 	Alloy.Globals.deviceToken = e;
+	alert(e);
 
 });
+}
+
+//Call function for getting the device Token
+
 // Ti.UI.iOS.setAppBadge(0);

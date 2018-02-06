@@ -103,6 +103,7 @@
                     android:label="RIGBUY"
                     android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+                <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
             </application>
         </manifest>
     </android>
@@ -116,8 +117,8 @@
         <module platform="android">ti.imagefactory</module>
         <module platform="android">dk.napp.drawer</module>
         <module platform="android">com.alcoapps.actionbarextras</module>
-        <module platform="iphone">ti.googlesignin</module>
-        <module platform="android">ti.googlesignin</module>
+        <module platform="android">br.com.arlsoft.pushclient</module>
+        <module platform="iphone">br.com.arlsoft.pushclient</module>
     </modules>
     <deployment-targets>
         <target device="mobileweb">false</target>
@@ -125,7 +126,7 @@
         <target device="ipad">false</target>
         <target device="iphone">true</target>
     </deployment-targets>
-    <sdk-version>7.0.1.GA</sdk-version>
+    <sdk-version>6.0.3.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
