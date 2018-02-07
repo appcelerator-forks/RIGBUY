@@ -68,7 +68,7 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest android:versionCode="1" android:versionName="1.0" package="com.rigbuy.app">
-            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23"/>
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25"/>
             <uses-permission android:name="android.permission.CAMERA"/>
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -103,7 +103,6 @@
                     android:label="RIGBUY"
                     android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-                <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
             </application>
         </manifest>
     </android>
@@ -117,8 +116,7 @@
         <module platform="android">ti.imagefactory</module>
         <module platform="android">dk.napp.drawer</module>
         <module platform="android">com.alcoapps.actionbarextras</module>
-        <module platform="android">br.com.arlsoft.pushclient</module>
-        <module platform="iphone">br.com.arlsoft.pushclient</module>
+        <module platform="android">ti.cloudpush</module>
     </modules>
     <deployment-targets>
         <target device="mobileweb">false</target>
@@ -126,7 +124,8 @@
         <target device="ipad">false</target>
         <target device="iphone">true</target>
     </deployment-targets>
-    <sdk-version>7.0.1.GA</sdk-version>
+    <sdk-version>6.2.0.GA</sdk-version>
+    <property name="GCM_sender_id" type="string">61069628492</property>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
@@ -146,5 +145,8 @@
     <property name="acs-username-production" type="string">appc_app_user</property>
     <property name="acs-password-production" type="string">JwvqRFw8bKb3SDHKmj</property>
     <property name="appc-org-id" type="string">220959560603109</property>
+    <property name="appc-push-type-development" type="string">gcm</property>
+    <property name="appc-push-type-production" type="string">gcm</property>
+    <property name="appc-push-type" type="string">gcm</property>
     <property name="appc-creator-user-id" type="string">025572e5-ba70-4868-9445-60d8f18a1be5</property>
 </ti:app>

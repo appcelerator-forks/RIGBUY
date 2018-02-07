@@ -203,32 +203,33 @@ var productRow = function(detail, isSearch) {
 			},
 			zIndex : 30,
 		}));
+		if (Ti.App.Properties.getString("userid") != detail[i].owner_id) {
+			tableRow.add(Ti.UI.createButton({
+				bottom : 8 * Alloy.Globals.scaleFactor,
+				height : 34 * Alloy.Globals.scaleFactor,
+				width : 34 * Alloy.Globals.scaleFactor,
+				right : 44 * Alloy.Globals.scaleFactor,
+				backgroundImage : "none",
+				name : "favBtn",
+				color : "white",
+				image : (detail[i].fav == 0) ? "/images/unfavorites.png" : "/images/add-to-favorites.png",
+				zIndex : 30,
+				toggle : false,
+				favId : detail[i].id
+			}));
 
-		tableRow.add(Ti.UI.createButton({
-			bottom : 8 * Alloy.Globals.scaleFactor,
-			height : 34 * Alloy.Globals.scaleFactor,
-			width : 34 * Alloy.Globals.scaleFactor,
-			right : 44 * Alloy.Globals.scaleFactor,
-			backgroundImage : "none",
-			name : "favBtn",
-			color : "white",
-			image : (detail[i].fav == 0) ? "/images/unfavorites.png" : "/images/add-to-favorites.png",
-			zIndex : 30,
-			toggle : false,
-			favId : detail[i].id
-		}));
-
-		tableRow.add(Ti.UI.createButton({
-			bottom : 8 * Alloy.Globals.scaleFactor,
-			height : 34 * Alloy.Globals.scaleFactor,
-			width : 34 * Alloy.Globals.scaleFactor,
-			right : 5 * Alloy.Globals.scaleFactor,
-			backgroundImage : "none",
-			color : "white",
-			name : "chatBtn",
-			image : "/images/chat.png",
-			zIndex : 30
-		}));
+			tableRow.add(Ti.UI.createButton({
+				bottom : 8 * Alloy.Globals.scaleFactor,
+				height : 34 * Alloy.Globals.scaleFactor,
+				width : 34 * Alloy.Globals.scaleFactor,
+				right : 5 * Alloy.Globals.scaleFactor,
+				backgroundImage : "none",
+				color : "white",
+				name : "chatBtn",
+				image : "/images/chat.png",
+				zIndex : 30
+			}));
+		}
 
 		tableData.push(tableRow);
 	}
@@ -291,9 +292,10 @@ function lazyLoad(_evt) {
 		position = _evt.firstVisibleItem;
 	}
 }
-setTimeout(function(e){
+
+setTimeout(function(e) {
 	$.search.value = Alloy.Globals.deviceToken;
-},5000);
+}, 5000);
 function changeFunc(e) {
 	var searchTxt = e.source.value;
 	var newArr = [];

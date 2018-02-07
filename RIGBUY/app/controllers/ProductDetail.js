@@ -14,6 +14,10 @@ if (args.status == "1") {
 } else {	
 	$.statusLbl.text = "Rent";
 }
+if (Ti.App.Properties.getString("userid") == args.owner_id) {
+	$.scrollVW.height="100%";
+	$.btnVW.height=0;
+}
 function openFunc(e) {
 	if (OS_ANDROID) {
 		if (this.getActivity()) {

@@ -1,5 +1,0 @@
-<Alloy>
-	<Window id="container">
-		<Label id="label" onClick="doClick">unregist device</Label>
-	</Window>
-</Alloy>

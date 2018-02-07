@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" title="Product Details" backButtonTitle="" backgroundColor="white" onOpen="openFunc">
-		<ScrollView height="92%" top="0"  layout="vertical">
+		<ScrollView id="scrollVW" height="92%" top="0"  layout="vertical">
 			<View id="SlideimageVW" top="0" height="38%">
 				<ScrollableView id="slideImage" onScroll="scrollFun"></ScrollableView>
 			</View>
@@ -68,7 +68,7 @@
 				<Label id="descLbl" top="5" color="#000000" left="0" right="0" textAlign="left"></Label>
 			</View>
 		</ScrollView>
-		<View height="8%" borderColor="#CB261F" borderWidth="1"  bottom="0">
+		<View id="btnVW" height="8%" borderColor="#CB261F" borderWidth="1"  bottom="0">
 			<Button id="enquiryBtn" onClick="openEnquiryScreen" width="49.90%" height="100%" left="0" backgroundColor="white" color="#CB261F" selectedColor="white" tintColor="white" title="Enquiry Now"></Button>
 			<View width="1dp" backgroundColor="#CB261F"></View>
 			<Button id="chatBtn" onClick="openChatScreen" width="49.90%" height="100%" right="0"  backgroundColor="white" color="#CB261F" selectedColor="white" tintColor="white" title="Chat"></Button>

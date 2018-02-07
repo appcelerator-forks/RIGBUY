@@ -8,7 +8,7 @@
 			<!-- <Label id="welcomeLbl" bottom="20" left="5%"  textAlign="center" color="#fff">Welcome</Label> -->
 		</View>
 		<View height="0.8" backgroundColor="#f54224" top="0"></View>
-		<TableView id="rightTable"  onClick="leftMenuOptionSelected" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="false" top="0" separatorColor="#f54224">
+		<TableView id="rightTable"  onClick="leftMenuOptionSelected" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="true" top="0" separatorColor="#f54224">
 			<FooterView>
 				<View height="1" backgroundColor="#f54224"></View>
 			</FooterView>
@@ -100,7 +100,7 @@
 				<!-- <Label id="welcomeLbl" bottom="20" left="5%"  textAlign="center" color="#fff">Welcome</Label> -->
 			</View>
 			<View height="0.8" backgroundColor="#f54224" top="0"></View>
-			<TableView id="rightTable" rowHeight="40" onClick="leftMenuOptionSelectedAndroid" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="false" top="0" separatorColor="#f54224">
+			<TableView id="rightTable" rowHeight="40" onClick="leftMenuOptionSelectedAndroid" backgroundColor="transparent"  height="Titanium.UI.SIZE" scrollable="true" top="0" separatorColor="#f54224">
 				<FooterView>
 					<View height="1" backgroundColor="#f54224"></View>
 				</FooterView>

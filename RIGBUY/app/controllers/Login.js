@@ -108,38 +108,38 @@ if (OS_IOS) {
 	});
 
 } else {
-	// var Google = require('ti.googlesignin');
-	// Alloy.Globals.google = Google;
-	// Google.initialize({
-// 
-		// clientID : "61069628492-l5skrm8fghkr53s3i66ouob3qkg3vta2.apps.googleusercontent.com", //  Web application client ID, not androidID !!!!
-		// onLogin : function(res) {
-			// Ti.API.info("**************   " + JSON.stringify(res));
-			// var obj = {};
-			// obj.id = res.id;
-			// obj.email = res.email;
-			// obj.name = res.displayName;
-			// obj.photo = res.photo;
-			// loginService("social", obj);
-		// }
-	// });
-// 
-	// Google.addEventListener('connect', function(e) {
-		// Ti.API.info(' ***** Connect: ');
-	// });
-	// Google.addEventListener('error', function(e) {
-		// Alloy.Globals.LoadingScreen.close();
-		// Ti.API.info(' ***** Err0r: ');
-	// });
-	// Google.addEventListener('disconnect', function(e) {
-		// Alloy.Globals.LoadingScreen.close();
-		// Ti.API.info(' ***** disconnect: ');
-	// });
-// 
-	// Google.addEventListener('login', function(e) {
-		// Ti.API.info(' ***** DEBUG: ' + JSON.stringify(e));
-// 
-	// });
+	var Google = require('ti.googlesignin');
+	Alloy.Globals.google = Google;
+	Google.initialize({
+
+		clientID : "61069628492-l5skrm8fghkr53s3i66ouob3qkg3vta2.apps.googleusercontent.com", //  Web application client ID, not androidID !!!!
+		onLogin : function(res) {
+			Ti.API.info("**************   " + JSON.stringify(res));
+			var obj = {};
+			obj.id = res.id;
+			obj.email = res.email;
+			obj.name = res.displayName;
+			obj.photo = res.photo;
+			loginService("social", obj);
+		}
+	});
+
+	Google.addEventListener('connect', function(e) {
+		Ti.API.info(' ***** Connect: ');
+	});
+	Google.addEventListener('error', function(e) {
+		Alloy.Globals.LoadingScreen.close();
+		Ti.API.info(' ***** Err0r: ');
+	});
+	Google.addEventListener('disconnect', function(e) {
+		Alloy.Globals.LoadingScreen.close();
+		Ti.API.info(' ***** disconnect: ');
+	});
+
+	Google.addEventListener('login', function(e) {
+		Ti.API.info(' ***** DEBUG: ' + JSON.stringify(e));
+
+	});
 
 }
 

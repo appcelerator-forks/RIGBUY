@@ -192,110 +192,63 @@ Alloy.Globals.openHome = function(response, loginObj) {
 Alloy.Globals.openHome();
 
 if (OS_ANDROID) {
-	var PushClient = require('br.com.arlsoft.pushclient');
-	var registerOptions = {
-		GCMSenderId : '61069628492'//food truck
-	};
+	var gcm = require('net.iamyellow.gcmjs');
 
-	var eventSuccess = function(event) {
-		if (!event) {
-			return;
+		var pendingData = gcm.data;
+		Ti.API.info("pendingData : " + pendingData);
+		if (pendingData && pendingData !== null) {
+			Ti.API.info('******* data (started) ' + JSON.stringify(pendingData));
 		}
-		Ti.API.info('Push 2 Success');
 
-		alert(event.registrationId);
-		user = Ti.App.Properties.getObject('userLoginData');
-		Alloy.Globals.deviceToken = event.registrationId;
+		gcm.registerForPushNotifications({
 
-		if (user && (Alloy.Globals.Mode != 'MODE_CLICK' && Alloy.Globals.Mode != 'MODE_FOREGROUND')) {
-			// doLoginIndex();
-		} 
-		// else if (user == null && Alloy.Globals.Mode == undefined && screeType != 'signup' && screeType != 'fbogin') {
-			// // Alloy.Globals.loginScreen.doLogin();
-		// } else if (screeType == 'signup') {
-			// // Alloy.Globals.signupScreen.doSignup();
-		// } else if (screeType == 'fbogin') {
-			// // Alloy.Globals.loginScreen.fbFun();
-		// }
-	};
+			success : function(ev) {
+				// on successful registration
 
-	var eventError = function(event) {
-		if (!event) {
-			return;
-		}
-		Ti.API.info('Push 2 Failure');
-		switch (event.code) {
-		case PushClient.ERROR_SENDER_ID:
-		alert("1");
-			// Only for Google Cloud Messaging (Android)
-			break;
-		case PushClient.ERROR_PLAY_SERVICES:
-			// Only for Google Cloud Messaging (Android)
-			alert("2");
-			break;
-		case PushClient.ERROR_NOT_SUPPORTED:
-		alert("3");
-			break;
-		case PushClient.ERROR_REGISTER:
-		alert("4");
-			break;
-		case PushClient.ERROR_UNREGISTER:
-		alert("5");
-			break;
-		default:
-		// Should never happen...
-		}
-		Ti.API.info('Push 2 Success');
+				Alloy.Globals.deviceToken = ev.deviceToken;
+				alert(ev.deviceToken);
+				Ti.App.Properties.setString("token", Alloy.Globals.deviceToken);
+				
 
-		user = Ti.App.Properties.getObject('userLoginData');
-		if (user && (Alloy.Globals.Mode != 'MODE_CLICK' && Alloy.Globals.Mode != 'MODE_FOREGROUND')) {
-			// doLoginIndex();
-		} else if (user == null && Alloy.Globals.Mode == undefined && screeType != 'signup' && screeType != 'fbogin') {
-			// Alloy.Globals.loginScreen.doLogin();
-		} else if (screeType == 'signup') {
-			// Alloy.Globals.signupScreen.doSignup();
-		} else if (screeType == 'fbogin') {
-			// Alloy.Globals.loginScreen.fbFun();
-		}
-	};
+				Ti.API.info("Alloy.Globals.deviceToken " + JSON.stringify(ev));
 
-	var eventCallback = function(event) {
-		if (!event) {
-			// Should never happen...
-			Alloy.Globals.Mode = 'nothing';
-		} else if (event.mode == PushClient.MODE_FOREGROUND) {
-			if (OS_ANDROID) {
-				//PushClient.showLocalNotification(event.data);
-				// Force to show local notification
+			},
+
+			error : function(ev) {
+				// when an error occurs
+				Ti.API.info('******* error, ' + ev.error);
+				
+				Ti.App.Properties.setString("token", null);
+
+			},
+
+			// Android k liye..
+			callback : function(e) {
+				Ti.API.info("PUSH Recieved  " + JSON.stringify(e));
+				try {//Show toast
+					
+				} catch(e) {
+					Ti.API.info('Error From Foreground');
+				}
+			},
+			unregister : function(ev) {
+				// on unregister
+				Ti.API.info('******* unregister, ' + ev.deviceToken);
+				Ti.App.Properties.setString("token", null);
+
+			},
+			data : function(data) {
+
+				Ti.App.Properties.setString("uid", 0);
+				try {
+					
+					Ti.Android.NotificationManager.cancelAll();
+				} catch(e) {
+					Ti.API.info('Error From background');
+				}
+
 			}
-			Alloy.Globals.Mode = 'MODE_FOREGROUND';
-
-			// Push data received with app in foreground
-
-		} else if (event.mode == PushClient.MODE_CLICK) {
-			// Push data received when user clicks in notification message
-			Alloy.Globals.Mode = 'MODE_CLICK';
-
-		} else if (event.mode == PushClient.MODE_BACKGROUND) {
-			// Requires set remote-notification UIBackgroundModes in tiapp.xml
-			PushClient.endBackgroundHandler(event.data.handlerId);
-			Alloy.Globals.Mode = 'MODE_BACKGROUND';
-
-			// Put the application back to sleep before any UI interations
-			// Push data received with app in background
-		} else if (event.mode == PushClient.MODE_ACTION) {
-			Alloy.Globals.Mode = 'MODE_ACTION';
-			// Push data received when user choose an action from notification message
-
-		} else {
-			Alloy.Globals.Mode = 'nothing';
-			// Should never happen...
-		}
-	};
-	PushClient.addEventListener(PushClient.EVENT_SUCCESS, eventSuccess);
-	PushClient.addEventListener(PushClient.EVENT_ERROR, eventError);
-	PushClient.addEventListener(PushClient.EVENT_CALLBACK, eventCallback);
-	PushClient.registerPush(registerOptions);
+		});
 } else {
 
 	Alloy.Globals.registerPushNotification = function(pushCallback) {
